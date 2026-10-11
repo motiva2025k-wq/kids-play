@@ -1,0 +1,114 @@
+/* =========================================================
+ * Kids_Play — Tema visual (100% original)
+ * Estilo: blocos + pixel-art suave, divertido e calmo (TDAH-friendly)
+ * ========================================================= */
+
+/* Paleta estendida */
+:root {
+  /* Roxo (principal) */
+  --color-roxo: #6d28d9;
+  --color-roxo-escuro: #4c1d95;
+  --color-roxo-claro: #ede9fe;
+
+  /* Dourado (destaque/recompensa) */
+  --color-dourado: #f5b301;
+  --color-dourado-escuro: #7a5600;
+  --color-dourado-claro: #fff3cd;
+
+  /* Verde-grama (acerto/sucesso) */
+  --color-verde: #4caf50;
+  --color-verde-escuro: #2e7d32;
+  --color-verde-claro: #e8f5e9;
+
+  /* Azul-céu (fundo/calma) */
+  --color-ceu: #38bdf8;
+  --color-ceu-escuro: #0369a1;
+  --color-ceu-claro: #eaf6ff;
+
+  /* Vermelho-suave (atenção, nunca agressivo) */
+  --color-vermelho-suave: #f87171;
+  --color-vermelho-escuro-suave: #7f1d1d;
+  --color-vermelho-claro-suave: #fee2e2;
+
+  /* Marrom-capivara */
+  --color-marrom-capivara: #b98a56;
+  --color-marrom-capivara-escuro: #7d5a2a;
+  --color-marrom-capivara-claro: #e7c9a9;
+
+  /* Neutros */
+  --color-neutro-50: #f8fafc;
+  --color-neutro-100: #f1f5f9;
+  --color-neutro-200: #e2e8f0;
+  --color-neutro-700: #334155;
+  --color-neutro-800: #1e293b;
+  --color-neutro-900: #0f172a;
+
+  /* Alerta (mantido) */
+  --color-alerta: #d64545;
+
+  /* Fundo calmo com nuvens em blocos (muito sutis) */
+  --bg-fundo-calmo: radial-gradient(
+      circle 12px at 10% 15%,
+      rgba(255, 255, 255, 0.6) 0%,
+      rgba(255, 255, 255, 0.6) 40%,
+      transparent 41%
+    ),
+    radial-gradient(
+      circle 10px at 25% 25%,
+      rgba(255, 255, 255, 0.5) 0%,
+      rgba(255, 255, 255, 0.5) 38%,
+      transparent 39%
+    ),
+    radial-gradient(
+      circle 14px at 85% 12%,
+      rgba(255, 255, 255, 0.55) 0%,
+      rgba(255, 255, 255, 0.55) 42%,
+      transparent 43%
+    ),
+    radial-gradient(
+      circle 9px at 70% 28%,
+      rgba(255, 255, 255, 0.5) 0%,
+      rgba(255, 255, 255, 0.5) 36%,
+      transparent 37%
+    ),
+    linear-gradient(180deg, var(--color-ceu-claro) 0%, #f8fcff 100%);
+}
+
+/* Estilo "bloco": bordas grossas escuras, cantos levemente arredondados,
+   sombra sólida deslocada (sem blur) */
+.bloco {
+  border: 4px solid var(--color-roxo-escuro);
+  border-radius: 1rem; /* 16px */
+  box-shadow: 4px 4px 0 0 var(--color-roxo-escuro);
+  background: #fff;
+}
+
+/* Variante suave */
+.bloco-suave {
+  border: 4px solid var(--color-roxo-claro);
+  border-radius: 1rem;
+  box-shadow: 4px 4px 0 0 var(--color-roxo-claro);
+  background: #fff;
+}
+
+/* Botão que "afunda" ao clicar */
+.btn-afunda {
+  transition: transform 120ms ease, box-shadow 120ms ease;
+  will-change: transform;
+}
+
+.btn-afunda:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0 0 0 0 var(--color-roxo-escuro);
+}
+
+/* Respeita redução de movimento */
+@media (prefers-reduced-motion: reduce) {
+  .btn-afunda {
+    transition: none;
+  }
+  .btn-afunda:active {
+    transform: none;
+    box-shadow: 4px 4px 0 0 var(--color-roxo-escuro);
+  }
+}

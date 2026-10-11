@@ -1,0 +1,17 @@
+name: Fechar Rankings
+
+on:
+  schedule:
+    - cron: '0 3 * * 1' # Segunda-feira às 03:00
+  workflow_dispatch:
+
+jobs:
+  fechar-rankings:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fechar rankings
+        run: |
+          echo "Fechamento de rankings - placeholder"
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}

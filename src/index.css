@@ -1,0 +1,76 @@
+/* =========================================================
+ * Kids_Play — cores, fonte e regras visuais globais
+ * Estilo: blocos + pixel-art suave, divertido e calmo (TDAH-friendly)
+ * Fonte Lexend, texto grande (TDAH). Contraste WCAG AA.
+ * ========================================================= */
+@import 'tailwindcss';
+@import './theme.css';
+
+@theme {
+  --font-sans: 'Lexend', ui-sans-serif, system-ui, sans-serif;
+
+  --color-roxo: #6d28d9;
+  --color-roxo-escuro: #4c1d95;
+  --color-roxo-claro: #ede9fe;
+
+  --color-dourado: #f5b301;
+  --color-dourado-escuro: #7a5600;
+  --color-dourado-claro: #fff3cd;
+
+  --color-verde: #4caf50;
+  --color-verde-escuro: #2e7d32;
+  --color-verde-claro: #e8f5e9;
+
+  --color-ceu: #38bdf8;
+  --color-ceu-escuro: #0369a1;
+  --color-ceu-claro: #eaf6ff;
+
+  --color-vermelho-suave: #f87171;
+  --color-vermelho-escuro-suave: #7f1d1d;
+  --color-vermelho-claro-suave: #fee2e2;
+
+  --color-marrom-capivara: #b98a56;
+  --color-marrom-capivara-escuro: #7d5a2a;
+  --color-marrom-capivara-claro: #e7c9a9;
+
+  --color-neutro-50: #f8fafc;
+  --color-neutro-100: #f1f5f9;
+  --color-neutro-200: #e2e8f0;
+  --color-neutro-700: #334155;
+  --color-neutro-800: #1e293b;
+  --color-neutro-900: #0f172a;
+
+  --color-alerta: #d64545;
+}
+
+@layer base {
+  html {
+    font-size: 18px; /* letras maiores de propósito */
+  }
+
+  body {
+    @apply font-sans text-roxo-escuro antialiased;
+    background: var(--bg-fundo-calmo);
+    background-attachment: fixed;
+    background-size: cover;
+  }
+
+  /* Alvos grandes e foco visível (acessibilidade) */
+  button,
+  a,
+  input,
+  select {
+    @apply focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-dourado;
+  }
+}
+
+/* Acessibilidade TDAH: respeita quem desligou movimento no sistema */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

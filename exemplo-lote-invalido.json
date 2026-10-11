@@ -1,0 +1,22 @@
+{
+  "lote_id": "",
+  "ano": 5,
+  "materia": "",
+  "missoes": [
+    {
+      "titulo": "",
+      "perguntas": [
+        {
+          "tipo": "multipla_escolha",
+          "enunciado": "",
+          "dados": {
+            "alternativas": [
+              {"texto": "A", "correta": true},
+              {"texto": "B", "correta": true}
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

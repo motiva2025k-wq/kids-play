@@ -1,0 +1,73 @@
+{
+  "lote_id": "mat-2ano-001",
+  "ano": 2,
+  "materia": "Matemática",
+  "missoes": [
+    {
+      "titulo": "Contagem básica",
+      "descricao": "Praticar contagem até 10",
+      "tema": "Números",
+      "habilidade_bncc": "EF02MA01",
+      "dificuldade": 1,
+      "perguntas": [
+        {
+          "tipo": "multipla_escolha",
+          "enunciado": "Quantos dedos tem uma mão?",
+          "dados": {
+            "alternativas": [
+              {"texto": "5", "correta": true},
+              {"texto": "4", "correta": false},
+              {"texto": "6", "correta": false},
+              {"texto": "3", "correta": false}
+            ]
+          },
+          "dica": "Conte seus dedos",
+          "explicacao": "Uma mão tem 5 dedos"
+        },
+        {
+          "tipo": "verdadeiro_falso",
+          "enunciado": "2 + 2 = 4. Verdadeiro ou falso?",
+          "dados": {
+            "correta": true,
+            "respostaCorretaTexto": "Sim, 2+2=4"
+          },
+          "dica": "Faça a conta",
+          "explicacao": "2+2=4"
+        },
+        {
+          "tipo": "completar",
+          "enunciado": "Complete: 1 + 2 = ____",
+          "dados": {
+            "opcoes": [{"texto": "3"}, {"texto": "2"}, {"texto": "4"}],
+            "correta": "3"
+          },
+          "dica": "Conte com os dedos",
+          "explicacao": "1+2=3"
+        },
+        {
+          "tipo": "multipla_escolha",
+          "enunciado": "Qual vem depois do 3?",
+          "dados": {
+            "alternativas": [
+              {"texto": "4", "correta": true},
+              {"texto": "2", "correta": false},
+              {"texto": "1", "correta": false},
+              {"texto": "5", "correta": false}
+            ]
+          },
+          "dica": "Conte em ordem",
+          "explicacao": "Após 3 vem 4"
+        },
+        {
+          "tipo": "verdadeiro_falso",
+          "enunciado": "5 é menor que 3. Verdadeiro ou falso?",
+          "dados": {
+            "correta": false
+          },
+          "dica": "Compare os números",
+          "explicacao": "5 é maior que 3"
+        }
+      ]
+    }
+  ]
+}

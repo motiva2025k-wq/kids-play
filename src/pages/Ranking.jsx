@@ -1,0 +1,221 @@
+import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import Layout from '../components/Layout.jsx'
+import Card from '../components/ui/Card.jsx'
+import Button from '../components/ui/Button.jsx'
+import Trono from '../components/ui/Trono.jsx'
+import { supabase } from '../lib/supabase.js'
+import { lerPerfilSelecionado } from '../lib/perfil.js'
+
+export default function Ranking() {
+  const navigate = useNavigate()
+  const perfil = lerPerfilSelecionado()
+  const [periodo, setPeriodo] = useState('semanal')
+  const [ranking, setRanking] = useState([])
+  const [posicaoAtual, setPosicaoAtual] = useState(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
+
+  useEffect(() => {
+    carregarRanking()
+  }, [periodo])
+
+  async function carregarRanking() {
+    if (!supabase) return
+
+    setLoading(true)
+    setError(null)
+
+    try {
+      const hoje = new Date()
+      const ano = hoje.getFullYear()
+      const semana = Math.ceil((((hoje - new Date(ano, 0, 1)) / 86400000) + new Date(ano, 0, 1).getDay() + 1) / 7)
+      const mes = hoje.getMonth() + 1
+
+      let query = supabase
+        .from('ranks')
+        .select(`
+          *,
+          children (
+            id,
+            nickname,
+            avatar_id,
+            mostrar_no_ranking,
+            mostrar_foto_no_ranking
+          )
+        `)
+        .eq('periodo', periodo)
+        .eq('ano', ano)
+
+      if (periodo === 'semanal') {
+        query = query.eq('semana', semana)
+      } else if (periodo === 'mensal') {
+        query = query.eq('mes', mes)
+      }
+
+      const { data, error } = await query.order('posicao', { ascending: true })
+
+      if (error) throw error
+
+      const filtrado = (data || []).filter(r => r.children?.mostrar_no_ranking !== false)
+      setRanking(filtrado)
+
+      if (perfil?.id) {
+        const minhaPosicao = filtrado.findIndex(r => r.child_id === perfil.id)
+        if (minhaPosicao >= 0) {
+          setPosicaoAtual({
+            posicao: filtrado[minhaPosicao].posicao || minhaPosicao + 1,
+            xp: filtrado[minhaPosicao].xp_total,
+            item: filtrado[minhaPosicao]
+          })
+        }
+      }
+    } catch (err) {
+      console.error('Erro ao carregar ranking:', err)
+      setError('Não foi possível carregar o ranking')
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  const top3 = ranking.slice(0, 3)
+  const resto = ranking.slice(3, 10)
+
+  return (
+    <Layout>
+      <div className="mb-4 flex items-center justify-between gap-3">
+        <Button variant="secundario" onClick={() => navigate(-1)}>
+          ← Voltar
+        </Button>
+        <h1 className="text-2xl font-bold">Ranking</h1>
+        <div className="w-20" />
+      </div>
+
+      {/* Botões de período */}
+      <div className="mb-6 flex flex-wrap justify-center gap-2">
+        <Button
+          variant={periodo === 'semanal' ? 'primario' : 'secundario'}
+          onClick={() => setPeriodo('semanal')}
+          className="px-4 py-2"
+        >
+          Semanal
+        </Button>
+        <Button
+          variant={periodo === 'mensal' ? 'primario' : 'secundario'}
+          onClick={() => setPeriodo('mensal')}
+          className="px-4 py-2"
+        >
+          Mensal
+        </Button>
+        <Button
+          variant={periodo === 'global' ? 'primario' : 'secundario'}
+          onClick={() => setPeriodo('global')}
+          className="px-4 py-2"
+        >
+          Global
+        </Button>
+      </div>
+
+      {loading && (
+        <Card className="p-6 text-center">
+          <p className="text-lg">Carregando ranking...</p>
+        </Card>
+      )}
+
+      {error && (
+        <Card className="p-6 text-center border-vermelho-escuro">
+          <p className="text-lg text-vermelho-escuro">{error}</p>
+          <Button onClick={carregarRanking} className="mt-4">
+            Tentar novamente
+          </Button>
+        </Card>
+      )}
+
+      {!loading && !error && (
+        <>
+          {/* Pódio */}
+          {top3.length > 0 && (
+            <div className="mb-6 flex items-end justify-center gap-4">
+              {top3[0] && (
+                <div className="flex flex-col items-center">
+                  <Trono coroa="ouro" className="mb-2" />
+                  <div className="text-center">
+                    <p className="font-bold text-lg">1º</p>
+                    <p className="font-semibold">{top3[0].children?.nickname}</p>
+                    <p className="text-sm opacity-80">{top3[0].xp_total} XP</p>
+                  </div>
+                </div>
+              )}
+              {top3[1] && (
+                <div className="flex flex-col items-center">
+                  <Trono coroa="prata" className="mb-2" />
+                  <div className="text-center">
+                    <p className="font-bold text-lg">2º</p>
+                    <p className="font-semibold">{top3[1].children?.nickname}</p>
+                    <p className="text-sm opacity-80">{top3[1].xp_total} XP</p>
+                  </div>
+                </div>
+              )}
+              {top3[2] && (
+                <div className="flex flex-col items-center">
+                  <Trono coroa="bronze" className="mb-2" />
+                  <div className="text-center">
+                    <p className="font-bold text-lg">3º</p>
+                    <p className="font-semibold">{top3[2].children?.nickname}</p>
+                    <p className="text-sm opacity-80">{top3[2].xp_total} XP</p>
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* Lista 4-10 */}
+          {resto.length > 0 && (
+            <div className="mb-6 space-y-2">
+              {resto.map((item, idx) => {
+                const posicao = item.posicao || idx + 4
+                return (
+                  <Card key={item.id} className="flex items-center justify-between p-4">
+                    <div className="flex items-center gap-4">
+                      <span className="text-xl font-bold w-8">{posicao}º</span>
+                      <span className="font-semibold">{item.children?.nickname}</span>
+                    </div>
+                    <span className="font-semibold text-roxo-escuro">{item.xp_total} XP</span>
+                  </Card>
+                )
+              })}
+            </div>
+          )}
+
+          {ranking.length === 0 && (
+            <Card className="p-6 text-center">
+              <p className="text-lg">Ainda não há dados para este período.</p>
+            </Card>
+          )}
+
+          {/* Card "Você" */}
+          {posicaoAtual && (
+            <Card className="p-6 bg-dourado-claro border-dourado-escuro">
+              <h2 className="text-lg font-bold mb-2">Você</h2>
+              <div className="flex justify-between items-center">
+                <div>
+                  <p className="font-semibold">Posição: {posicaoAtual.posicao}º</p>
+                  <p className="text-sm opacity-80">XP: {posicaoAtual.xp}</p>
+                </div>
+                <div className="text-right">
+                  <p className="text-sm">Continue subindo no ranking!</p>
+                </div>
+              </div>
+            </Card>
+          )}
+        </>
+      )}
+
+      <div className="mt-6 flex flex-wrap justify-center gap-3">
+        <Button variant="secundario" onClick={() => navigate('/hall-da-fama')}>
+          Ver Hall da Fama
+        </Button>
+      </div>
+    </Layout>
+  )
+}
