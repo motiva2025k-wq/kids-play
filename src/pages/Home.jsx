@@ -25,9 +25,15 @@ export default function Home() {
       </div>
 
       <div className="mb-8 flex flex-col items-center gap-4 text-center">
-        <Kapivarus pose="feliz" size={120} />
+        {/* Exemplo do componente reutilizável: estado + balão de fala + tamanho "m" */}
+        <Kapivarus
+          estado="feliz"
+          mensagem="Oi, aventureiro(a)! Vamos começar nossa trilha?"
+          tom="dica"
+          tamanho="m"
+        />
         <div className="bloco max-w-xl px-6 py-4">
-          <h1 className="text-2xl font-bold">Oi, aventureiro(a)! Vamos começar nossa trilha?</h1>
+          <h1 className="text-2xl font-bold">Bem-vindo de volta!</h1>
           <p className="mt-1 text-lg">Um objetivo por tela. Sem pressa, sempre juntos!</p>
         </div>
       </div>

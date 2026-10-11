@@ -340,7 +340,7 @@ SELECT id,
     WHEN 6 THEN 'A frase "Eu gosto de chocolate." diz o que a pessoa gosta. Verdadeiro ou falso?'
   END,
   CASE p.num
-    WHEN 1 THEN '{"correta":true,"respostaCorretaTexto":"Sim, "mia" é o som do gato."}'::jsonb
+    WHEN 1 THEN '{"correta":true,"respostaCorretaTexto":"Sim, \"mia\" é o som do gato."}'::jsonb
     WHEN 2 THEN '{"alternativas":[{"texto":"Eu brinquei ontem.","correta":true},{"texto":"Eu brinco hoje.","correta":false},{"texto":"Eu vou brincar.","correta":false}],"respostaCorretaTexto":""}'::jsonb
     WHEN 3 THEN '{"opcoes":[{"texto":"brinca"},{"texto":"corre"},{"texto":"dorme"}],"correta":"brinca","respostaCorretaTexto":"A menina brinca no parque."}'::jsonb
     WHEN 4 THEN '{"modo":"ordenar","itens":[{"id":"na","texto":"na"},{"id":"escola","texto":"escola"},{"id":"está","texto":"está"},{"id":"Marina","texto":"Marina"}],"ordemEsperada":["Marina","está","na","escola"],"respostaCorretaTexto":"Marina está na escola."}'::jsonb
@@ -484,7 +484,7 @@ VALUES
 
 INSERT INTO perguntas (missao_id, tipo, enunciado, dados, dica, explicacao, ordem)
 SELECT id,
-  CASE WHEN p.num = 1 THEN 'ultipla_escolha'
+  CASE WHEN p.num = 1 THEN 'multipla_escolha'
        WHEN p.num = 2 THEN 'contar_imagens'
        WHEN p.num = 3 THEN 'verdadeiro_falso'
        WHEN p.num = 4 THEN 'completar'

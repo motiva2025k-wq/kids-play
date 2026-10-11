@@ -112,3 +112,30 @@
     box-shadow: 4px 4px 0 0 var(--color-roxo-escuro);
   }
 }
+
+/* Troca de pose do Kapivarus — pulinho curto ao mudar de estado.
+   Removido automaticamente quando o usuário prefere menos movimento. */
+.kapi-troca {
+  animation: kapi-troca 320ms ease-out both;
+}
+
+@keyframes kapi-troca {
+  0% {
+    opacity: 0;
+    transform: translateY(8px) scale(0.94);
+  }
+  55% {
+    opacity: 1;
+    transform: translateY(-4px) scale(1.03);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kapi-troca {
+    animation: none;
+  }
+}

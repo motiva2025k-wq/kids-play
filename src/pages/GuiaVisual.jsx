@@ -37,7 +37,7 @@ export default function GuiaVisual() {
       </div>
 
       {/* Kapivarus poses */}
-      <Card title="Kapivarus — 9 poses (SVG pixel 32x32)" className="mb-6">
+      <Card title="Kapivarus — 9 poses (imagens .webp, com fallback SVG)" className="mb-6">
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
           {POSES_KAPIVARUS.map((p) => (
             <div key={p.id} className="bloco flex flex-col items-center gap-2 p-3">
