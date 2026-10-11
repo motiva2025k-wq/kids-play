@@ -30,7 +30,16 @@ import SelecionarPerfil from './pages/SelecionarPerfil.jsx'
 
 function TelaCarregando() {
   return (
-    <div className="flex min-h-screen items-center justify-center text-xl font-semibold">
+    <div className="flex min-h-screen flex-col items-center justify-center gap-4 text-xl font-semibold">
+      {/* Ícone do app na tela de carregamento (splash) */}
+      <img
+        src="/assets/logo/kidsplay-icone.svg"
+        alt="Kids_Play"
+        width={112}
+        height={112}
+        loading="eager"
+        className="h-28 w-28"
+      />
       Carregando…
     </div>
   )

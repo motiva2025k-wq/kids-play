@@ -1,0 +1,29 @@
+{
+  "name": "Kids_Play",
+  "short_name": "Kids_Play",
+  "description": "Reforço escolar gamificado para o 2º, 3º e 4º ano do ensino fundamental.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#EAF6FF",
+  "theme_color": "#6D28D9",
+  "icons": [
+    {
+      "src": "/assets/logo/kidsplay-icone-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/logo/kidsplay-icone.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/logo/kidsplay-icone.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
