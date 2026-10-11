@@ -1,8 +1,17 @@
+// Home — trilha de missões com tema de jogo.
+// HUD com ícones, botões grandes estilo jogo; textos e lógica inalterados.
 import { useNavigate } from "react-router-dom"
 import Kapivarus from "../components/kapivarus/Kapivarus.jsx"
-import Badge from "../components/ui/Badge.jsx"
 import Button from "../components/ui/Button.jsx"
 import Layout from "../components/Layout.jsx"
+import HudItem from "../components/ui/HudItem.jsx"
+import {
+  IconeChama,
+  IconeCoroa,
+  IconeMoeda,
+  IconePergaminho,
+  IconeEstrela,
+} from "../components/ui/Icones.jsx"
 
 export default function Home() {
   const navegar = useNavigate()
@@ -15,11 +24,12 @@ export default function Home() {
   return (
     <Layout>
       <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
-        <div className="flex flex-wrap gap-2">
-          <Badge tipo="xp" valor={150} />
-          <Badge tipo="moedas" valor={25} />
-          <Badge tipo="nivel" valor={3} />
-          <Badge tipo="streak" valor={7} />
+        {/* HUD do jogador — mesmos valores do Badges (XP 150, Moedas 25, Nível 3, Streak 7) */}
+        <div className="grid flex-1 grid-cols-2 gap-2 sm:grid-cols-4">
+          <HudItem icone={<IconeEstrela size={26} />} animar="estrela-pulsar" cor="dourado" rotulo="XP" valor={150} />
+          <HudItem icone={<IconeMoeda size={26} />} animar="moeda-girar" cor="verde" rotulo="Moedas" valor={25} />
+          <HudItem icone={<IconeCoroa size={26} />} cor="roxo" rotulo="Nível" valor={3} />
+          <HudItem icone={<IconeChama size={26} />} animar="chama-balancar" cor="laranja" rotulo="Dias seguidos" valor={7} />
         </div>
         <Button variant="secundario" onClick={() => navegar("/guia-visual")}>Guia visual</Button>
       </div>
@@ -41,11 +51,13 @@ export default function Home() {
       <section className="space-y-4">
         <div className="space-y-3">
           <div className="flex items-center gap-3">
-            <div className="bloco flex h-12 w-12 items-center justify-center text-xl font-bold bg-dourado-claro">★</div>
+            <div className="bloco flex h-12 w-12 items-center justify-center bg-dourado-claro">
+              <IconePergaminho size={26} />
+            </div>
             <button
               type="button"
               onClick={() => navegar("/reforco")}
-              className="btn-afunda bloco flex-1 px-4 py-3 text-left text-lg font-bold hover:bg-roxo-claro"
+              className="btn-jogo btn-afunda bloco flex-1 px-4 py-3 text-left text-lg font-bold hover:bg-roxo-claro"
             >
               Treino do Kapivarus
             </button>
@@ -53,8 +65,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="space-y-4 mt-6">
-        <h2 className="text-xl font-bold">Trilha de missões</h2>
+      <section className="mt-6 space-y-4">
+        <h2 className="flex items-center gap-2 text-xl font-bold">
+          <IconePergaminho size={24} />
+          Trilha de missões
+        </h2>
         <div className="space-y-3">
           {missoes.map((m, idx) => (
             <div key={m.id} className="flex items-center gap-3">
@@ -64,7 +79,7 @@ export default function Home() {
               <button
                 type="button"
                 onClick={() => navegar("/missao")}
-                className="btn-afunda bloco flex-1 px-4 py-3 text-left text-lg font-bold hover:bg-roxo-claro"
+                className="btn-jogo btn-afunda bloco flex-1 px-4 py-3 text-left text-lg font-bold hover:bg-roxo-claro"
               >
                 Missão {m.id} — {m.nome}
               </button>

@@ -3,7 +3,9 @@ import { useNavigate } from 'react-router-dom'
 import Layout from '../components/Layout.jsx'
 import Card from '../components/ui/Card.jsx'
 import Button from '../components/ui/Button.jsx'
+import Confete from '../components/ui/Confete.jsx'
 import Trono from '../components/ui/Trono.jsx'
+import { IconeCoroa, IconeTrofeu } from '../components/ui/Icones.jsx'
 import { supabase } from '../lib/supabase.js'
 import { lerPerfilSelecionado } from '../lib/perfil.js'
 
@@ -87,7 +89,10 @@ export default function Ranking() {
         <Button variant="secundario" onClick={() => navigate(-1)}>
           ← Voltar
         </Button>
-        <h1 className="text-2xl font-bold">Ranking</h1>
+        <h1 className="flex items-center gap-2 text-2xl font-bold">
+          <IconeCoroa size={26} />
+          Ranking
+        </h1>
         <div className="w-20" />
       </div>
 
@@ -135,37 +140,41 @@ export default function Ranking() {
         <>
           {/* Pódio */}
           {top3.length > 0 && (
-            <div className="mb-6 flex items-end justify-center gap-4">
-              {top3[0] && (
-                <div className="flex flex-col items-center">
-                  <Trono coroa="ouro" className="mb-2" />
-                  <div className="text-center">
-                    <p className="font-bold text-lg">1º</p>
-                    <p className="font-semibold">{top3[0].children?.nickname}</p>
-                    <p className="text-sm opacity-80">{top3[0].xp_total} XP</p>
+            <div className="relative mb-6">
+              {/* Confete comemora o 1º lugar */}
+              <Confete quantidade={top3[0] ? 14 : 0} />
+              <div className="flex items-end justify-center gap-4">
+                {top3[0] && (
+                  <div className="flex flex-col items-center">
+                    <Trono coroa="ouro" className="mb-2" />
+                    <div className="text-center">
+                      <span className="medalha medalha-ouro mb-1">🥇 1º</span>
+                      <p className="font-semibold">{top3[0].children?.nickname}</p>
+                      <p className="text-sm opacity-80">{top3[0].xp_total} XP</p>
+                    </div>
                   </div>
-                </div>
-              )}
-              {top3[1] && (
-                <div className="flex flex-col items-center">
-                  <Trono coroa="prata" className="mb-2" />
-                  <div className="text-center">
-                    <p className="font-bold text-lg">2º</p>
-                    <p className="font-semibold">{top3[1].children?.nickname}</p>
-                    <p className="text-sm opacity-80">{top3[1].xp_total} XP</p>
+                )}
+                {top3[1] && (
+                  <div className="flex flex-col items-center">
+                    <Trono coroa="prata" className="mb-2" />
+                    <div className="text-center">
+                      <span className="medalha medalha-prata mb-1">🥈 2º</span>
+                      <p className="font-semibold">{top3[1].children?.nickname}</p>
+                      <p className="text-sm opacity-80">{top3[1].xp_total} XP</p>
+                    </div>
                   </div>
-                </div>
-              )}
-              {top3[2] && (
-                <div className="flex flex-col items-center">
-                  <Trono coroa="bronze" className="mb-2" />
-                  <div className="text-center">
-                    <p className="font-bold text-lg">3º</p>
-                    <p className="font-semibold">{top3[2].children?.nickname}</p>
-                    <p className="text-sm opacity-80">{top3[2].xp_total} XP</p>
+                )}
+                {top3[2] && (
+                  <div className="flex flex-col items-center">
+                    <Trono coroa="bronze" className="mb-2" />
+                    <div className="text-center">
+                      <span className="medalha medalha-bronze mb-1">🥉 3º</span>
+                      <p className="font-semibold">{top3[2].children?.nickname}</p>
+                      <p className="text-sm opacity-80">{top3[2].xp_total} XP</p>
+                    </div>
                   </div>
-                </div>
-              )}
+                )}
+              </div>
             </div>
           )}
 
@@ -177,7 +186,9 @@ export default function Ranking() {
                 return (
                   <Card key={item.id} className="flex items-center justify-between p-4">
                     <div className="flex items-center gap-4">
-                      <span className="text-xl font-bold w-8">{posicao}º</span>
+                      <span className="flex h-9 w-9 items-center justify-center rounded-full bg-roxo-claro text-base font-bold text-roxo-escuro">
+                        {posicao}
+                      </span>
                       <span className="font-semibold">{item.children?.nickname}</span>
                     </div>
                     <span className="font-semibold text-roxo-escuro">{item.xp_total} XP</span>
@@ -196,7 +207,10 @@ export default function Ranking() {
           {/* Card "Você" */}
           {posicaoAtual && (
             <Card className="p-6 bg-dourado-claro border-dourado-escuro">
-              <h2 className="text-lg font-bold mb-2">Você</h2>
+              <h2 className="mb-2 flex items-center gap-2 text-lg font-bold">
+                <IconeTrofeu size={22} />
+                Você
+              </h2>
               <div className="flex justify-between items-center">
                 <div>
                   <p className="font-semibold">Posição: {posicaoAtual.posicao}º</p>
@@ -213,7 +227,7 @@ export default function Ranking() {
 
       <div className="mt-6 flex flex-wrap justify-center gap-3">
         <Button variant="secundario" onClick={() => navigate('/hall-da-fama')}>
-          Ver Hall da Fama
+          🏛️ Ver Hall da Fama
         </Button>
       </div>
     </Layout>

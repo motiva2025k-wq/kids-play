@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import Layout from '../components/Layout.jsx'
 import Card from '../components/ui/Card.jsx'
 import Button from '../components/ui/Button.jsx'
+import { IconeBau, IconeMoeda } from '../components/ui/Icones.jsx'
 import { supabase } from '../lib/supabase.js'
 import { lerPerfilSelecionado } from '../lib/perfil.js'
 import { useToast } from '../contexts/ToastContext.jsx'
@@ -74,7 +75,12 @@ export default function Loja() {
         <Button variant="secundario" onClick={() => navigate(-1)}>
           ← Voltar
         </Button>
-        <h1 className="text-2xl font-bold">Loja</h1>
+        <h1 className="flex items-center gap-2 text-2xl font-bold">
+          <span className="moeda-girar inline-flex">
+            <IconeBau size={26} />
+          </span>
+          Loja
+        </h1>
         <div className="w-20" />
       </div>
 
@@ -93,21 +99,25 @@ export default function Loja() {
           {itens.map(item => (
             <Card key={item.id} className="p-4 flex flex-col justify-between">
               <div className="mb-4">
-                <h2 className="text-lg font-bold mb-2">{item.nome}</h2>
-                {item.descricao && <p className="text-sm opacity-80 mb-2">{item.descricao}</p>}
-                <span className="font-semibold text-verde-escuro">💰 {item.preco} moedas</span>
+                <h2 className="mb-2 text-lg font-bold">{item.nome}</h2>
+                {item.descricao && <p className="mb-2 text-sm opacity-80">{item.descricao}</p>}
+                <span className="inline-flex items-center gap-1.5 font-semibold text-verde-escuro">
+                  <IconeMoeda size={18} />
+                  {item.preco} moedas
+                </span>
                 <span className="ml-2 text-xs opacity-60">({item.tipo})</span>
               </div>
               {jaPossui(item.id) ? (
                 <Button variant="secundario" disabled>
-                  Já adquirido
+                  ✅ Já adquirido
                 </Button>
               ) : (
                 <Button
+                  className="btn-jogo"
                   onClick={() => comprarItem(item)}
                   disabled={comprando === item.id}
                 >
-                  {comprando === item.id ? 'Comprando...' : 'Comprar'}
+                  {comprando === item.id ? 'Comprando...' : '🛍️ Comprar'}
                 </Button>
               )}
             </Card>

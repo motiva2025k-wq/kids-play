@@ -7,6 +7,9 @@ import Kapivarus from '../components/kapivarus/Kapivarus.jsx'
 import KapivarusFala from '../components/kapivarus/KapivarusFala.jsx'
 import Button from '../components/ui/Button.jsx'
 import Card from '../components/ui/Card.jsx'
+import Confete from '../components/ui/Confete.jsx'
+import HudItem from '../components/ui/HudItem.jsx'
+import { IconeMoeda, IconeEstrela } from '../components/ui/Icones.jsx'
 import Layout from '../components/Layout.jsx'
 import { pegarFraseAleatoria } from '../data/frasesKapivarus.js'
 
@@ -55,16 +58,19 @@ export default function ResultadoMissao({ resultado, novaTentativa }) {
         <div className="text-center">
           <div className="text-sm font-semibold opacity-60">Resultado</div>
         </div>
-        <div className="w[90px]" />
+        <div className="w-[90px]" />
       </div>
+
+      {/* Confete quando a missão foi brilhante (3 estrelas) */}
+      {resultado.estrelas >= 3 && <Confete quantidade={16} />}
 
       <div className="flex flex-col items-center gap-6 py-10 text-center">
         <Kapivarus
           pose={resultado.estrelas >= 3 ? 'comemorando' : resultado.estrelas >= 2 ? 'feliz' : 'incentivando'}
-          size={120}
+          size={160}
         />
 
-        <div className="flex gap-2 text-5xl" aria-label="estrelas">
+        <div className="flex gap-2 text-5xl text-dourado" aria-label="estrelas">
           {linhasEstrelas}
         </div>
 
@@ -75,19 +81,21 @@ export default function ResultadoMissao({ resultado, novaTentativa }) {
           </p>
         </Card>
 
-        <div className="grid grid-cols-2 gap-3 w-full max-w-sm">
-          <Card>
-            <div className="text-sm font-semibold opacity-70">XP</div>
-            <div className="text-2xl font-bold text-roxo-escuro">
-              +{resultado.xp}
-            </div>
-          </Card>
-          <Card>
-            <div className="text-sm font-semibold opacity-70">Moedas</div>
-            <div className="text-2xl font-bold text-verde-escuro">
-              +{resultado.moedas}
-            </div>
-          </Card>
+        <div className="grid w-full max-w-sm grid-cols-2 gap-3">
+          <HudItem
+            icone={<IconeEstrela size={26} />}
+            animar="estrela-pulsar"
+            cor="dourado"
+            rotulo="XP"
+            valor={`+${resultado.xp}`}
+          />
+          <HudItem
+            icone={<IconeMoeda size={26} />}
+            animar="moeda-girar"
+            cor="verde"
+            rotulo="Moedas"
+            valor={`+${resultado.moedas}`}
+          />
         </div>
 
         <div className="flex justify-center">
@@ -100,8 +108,8 @@ export default function ResultadoMissao({ resultado, novaTentativa }) {
       </div>
 
       <div className="flex flex-wrap justify-center gap-3">
-        <Button onClick={() => navegar('/home')}>
-          Voltar para a trilha
+        <Button className="btn-jogo" onClick={() => navegar('/home')}>
+          🏁 Voltar para a trilha
         </Button>
         <Button variant="secundario" onClick={handleNovaTentativa}>
           Tentar de novo (metade do XP)

@@ -31,15 +31,14 @@ export default function Missao() {
             key={alt}
             type="button"
             onClick={() => navegar("/acerto")}
-            className="btn-afunda bloco min-h-[56px] px-4 py-4 text-left text-xl font-bold hover:bg-verde-claro"
+            className="btn-jogo btn-afunda bloco min-h-[56px] px-4 py-4 text-left text-xl font-bold hover:bg-verde-claro"
           >
             {alt}
           </button>
         ))}
         <button
           type="button"
-          onClick={() => navegar("/erro-gentil")}
-          className="btn-afunda bloco min-h-[56px] px-4 py-4 text-left text-xl font-bold hover:bg-vermelho-claro-suave"
+          onClick={() => navegar("/erro-gentil")}            className="btn-jogo btn-afunda bloco min-h-[56px] px-4 py-4 text-left text-xl font-bold hover:bg-vermelho-claro-suave"
         >
           Urso
         </button>

@@ -41,6 +41,14 @@
   --color-neutro-900: #0f172a;
 
   --color-alerta: #d64545;
+
+  /* Acentos de jogo (mundos/power-ups) */
+  --color-laranja: #f97316;
+  --color-laranja-escuro: #c2410c;
+  --color-laranja-claro: #ffedd5;
+  --color-rosa: #ec4899;
+  --color-rosa-escuro: #9d174d;
+  --color-rosa-claro: #fce7f3;
 }
 
 @layer base {
