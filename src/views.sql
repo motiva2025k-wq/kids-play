@@ -125,23 +125,30 @@ ALTER TABLE tentativas_missao ENABLE ROW LEVEL SECURITY;
 ALTER TABLE respostas ENABLE ROW LEVEL SECURITY;
 
 -- 1) materias: qualquer usuário logado lê. Nenhum escreve (só admin via service role).
+DROP POLICY IF EXISTS "materias_le_any" ON materias;
 CREATE POLICY "materias_le_any" ON materias FOR SELECT USING (auth.role() = 'authenticated');
 
 -- 2) missoes: qualquer usuário logado lê.
+DROP POLICY IF EXISTS "missoes_le_any" ON missoes;
 CREATE POLICY "missoes_le_any" ON missoes FOR SELECT USING (auth.role() = 'authenticated');
 
 -- 3) perguntas: qualquer usuário logado lê.
+DROP POLICY IF EXISTS "perguntas_le_any" ON perguntas;
 CREATE POLICY "perguntas_le_any" ON perguntas FOR SELECT USING (auth.role() = 'authenticated');
 
 -- 4) tentativas_missao: a criança só lê/escreve os PRÓPRIOS registros.
+DROP POLICY IF EXISTS "tentativas_le_proprias" ON tentativas_missao;
 CREATE POLICY "tentativas_le_proprias" ON tentativas_missao
   FOR SELECT USING (crianca_id = auth.uid());
+DROP POLICY IF EXISTS "tentativas_ins_proprias" ON tentativas_missao;
 CREATE POLICY "tentativas_ins_proprias" ON tentativas_missao
   FOR INSERT WITH CHECK (crianca_id = auth.uid());
+DROP POLICY IF EXISTS "tentativas_upd_proprias" ON tentativas_missao;
 CREATE POLICY "tentativas_upd_proprias" ON tentativas_missao
   FOR UPDATE USING (crianca_id = auth.uid());
 
 -- 5) respostas: a criança só lê/escreve as PRÓPRIAS respostas.
+DROP POLICY IF EXISTS "respostas_le_proprias" ON respostas;
 CREATE POLICY "respostas_le_proprias" ON respostas
   FOR SELECT USING (
     EXISTS (
@@ -150,6 +157,7 @@ CREATE POLICY "respostas_le_proprias" ON respostas
         AND t.crianca_id = auth.uid()
     )
   );
+DROP POLICY IF EXISTS "respostas_ins_proprias" ON respostas;
 CREATE POLICY "respostas_ins_proprias" ON respostas
   FOR INSERT WITH CHECK (
     EXISTS (
@@ -158,6 +166,7 @@ CREATE POLICY "respostas_ins_proprias" ON respostas
         AND t.crianca_id = auth.uid()
     )
   );
+DROP POLICY IF EXISTS "respostas_upd_proprias" ON respostas;
 CREATE POLICY "respostas_upd_proprias" ON respostas
   FOR UPDATE USING (
     EXISTS (
@@ -215,7 +224,8 @@ ON CONFLICT (id) DO NOTHING;
 -- "Identificar os fonemas vocálicos e as sílabas da palavra."
 INSERT INTO missoes (materia_id, ano, titulo, descricao, ordem, dificuldade)
 VALUES
-  ('portugues', 2, 'Vogais e sílabas: conheço bem', 'Vamos brincar com vozes e divisão das palavras em partes.', 1, 1);
+  ('portugues', 2, 'Vogais e sílabas: conheço bem', 'Vamos brincar com vozes e divisão das palavras em partes.', 1, 1)
+ON CONFLICT DO NOTHING;
 
 -- Perguntas
 INSERT INTO perguntas (missao_id, tipo, enunciado, dados, dica, explicacao, ordem)
@@ -268,7 +278,8 @@ ON CONFLICT DO NOTHING;
 -- Missão 2: Palavras com nh, lh, ch, rr (BNCC EF02LP09)
 INSERT INTO missoes (materia_id, ano, titulo, descricao, ordem, dificuldade)
 VALUES
-  ('portugues', 2, 'Brincando com nh, lh, ch, rr', 'Vamos aprender sons especiais das palavras que às vezes confundem.', 2, 2);
+  ('portugues', 2, 'Brincando com nh, lh, ch, rr', 'Vamos aprender sons especiais das palavras que às vezes confundem.', 2, 2)
+ON CONFLICT DO NOTHING;
 
 INSERT INTO perguntas (missao_id, tipo, enunciado, dados, dica, explicacao, ordem)
 SELECT id,
@@ -320,7 +331,8 @@ ON CONFLICT DO NOTHING;
 -- Missão 3: Ler frases e entender o sentido (BNCC EF02LP17 / EF02LP18)
 INSERT INTO missoes (materia_id, ano, titulo, descricao, ordem, dificuldade)
 VALUES
-  ('portugues', 2, 'Frases: leio e compreendo', 'Vamos ler frases simples e descobrir o que elas significam.', 3, 3);
+  ('portugues', 2, 'Frases: leio e compreendo', 'Vamos ler frases simples e descobrir o que elas significam.', 3, 3)
+ON CONFLICT DO NOTHING;
 
 INSERT INTO perguntas (missao_id, tipo, enunciado, dados, dica, explicacao, ordem)
 SELECT id,
@@ -376,7 +388,8 @@ ON CONFLICT DO NOTHING;
 -- Missão 1: Contagem e números até 20 (BNCC EF02MA01)
 INSERT INTO missoes (materia_id, ano, titulo, descricao, ordem, dificuldade)
 VALUES
-  ('matematica', 2, 'Conto até 20 com calma', 'Contar objetos e reconocer os números até 20.', 1, 1);
+  ('matematica', 2, 'Conto até 20 com calma', 'Contar objetos e reconocer os números até 20.', 1, 1)
+ON CONFLICT DO NOTHING;
 
 INSERT INTO perguntas (missao_id, tipo, enunciado, dados, dica, explicacao, ordem)
 SELECT id,
@@ -428,7 +441,8 @@ ON CONFLICT DO NOTHING;
 -- Missão 2: Adição com soma até 20 (BNCC EF02MA05)
 INSERT INTO missoes (materia_id, ano, titulo, descricao, ordem, dificuldade)
 VALUES
-  ('matematica', 2, 'Somar com as mãos e de cabeça', 'Resolvendo somas simples até 20.', 2, 2);
+  ('matematica', 2, 'Somar com as mãos e de cabeça', 'Resolvendo somas simples até 20.', 2, 2)
+ON CONFLICT DO NOTHING;
 
 INSERT INTO perguntas (missao_id, tipo, enunciado, dados, dica, explicacao, ordem)
 SELECT id,
@@ -480,7 +494,8 @@ ON CONFLICT DO NOTHING;
 -- Missão 3: Subtração simples (BNCC EF02MA06)
 INSERT INTO missoes (materia_id, ano, titulo, descricao, ordem, dificuldade)
 VALUES
-  ('matematica', 2, 'Tire e veja o que sobra', 'Introdução à subtração com números pequenos.', 3, 3);
+  ('matematica', 2, 'Tire e veja o que sobra', 'Introdução à subtração com números pequenos.', 3, 3)
+ON CONFLICT DO NOTHING;
 
 INSERT INTO perguntas (missao_id, tipo, enunciado, dados, dica, explicacao, ordem)
 SELECT id,
