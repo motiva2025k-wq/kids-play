@@ -91,6 +91,63 @@ try {
   console.error(`✗ Erro inesperado: ${erro.message}`)
 }
 
+// 5) Tabelas do Kids_Play (materias, missoes, perguntas, tentativas_missao,
+//    respostas) com RLS: um visitante SEM login não pode ver nenhuma linha.
+//    - "permission denied" / 0 linhas = tabela existe e o RLS a esconde (bom!)
+//    - "does not exist"                = falta rodar src/views.sql no SQL Editor
+//    - visível com linhas              = RLS desligado: falha de segurança
+const tabelasDoApp = ['materias', 'missoes', 'perguntas', 'tentativas_missao', 'respostas']
+for (const tabela of tabelasDoApp) {
+  try {
+    const { data, error } = await supabase.from(tabela).select('id').limit(1)
+    if (error) {
+      if (error.message.includes('does not exist')) {
+        falhas++
+        console.error(`✗ Tabela "${tabela}" não existe — rode src/views.sql no SQL Editor.`)
+      } else if (error.message.includes('permission denied')) {
+        console.log(`✓ Tabela "${tabela}" existe e o RLS bloqueia visitantes`)
+      } else {
+        falhas++
+        console.error(`✗ Tabela "${tabela}": ${error.message}`)
+      }
+    } else if (data.length > 0) {
+      falhas++
+      console.error(
+        `✗ Tabela "${tabela}" está LEGÍVEL por visitante (RLS desligado!) — ${data.length} linhas visíveis sem login`,
+      )
+    } else {
+      console.log(`✓ Tabela "${tabela}" existe e o RLS a esconde de visitantes (0 linhas sem login)`)
+    }
+  } catch (erro) {
+    falhas++
+    console.error(`✗ Erro inesperado em "${tabela}": ${erro.message}`)
+  }
+}
+
+// 6) View desempenho_por_missao (criada no fim do src/views.sql)
+try {
+  const { data, error } = await supabase
+    .from('desempenho_por_missao')
+    .select('crianca_id')
+    .limit(1)
+  if (error) {
+    if (error.message.includes('does not exist')) {
+      falhas++
+      console.error('✗ View "desempenho_por_missao" não existe — rode src/views.sql no SQL Editor.')
+    } else if (error.message.includes('permission denied')) {
+      console.log('✓ View "desempenho_por_missao" existe (acesso reservado a usuários logados)')
+    } else {
+      falhas++
+      console.error(`✗ View "desempenho_por_missao": ${error.message}`)
+    }
+  } else {
+    console.log(`✓ View "desempenho_por_missao" existe e respondeu (visitante vê ${data.length} linhas)`)
+  }
+} catch (erro) {
+  falhas++
+  console.error(`✗ Erro inesperado na view: ${erro.message}`)
+}
+
 console.log('')
 console.log(falhas === 0 ? 'TUDO CERTO — conexão saudável.' : `${falhas} problema(s) encontrado(s).`)
 process.exit(falhas === 0 ? 0 : 1)
