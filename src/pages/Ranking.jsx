@@ -1,6 +1,8 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Layout from '../components/Layout.jsx'
+import KapivarusFala from '../components/kapivarus/KapivarusFala.jsx'
+import { dizer } from '../components/kapivarus/falas.mjs'
 import Card from '../components/ui/Card.jsx'
 import Button from '../components/ui/Button.jsx'
 import Confete from '../components/ui/Confete.jsx'
@@ -17,6 +19,9 @@ export default function Ranking() {
   const [posicaoAtual, setPosicaoAtual] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+
+  const contexto = useMemo(() => ({ nome: perfil?.nickname || perfil?.nome || '' }), [perfil])
+  const falaRanking = useMemo(() => dizer('ranking', contexto), [contexto])
 
   useEffect(() => {
     carregarRanking()
@@ -94,6 +99,11 @@ export default function Ranking() {
           Ranking
         </h1>
         <div className="w-20" />
+      </div>
+
+      {/* Kapivarus no trono com uma fala do catálogo */}
+      <div className="mb-6 flex justify-center">
+        <KapivarusFala pose={falaRanking.estado} tom="dica" efeito={falaRanking.efeito} texto={falaRanking.texto} />
       </div>
 
       {/* Botões de período */}

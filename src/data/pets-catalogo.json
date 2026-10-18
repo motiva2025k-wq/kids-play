@@ -1,0 +1,95 @@
+{
+  "versao": 1,
+  "especies": [
+    {
+      "id": "capivara",
+      "nome": "Capivara",
+      "fraseInicio": "Sai do rio e estuda comigo!",
+      "fraseEvolucao": "A Capivara está ficando mais grande! Cara dos estudos.",
+      "corPadrao": "#B98A56",
+      "energiaInicial": 55,
+      "saudacao": "Oi, riacho!",
+      "resumoEvolucao": "O Capivara cresce com calma e é muito fiel. A melhor companheira pra quem gosta de paciência.",
+      "evolucoes": [
+        { "estagio": "filhote", "imagem": "pets/capivara-filhote.svg" },
+        { "estagio": "jovem", "imagem": "pets/capivara-jovem.svg" },
+        { "estagio": "adulto", "imagem": "pets/capivara-adulto.svg" }
+      ]
+    },
+    {
+      "id": "coelho",
+      "nome": "Coelho",
+      "fraseInicio": "Eu pulo em ritmo! Vamos estudar?",
+      "fraseEvolucao": "Os coins do Coelho ficaram mais grandes!",
+      "corPadrao": "#CBD5E1",
+      "energiaInicial": 70,
+      "saudacao": "Bonitinho!",
+      "resumoEvolucao": "O Coelho é ágil e fica inquieto. Perfeito para quem não para de pensar.",
+      "evolucoes": [
+        { "estagio": "filhote", "imagem": "pets/coelho-filhote.svg" },
+        { "estagio": "jovem", "imagem": "pets/coelho-jovem.svg" },
+        { "estagio": "adulto", "imagem": "pets/coelho-adulto.svg" }
+      ]
+    },
+    {
+      "id": "rafinha",
+      "nome": "Rafinha",
+      "fraseInicio": "A conta tá compartilhada? Vamos dar uma olhada!",
+      "fraseEvolucao": "A Rafinha está em forma! Por que não testar mais uma vez?",
+      "corPadrao": "#EA580C",
+      "energiaInicial": 60,
+      "saudacao": "Tá na direção!",
+      "resumoEvolucao": "A Rafinha levanta cada vez mais. Bom para quem quer aprender a repetir com calma.",
+      "evolucoes": [
+        { "estagio": "filhote", "imagem": "pets/rafinha-filhote.svg" },
+        { "estagio": "jovem", "imagem": "pets/rafinha-jovem.svg" },
+        { "estagio": "adulto", "imagem": "pets/rafinha-adulto.svg" }
+      ]
+    },
+    {
+      "id": "pinguim",
+      "nome": "Pinguim",
+      "fraseInicio": "O chão é aquente? Vamos dar aquele passo!",
+      "fraseEvolucao": "O Pinguim está muito feliz!",
+      "corPadrao": "#1E293B",
+      "energiaInicial": 45,
+      "saudacao": "Pula tu!",
+      "resumoEvolucao": "O Pinguim teaca e nunca desiste. Perfeito para não desistir do exercício.",
+      "evolucoes": [
+        { "estagio": "filhote", "imagem": "pets/pinguim-filhote.svg" },
+        { "estagio": "jovem", "imagem": "pets/pinguim-jovem.svg" },
+        { "estagio": "adulto", "imagem": "pets/pinguim-adulto.svg" }
+      ]
+    },
+    {
+      "id": "tortuguita",
+      "nome": "Tortuguita",
+      "fraseInicio": "Fonte começaram! Pode andar devagar!",
+      "fraseEvolucao": "A Tortuguita decora tudo!",
+      "corPadrao": "#2E7D32",
+      "energiaInicial": 65,
+      "saudacao": "Vamos encara a banca!",
+      "resumoEvolucao": "A Tortuguita é lenta e corajosa. Uma boa para quem gosta de repetir só que sempre.",
+      "evolucoes": [
+        { "estagio": "filhote", "imagem": "pets/tortuguita-filhote.svg" },
+        { "estagio": "jovem", "imagem": "pets/tortuguita-jovem.svg" },
+        { "estagio": "adulto", "imagem": "pets/tortuguita-adulto.svg" }
+      ]
+    },
+    {
+      "id": "luz",
+      "nome": "Luz",
+      "fraseInicio": "Seus estudos são super brilhantes!",
+      "fraseEvolucao": "A Luz disparou de nível!",
+      "corPadrao": "#F59E0B",
+      "energiaInicial": 80,
+      "saudacao": "Cuidado, que a luz fica mais forte!",
+      "resumoEvolucao": "A Luz é rápida e feliz. Muitos cards que podem flutuar. Azul, vermelho e o amarelo clássico são só o início.",
+      "evolucoes": [
+        { "estagio": "filhote", "imagem": "pets/luz-filhote.svg" },
+        { "estagio": "jovem", "imagem": "pets/luz-jovem.svg" },
+        { "estagio": "adulto", "imagem": "pets/luz-adulto.svg" }
+      ]
+    }
+  ]
+}

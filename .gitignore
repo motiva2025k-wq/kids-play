@@ -16,3 +16,9 @@ npm-debug.log*
 # Sistema
 .DS_Store
 Thumbs.db
+
+# Artefatos de desenvolvimento (não versionar)
+.dev.pid
+test-results/
+playwright-report/
+c/

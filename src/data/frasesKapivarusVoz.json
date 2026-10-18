@@ -1,0 +1,126 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "Catálogo de falas do Kapivarus por evento. Cada evento tem 3-5 variações; o sistema sorteia sem repetir a anterior em sequência. Variáveis: {nome}, {nivel}, {dias}, {xp}, {pet}, {etapas}, {moedas}, {missoes}.",
+  "versao": 1,
+  "eventos": {
+    "boas-vindas": [
+      "Oi, aventureiro(a)! Vamos começar nossa trilha?",
+      "Bem-vindo de volta! Você manda muito bem hoje.",
+      "Saudades! Hoje a gente segue tranquilo(a)?",
+      "Legal ter você aqui. Seja bem-vindo(a)!",
+      "Salve, aventureiro(a)! Tudo certo por aqui?"
+    ],
+    "volta-apos-dias": [
+      "Ufa, você voltou! Que bom ter você de volta.",
+      "O Kapivarus tava precisando de você. Como você esteve?",
+      "Que bom que voltou. A gente segue do jeito que você quiser.",
+      "Volte sempre que quiser. Estamos juntos nessa."
+    ],
+    "inicio-missao": [
+      "Bora começar a missão? Você está pronto(a)!",
+      "A missão tá à sua espera. Vamos lá, passo a passo.",
+      "Prepare o coração: missão começou! Você consegue!",
+      "Começou! Respire fundo e vá com calma."
+    ],
+    "acerto": [
+      "Nossa, ficou ótimo(a)!",
+      "Você acertou! Continue assim.",
+      "Top demais! O Kapivarus tava orgulhoso(a).",
+      "Exatamente! Você tá surpreso(a)?",
+      "Acerto! Quase como um little expert!"
+    ],
+    "acerto-em-sequencia": [
+      "Você está em sequência! Continue!",
+      "Respeito! Mais um, mais um...",
+      "Potência! A gente não para aqui!",
+      "Série de acertos, super herói(a) da matemática!",
+      "Destaque! Você tá num ritmo incrível!"
+    ],
+    "erro": [
+      "Quase! Vamos tentar de novo, juntos?",
+      "É bom errar — aprende-se mais! Sem pressa.",
+      "Confia: eu te ajudo. Tenta de novo, futebolista.",
+      "Errou? Tranquilo(a). O importante é continuar.",
+      "Quase lá! Respire e tenta de novo."
+    ],
+    "dica": [
+      "Tem uma dica aqui... presta atenção no detalhe.",
+      "Uma pista: olha o que a pergunta tá pedindo.",
+      "Dica do Kapivarus: a breath before answer? Respire.",
+      "Pista: o Kapivarus tava escondido nessa parte.",
+      "Dica: leia a pergunta com calma antes de responder."
+    ],
+    "missao-concluida": [
+      "Missão cumprida! Que orgulho!",
+      "Parabéns, aventureiro(a)! Missão superada!",
+      "Concluída! Você fez tudo com muito carinho.",
+      "Missão finalizada! Respire e saboreie.",
+      "Exatamente! Missão completa, camarada(a)!"
+    ],
+    "subiu-nivel": [
+      "Você subiu de nível! Nível {nivel} em dia.",
+      "Aumentou de nível! Benção.",
+      "Novo nível! Você cresceu de verdade.",
+      "Level up! {nivel} e o Kapivarus tava torcendo.",
+      "Subiu! E o Kapivarus tá comemorando com você."
+    ],
+    "meta-do-dia-cumprida": [
+      "Meta do dia cumprida! Incrível.",
+      "Missões do dia completas. Você fez história.",
+      "Dia cumprido! Tá valendo cada esforço.",
+      "Meta batida! O Kapivarus tá super feliz.",
+      "Dia completo, meta atingida. Parabéns!"
+    ],
+    "tocou-kapivarus": [
+      "Cócegas!",
+      "Bora estudar?",
+      "Você está indo muito bem!",
+      "Me conta uma curiosidade!",
+      "Agora é você que entrevista o Kapivarus?"
+    ],
+    "ocioso": [
+      "Se precisar de uma pausa, a gente pausa.",
+      "Quando quiser, o Kapivarus tá aqui.",
+      "Tudo bem descansar um pouco. O aprendizado não corre.",
+      "Reflexão: calma também é parte do jogo.",
+      "Tá tudo bem. O tutor fica por aqui."
+    ],
+    "despedida": [
+      "Até a próxima, aventureiro(a)!",
+      "Tudo bem! Até breve, camarada(a).",
+      "A gente se encontra na próxima missão.",
+      "Até mais! Volte quando quiser.",
+      "Curta o caminho. Volte sempre."
+    ],
+    "pet-ganhou": [
+      "Parabéns! O(a) {pet} deu seu primeiro passo!",
+      "Você ganhou uma companhia! Pode chamar(a) de {nome}.",
+      "Isto é apenas o começo. O(a) {pet} vai crescer com você."
+    ],
+    "pet-evoluiu": [
+      "O(a) {pet} evoluiu! Agora você é mais forte(a) junto com ele(a).",
+      "Entraram mais {etapas} de nível. Parabéns pela evolução.",
+      "A constância daqui rendeu isso. O(a) {pet} cresceu de novo!"
+    ],
+    "pet-feliz": [
+      "O(a) {pet} está muito feliz por você!",
+      "Cada alimentação (missão) acalma o(a) {pet} logo mais!",
+      "Muito bem! O(a) {pet} sorri em voz alta."
+    ],
+    "pet-dormindo": [
+      "O(a) {pet} dormiu de vez. Não tem problema nenhum.",
+      "O(a) {pet} está descansado(a). Quando você voltar, estará feliz.",
+      "Dormir é parte do dia. O(a) {pet} espera por você na próxima volta."
+    ],
+    "pet-acordou": [
+      "O(a) {pet} acordou e está feliz de te ver!",
+      "Você voltou e o(a) {pet} dormiu de novo. Tudo certo.",
+      "Muito prazer ter você de volta. O(a) {pet} virou mais brilhante."
+    ],
+    "pet-correndo": [
+      "O(a) {pet} corre atrás de você! Vai fundo.",
+      "O(a) {pet} não para de correr! Continue assim.",
+      "Nada de pular — só estudar!"
+    ]
+  }
+}

@@ -8,7 +8,7 @@
 // 5. Ao final: tela de resultado com estrelas, XP, moedas, resumo + mensagem do Kapivarus
 //
 // Só depende do contexto Auth e do hook useMissao.
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useAuth } from '../contexts/AuthContext.jsx'
 import Kapivarus from '../components/kapivarus/Kapivarus.jsx'
@@ -23,8 +23,10 @@ import Layout from '../components/Layout.jsx'
 import { useMissao } from '../lib/useMissao.js'
 import { fraseComEmbrace, FRASES_BOAVINDAS, FRASES_FINAL_ACERTO, FRASES_FINAL_INCENTIVO } from "../data/frasesDeMissao.js";
 import { lerPerfilSelecionado } from '../lib/perfil.js'
-import { pegarFraseAleatoria } from '../data/frasesKapivarus.js'
+import { dizer, estadoDe } from '../components/kapivarus/falas.mjs'
 import { supabase } from '../lib/supabase.js'
+import { aplicarResultadoMissao } from '../lib/progresso.js'
+import { carregarMissaoComPerguntas } from '../lib/missoes.js'
 
 // ---------- Web Speech (ATRIBUTO: modo reforço) ----------
 const sintetizador = typeof window !== 'undefined' ? window.speechSynthesis : null
@@ -50,6 +52,9 @@ export default function MissaoNova() {
   const idMissao = Number(id) || 0
   const idCrianca = perfil?.id
 
+  // ref para o bark.evento achar a falarEvento mais recente (definida abaixo)
+  const falarEventoRef = useRef(null)
+
   const {
     status,
     pergunta,
@@ -72,7 +77,11 @@ export default function MissaoNova() {
       falar: (texto, tom, pose) => {
         falarTexto(texto)
       },
-      fraseAleatoria: (tom) => pegarFraseAleatoria(tom),
+      // o motor dispara o evento do catálogo a cada passo;
+      // aqui só traduzimos o evento em fala do Kapivarus.
+      evento: (ev) => {
+        falarEventoRef.current?.(ev)
+      },
     },
   })
 
@@ -81,6 +90,48 @@ export default function MissaoNova() {
   const [lastPerguntaId, setLastPerguntaId] = useState(null)
   const [reportText, setReportText] = useState('')
   const [reportando, setReportando] = useState(false)
+
+  // ------- falas do catálogo (Kapivarus) -------
+  const contexto = useMemo(
+    () => ({
+      nome: perfil?.nickname || perfil?.nome || '',
+      xp: resultado?.xp ?? 0,
+      nivel: perfil?.nivel ?? perfil?.level ?? 1,
+      moedas: resultado?.moedas ?? 0,
+      missoes: perfil?.missoes_concluidas ?? perfil?.missoes ?? 0,
+    }),
+    [perfil, resultado],
+  )
+  // se a missão é de leitura (matéria de Português/Língua) → leitura_inicio
+  const [missaoLeitura, setMissaoLeitura] = useState(false)
+  const [falaProva, setFalaProva] = useState(() => dizer('inicio_missao', contexto))
+
+  // detecta se a missão é de leitura (para usar leitura_inicio no 1º enunciado)
+  useEffect(() => {
+    let vivo = true
+    async function checar() {
+      const detalhe = await carregarMissaoComPerguntas(idMissao)
+      if (!vivo) return
+      const nome = (detalhe?.materias?.nome || '').toLowerCase()
+      setMissaoLeitura(nome.includes('portug') || nome.includes('l.ngua'))
+    }
+    if (idMissao) checar()
+    return () => {
+      vivo = false
+    }
+  }, [idMissao])
+
+  // ------- fala por evento -------
+  const falarEvento = useCallback(
+    (evento) => {
+      const f = dizer(evento, contexto)
+      setFalaProva(f)
+      return f
+    },
+    [contexto],
+  )
+  // sempre aponta para a versão mais recente (contexto muda a cada resultado)
+  falarEventoRef.current = falarEvento
 
   // garantir carregamento da missao ao montar e se o id mudar
   useEffect(() => {
@@ -91,11 +142,11 @@ export default function MissaoNova() {
     if (pergunta?.id) setLastPerguntaId(pergunta.id)
   }, [pergunta])
 
-  // ao responder, reenvia pendentes se necessario (hook faz isso internamente)
+  // ao responder: o motor do hook já calcula acerto/erro/sequência e dispara
+  // o evento via bark.evento; aqui só encaminhamos a resposta e o envio.
   const handleResponder = useCallback(
     (escolhaCorreta) => {
-      // responder da missao: se acertou, responde ao hook; se errou, o hook já gerencia
-      responder(escolhaCorreta ? true : false)
+      responder(escolhaCorreta === true)
       confirmarEnvio()
     },
     [responder, confirmarEnvio],
@@ -134,6 +185,29 @@ export default function MissaoNova() {
     }
   }, [lastPerguntaId, reportText])
 
+  // fala de conclusão (com erros → missao_concluida_sem_acertar_tudo)
+  // + detecta "subiu de nível" e "meta do dia" pelo progresso local
+  const missaoJaProcessada = useRef(false)
+  useEffect(() => {
+    if (status !== 'final' || !resultado || missaoJaProcessada.current) return
+    missaoJaProcessada.current = true
+
+    const perfeito = resultado.acertos === resultado.total
+    const eventoBase = perfeito ? 'missao_concluida' : 'missao_concluida_sem_acertar_tudo'
+
+    const { subiuDeNivel, metaDoDia } = aplicarResultadoMissao({ estrelas: resultado.estrelas })
+
+    // prioridade: subir de nível > meta do dia > conclusão da missão
+    if (subiuDeNivel) {
+      falarEvento('subiu_de_nivel')
+    } else if (metaDoDia) {
+      falarEvento('meta_do_dia')
+    } else {
+      falarEvento(eventoBase)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [status, resultado])
+
   // ---------- resultado final ----------
   const missaoCompleta = status === 'final'
 
@@ -152,7 +226,7 @@ export default function MissaoNova() {
     return (
       <Layout>
         <div className="flex flex-col items-center gap-6 py-20 text-center">
-          <Kapivarus pose="neutro" size={120} />
+          <Kapivarus pose={estadoDe('carregando')} size={120} />
           <div className="txt">
             <h1 className="text-2xl font-bold">Carregando missão…</h1>
             <p className="opacity-80">Enquanto isso, respira fundo.</p>
@@ -222,11 +296,11 @@ export default function MissaoNova() {
           </Button>
         </div>
 
-        {/* boas-vindas do Kapivarus na primeira */}
+        {/* boas-vindas do Kapivarus na primeira (leitura usa leitura_inicio) */}
         {posicao === 1 && (
           <div className="mb-6">
             <KapivarusFala
-              pose="feliz"
+              pose={missaoLeitura ? estadoDe('leitura_inicio') : falaProva.estado}
               tom="acerto"
               texto={fraseComEmbrace(pergunta.enunciado, pergunta.titulo || '')}
               mostrarBotaoEntendi
@@ -249,9 +323,10 @@ export default function MissaoNova() {
         {/* feedback do Kapivarus */}
         <div className="flex justify-center">
           <KapivarusFala
-            pose="feliz"
-            tom="acerto"
-            texto={fraseComEmbrace(pergunta.dica, 'usando a dica')}
+            pose={falaProva.estado}
+            tom="dica"
+            efeito={falaProva.efeito}
+            texto={falaProva.texto}
           />
         </div>
       </Layout>
@@ -325,9 +400,10 @@ export default function MissaoNova() {
           {/* frase do Kapivarus */}
           <div className="m-0 flex justify-center">
             <KapivarusFala
-              pose={resultado.estrelas >= 3 ? 'comemorando' : resultado.estrelas === 2 ? 'feliz' : 'incentivando'}
+              pose={falaProva.estado}
               tom={resultado.estrelas >= 2 ? 'acerto' : 'incentivo'}
-              texto={fraseComEmbrace(pergunta?.dica || '', 'energia')}
+              efeito={falaProva.efeito}
+              texto={falaProva.texto}
             />
           </div>
         </div>

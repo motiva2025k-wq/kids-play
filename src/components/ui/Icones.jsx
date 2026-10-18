@@ -63,6 +63,18 @@ export function IconeTrofeu({ size = 28 }) {
   )
 }
 
+export function IconePets({ size = 28 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="12" cy="8" rx="5" ry="7" fill="#b98a56" stroke="#7d5a2a" strokeWidth="1.6" />
+      <ellipse cx="12" cy="8" rx="3" ry="3" fill="#f5b301" stroke="#7d5a2a" strokeWidth="1" />
+      <circle cx="8" cy="13" r="2" fill="#fff" stroke="#7d5a2a" strokeWidth="1.2" />
+      <circle cx="16" cy="13" r="2" fill="#fff" stroke="#7d5a2a" strokeWidth="1.2" />
+      <path d="M6 17c2-2 8-1 8 1s-2 4-6 4c-4 0-6-2-6-5" fill="none" stroke="#7d5a2a" strokeWidth="1.6" strokeLinecap="round" />
+    </svg>
+  )
+}
+
 export function IconeCoroa({ size = 28 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
@@ -77,6 +89,38 @@ export function IconeCoroa({ size = 28 }) {
       <circle cx="8" cy="14" r="1.1" fill="#38bdf8" />
       <circle cx="16" cy="14" r="1.1" fill="#ec4899" />
       <circle cx="12" cy="12.5" r="1.1" fill="#4caf50" />
+    </svg>
+  )
+}
+
+export function IconeCadeado({ size = 28 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="12" cy="12" r="9" fill="none" stroke="#7a5600" strokeWidth="1.8" />
+      <path d="M12 7v10M12 17l-2 2M12 17l2 2M8 12h8" stroke="#7a5600" strokeWidth="1.6" strokeLinecap="round" />
+      <circle cx="12" cy="12" r="2" fill="#f5b301" />
+    </svg>
+  )
+}
+
+export function IconeEquipment({ size = 28 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+      <rect x="3" y="6" width="18" height="9" rx="1.5" fill="#b98a56" stroke="#7d5a2a" strokeWidth="1.6" strokeLinejoin="round" />
+      <path d="M3 6a9 6 0 0 1 18 0z" fill="#c99a66" stroke="#7d5a2a" strokeWidth="1.6" strokeLinejoin="round" />
+      <rect x="3" y="8.5" width="18" height="1.6" fill="#f5b301" stroke="#7a5600" strokeWidth="1.2" />
+      <circle cx="8.5" cy="15" r="1" fill="#fff6e0" />
+      <circle cx="12" cy="15" r="1" fill="#fff6e0" />
+      <circle cx="15.5" cy="15" r="1" fill="#fff6e0" />
+    </svg>
+  )
+}
+
+export function IconeDesejo({ size = 28 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 21s-7-4.5-9-9c-1.5-3.5 0-7.5 3-10.5C8 2 11 3.5 14 6c2 1.5 3.5 3.5 4.5 6C18 9 19.5 13 18 17c-1.5 3-2.5 5.5-2.5 7.5 0 2-1 4-2.5 7.5z" fill="#ec4899" stroke="#7a5600" strokeWidth="1.4" strokeLinejoin="round" />
+      <path d="M12 21c-1 0-2-.4-3-.8" stroke="#fff" strokeWidth="1.6" strokeLinecap="round" />
     </svg>
   )
 }

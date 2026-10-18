@@ -16,6 +16,8 @@ import Painel from './pages/Painel.jsx'
 import Ranking from './pages/Ranking.jsx'
 import HallDaFama from './pages/HallDaFama.jsx'
 import PainelResponsavel from './pages/PainelResponsavel.jsx'
+import MeusPets from './pages/MeusPets.jsx'
+import Pet from './pages/Pet.jsx'
 import Loja from './pages/Loja.jsx'
 import Inventario from './pages/Inventario.jsx'
 import RelatoriosPais from './pages/RelatoriosPais.jsx'
@@ -182,6 +184,22 @@ export default function App() {
         }
       />
       <Route
+        path="/meus-pets"
+        element={
+          <RotaProtegida>
+            <MeusPets />
+          </RotaProtegida>
+        }
+      />
+      <Route
+        path="/pet/:petId"
+        element={
+          <RotaProtegida>
+            <Pet />
+          </RotaProtegida>
+        }
+      />
+      <Route
         path="/inventario"
         element={
           <RotaProtegida>
@@ -247,11 +265,8 @@ export default function App() {
             <ErroGentil />
           </RotaProtegida>
         }
-      />
-      <Route
-        path="/guia-visual"
-        element={<GuiaVisual />}
-      />
+      />      <Route path="/guia-visual" element={<GuiaVisual />} />
+
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   )

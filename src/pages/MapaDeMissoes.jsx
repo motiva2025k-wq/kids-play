@@ -15,7 +15,7 @@
 //   - Card, Button (seletor e blocos)
 //   - Renderer de exercícios não entra aqui (só na tela de prova)
 //
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../contexts/AuthContext.jsx'
 import { lerPerfilSelecionado } from '../lib/perfil.js'
@@ -27,6 +27,7 @@ import ProgressBar from '../components/ui/ProgressBar.jsx'
 import Card from '../components/ui/Card.jsx'
 import Layout from '../components/Layout.jsx'
 import { carregarMissoes, missoesConcluidas } from '../lib/missoes.js'
+import { dizer } from '../components/kapivarus/falas.mjs'
 
 // icones nominais para matérias (sem imagem externa; usa emojis só como placeholder,
 // será substituído por SVG nas próximas iterações se necessário)
@@ -64,6 +65,8 @@ export default function MapaDeMissoes() {
   const idCrianca = perfil?.id
 
   const ano = perfil?.school_year || '2'
+  const contexto = useMemo(() => ({ nome: perfil?.nickname || perfil?.nome || '' }), [perfil])
+  const falaBoasVindas = useMemo(() => dizer('boas_vindas', contexto), [contexto])
 
   const [materiaId, setMateriaId] = useState('portugues')
   const [missoes, setMissoes] = useState([])
@@ -122,9 +125,10 @@ export default function MapaDeMissoes() {
       {/* boas-vindas */}
       <div className="mb-4 flex justify-center">
         <KapivarusFala
-          pose="neutro"
+          pose={falaBoasVindas.estado}
           tom="dica"
-          texto={`Bem-vindo à trilha de ${materia.nome} do ${ano}º ano!`}
+          efeito={falaBoasVindas.efeito}
+          texto={falaBoasVindas.texto}
         />
       </div>
 

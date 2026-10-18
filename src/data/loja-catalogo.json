@@ -1,0 +1,21 @@
+{
+  "versao": 1,
+  "idioma": "pt-BR",
+  "nota": "Exemplo de catálogo. Trocar/adicionar itens no arquivo; nenhum código depende de uma ordem específica.",
+  "faixas": {
+    "pequeno": { "estimativa_dias": "1-2", "intervalo_inicial": 10, "intervalo_final": 20 },
+    "medio": { "estimativa_dias": "4-7", "intervalo_inicial": 30, "intervalo_final": 60 },
+    "grande": { "estimativa_dias": "2 semanas", "intervalo_inicial": 70, "intervalo_final": 120 }
+  },
+  "itens": [
+    { "id": "guia-visual", "nome": "Guia visual do Kapivarus", "descricao": "Vista o tutor em todas as poses e saiba quando ele aparece em cada momento.", "categoria": "avatares", "preco": 0, "raridade": "comum", "unico": true, "requisito": null, "liberar_por": null, "imagem": "/assets/logo/kidsplay-icone.svg", "dados": { "tipo": "guia", "promessa": "Ver o Kapivarus no trono" } },
+    { "id": "capa-de-rei", "nome": "Capa de rei dourada", "descricao": "Capa do Kapivarus que faz você parecer o dono da sala de estudos.", "categoria": "roupas", "preco": 25, "raridade": "raro", "unico": true, "requisito": 2, "liberar_por": null, "imagem": "/assets/logo/kidsplay-logo.svg", "dados": { "tipo": "capa", "promessa": "Ficar espetante no painel" } },
+    { "id": "balao-de-ouro", "nome": "Balão de ouro", "descricao": "Balão do Kapivarus que fala só de sorte e conquistas.", "categoria": "roupas", "preco": 45, "raridade": "raro", "unico": true, "requisito": 5, "liberar_por": null, "imagem": "/assets/logo/kidsplay-logo.svg", "dados": { "tipo": "balao", "promessa": "Migrama a frase padrão quando você ganhar algo" } },
+    { "id": "moldura-dourada", "nome": "Moldura dourada", "descricao": "Moldura brilhante no perfil. Não envolve pagamento de respostas.", "categoria": "molduras", "preco": 30, "raridade": "raro", "unico": true, "requisito": 3, "liberar_por": null, "imagem": "/assets/logo/kidsplay-logo.svg", "dados": { "tipo": "moldura", "promessa": "Vizualizar o perfil com brilho" } },
+    { "id": "fundo-cristal", "nome": "Fundo cristal", "descricao": "Cena da trilha com fundo crystal. Molde de conveniência leve.", "categoria": "cenários", "preco": 40, "raridade": "comum", "unico": false, "requisito": 4, "liberar_por": null, "imagem": "/assets/logo/kidsplay-logo.svg", "dados": { "tipo": "fundo", "promessa": "Mudar a atmosfera da trilha" } },
+    { "id": "petisco-basico", "nome": "Petisco básico", "descricao": "Dá fome ao pet. Só tem efeito se o pet estiver cansado.", "categoria": "itens-pet", "preco": 10, "raridade": "comum", "unico": false, "requisito": null, "liberar_por": null, "imagem": "/assets/logo/kidsplay-icone.svg", "dados": { "tipo": "petisco", "promessa": "Recarregar energia do pet" } },
+    { "id": "cor-azul-pet", "nome": "Cor azul do pet", "descricao": "Muda a cor do pet preferido. Sem resolver questões.", "categoria": "itens-pet", "preco": 40, "raridade": "evencao", "unico": false, "requisito": 6, "liberar_por": null, "imagem": "/assets/logo/kidsplay-logo.svg", "dados": { "tipo": "cores", "promessa": "Mudar a cor do pet" } },
+    { "id": "trono-especial", "nome": "Trono especial", "descricao": "Evoca o Kapivarus para o trono. Recompensa visual, sem pressão.", "categoria": "títulos", "preco": 70, "raridade": "letal", "unico": true, "requisito": 8, "liberar_por": null, "imagem": "/assets/logo/kidsplay-logo.svg", "dados": { "tipo": "trono", "promessa": "Kapivarus no trono" } },
+    { "id": "sala-trofeus", "nome": "Sala da Triunfo", "descricao": "Acesso a uma nova área no perfil onde ficam as conquistas.", "categoria": "títulos", "preco": 90, "raridade": "letal", "unico": true, "requisito": 12, "liberar_por": null, "imagem": "/assets/logo/kidsplay-logo.svg", "dados": { "tipo": "sala", "promessa": "Ver conquistas coletadas" } }
+  ]
+}

@@ -7,6 +7,7 @@ export default function KapivarusFala({
   pose = "neutro",
   texto = "",
   tom = "dica",
+  efeito = null,   // 'estrelinhas' | 'confete' | 'pulsar' | 'lampada' | 'suave'
   mostrarBotaoEntendi = false,
   onEntendi,
   size = 72,
@@ -17,6 +18,7 @@ export default function KapivarusFala({
       estado={pose}
       mensagem={texto}
       tom={tom}
+      efeito={efeito}
       tamanho={size}
       mostrarBotaoEntendi={mostrarBotaoEntendi}
       onEntendi={onEntendi}
@@ -24,4 +26,6 @@ export default function KapivarusFala({
       className={className}
     />
   )
-}
+};
+
+

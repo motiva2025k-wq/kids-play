@@ -2,11 +2,16 @@ import { useNavigate } from 'react-router-dom'
 import Layout from '../components/Layout.jsx'
 import Card from '../components/ui/Card.jsx'
 import Button from '../components/ui/Button.jsx'
+import { useMemo } from 'react'
 import KapivarusFala from '../components/kapivarus/KapivarusFala.jsx'
-import { pegarFraseAleatoria } from '../data/frasesKapivarus.js'
+import { dizer } from '../components/kapivarus/falas.mjs'
+import { lerPerfilSelecionado } from '../lib/perfil.js'
 
 export default function Reforco() {
   const navigate = useNavigate()
+  const perfil = lerPerfilSelecionado()
+  const contexto = useMemo(() => ({ nome: perfil?.nickname || perfil?.nome || '' }), [perfil])
+  const falaTreino = useMemo(() => dizer('treino_revisao', contexto), [contexto])
 
   return (
     <Layout>
@@ -23,7 +28,7 @@ export default function Reforco() {
         </Card>
 
         <div className="flex justify-center">
-          <KapivarusFala pose="feliz" tom="acerto" texto={pegarFraseAleatoria('acerto')} />
+          <KapivarusFala pose={falaTreino.estado} tom="dica" efeito={falaTreino.efeito} texto={falaTreino.texto} />
         </div>
 
         <Card className="p-4 text-center bg-dourado-claro border-dourado-escuro">

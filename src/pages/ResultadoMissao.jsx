@@ -1,7 +1,7 @@
 // ResultadoMissao — versão compacta da tela de resultado, caso você queira
 // separar a apresentação do motor. Por enquanto é quase idêntica ao final de
 // MissaoNova, mas aqui focada em resumo rápido + botão de nova tentativa.
-import { useCallback, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Kapivarus from '../components/kapivarus/Kapivarus.jsx'
 import KapivarusFala from '../components/kapivarus/KapivarusFala.jsx'
@@ -11,11 +11,32 @@ import Confete from '../components/ui/Confete.jsx'
 import HudItem from '../components/ui/HudItem.jsx'
 import { IconeMoeda, IconeEstrela } from '../components/ui/Icones.jsx'
 import Layout from '../components/Layout.jsx'
-import { pegarFraseAleatoria } from '../data/frasesKapivarus.js'
+import { dizer } from '../components/kapivarus/falas.mjs'
+import { lerPerfilSelecionado } from '../lib/perfil.js'
 
 export default function ResultadoMissao({ resultado, novaTentativa }) {
   const navegar = useNavigate()
   const [feito, setFeito] = useState(false)
+  const perfil = lerPerfilSelecionado()
+  const contexto = useMemo(
+    () => ({
+      nome: perfil?.nickname || perfil?.nome || '',
+      xp: resultado?.xp ?? 0,
+      moedas: resultado?.moedas ?? 0,
+      nivel: perfil?.nivel ?? perfil?.level ?? 1,
+    }),
+    [perfil, resultado],
+  )
+  const falaResultado = useMemo(
+    () =>
+      dizer(
+        resultado && resultado.acertos === resultado.total
+          ? 'missao_concluida'
+          : 'missao_concluida_sem_acertar_tudo',
+        contexto,
+      ),
+    [resultado, contexto],
+  )
 
   const handleNovaTentativa = useCallback(() => {
     if (novaTentativa) novaTentativa()
@@ -100,9 +121,10 @@ export default function ResultadoMissao({ resultado, novaTentativa }) {
 
         <div className="flex justify-center">
           <KapivarusFala
-            pose="feliz"
-            tom="acerto"
-            texto={pegarFraseAleatoria('acerto')}
+            pose={falaResultado.estado}
+            tom={resultado.estrelas >= 2 ? 'acerto' : 'incentivo'}
+            efeito={falaResultado.efeito}
+            texto={falaResultado.texto}
           />
         </div>
       </div>

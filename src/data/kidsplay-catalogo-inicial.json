@@ -1,0 +1,122 @@
+{
+  "economia": {
+    "moeda": "moedas",
+    "regras": {
+      "sem_dinheiro_real": true,
+      "sem_caixa_surpresa": true,
+      "sem_perda_de_consistencia": true
+    },
+    "ganhos": [
+      { "fonte": "missao_concluida", "condicao": "acertos >= 60%", "quantidade": 10, "justificativa": "Recompensa de esforço e constância na missão." },
+      { "fonte": "meta_do_dia", "condicao": "acertos >= 80%", "quantidade": 25, "justificativa": "Meta do dia: premia quem completa mais que a média." },
+      { "fonte": "quest_concluida", "quantidade": 30, "justificativa": "Constância de concluir a narrativa da quest." },
+      { "fonte": "participacao_evento", "quantidade": 20, "justificativa": "Medalha de participação: todas as crianças ganham, sem FOMO." },
+      { "fonte": "constancia", "ponto": "diario", "adicional": 2, "justificativa": "+2 moedas para cada dia seguido acima de 2." },
+      { "fonte": "dica_acessada", "quantidade": 1, "justificativa": "Incentivo à interação; não paga por acerto." }
+    ],
+    "faixas_preco": {
+      "pequeno": { "estimativa_dias": "1-2", "intervalo_inicial": 10, "intervalo_final": 20 },
+      "medio": { "estimativa_dias": "4-7", "intervalo_inicial": 30, "intervalo_final": 60 },
+      "grande": { "estimativa_dias": "2_semanas", "intervalo_inicial": 70, "intervalo_final": 120 }
+    }
+  },
+
+  "categorias_loja": [
+    { "id": "petiscos", "nome": "Petiscos", "icone": "🍪", "iconeColorido": "#FF8A1F", "tamanho": "pequeno" },
+    { "id": "baloes", "nome": "Balões do Kapivarus", "icone": "🫧", "iconeColorido": "#6D28D9", "tamanho": "pequeno" },
+    { "id": "molduras", "nome": "Molduras", "icone": "🖼️", "iconeColorido": "#FF5FA2", "tamanho": "medio" },
+    { "id": "avatares", "nome": "Avatares", "icone": "🧸", "iconeColorido": "#2EA8FF", "tamanho": "medio" },
+    { "id": "fondos", "nome": "Fundos de Telas", "icone": "🌈", "iconeColorido": "#34D058", "tamanho": "medio" },
+    { "id": "telas", "nome": "Telas de Itens", "icone": "🖥️", "iconeColorido": "#9B5CFF", "tamanho": "medio" },
+    { "id": "títulos", "nome": "Títulos", "icone": "👑", "iconeColorido": "#FF4D4D", "tamanho": "grande" }
+  ],
+
+  "itens": [
+    { "id": "inciar-querido", "nome": "Inciar Querido", "categoria": "avatares", "tamanho": "pequeno", "preco": 0, "requisito": null, "venda": true, "unico": false, "imagem": "/assets/itens/inciar-querido.svg", "descricao": "O pet de todos. Sempre disponível." },
+    { "id": "escova-dente", "nome": "Escova de Dentes Gostosinha", "categoria": "petiscos", "tamanho": "pequeno", "preco": 8, "requisito": null, "venda": true, "unico": true, "imagem": "/assets/itens/escova-dente.svg", "descricao": "Sabe os segredos da higiene infantil." },
+    { "id": "gominha-ja", "nome": "Gominha Já", "categoria": "petiscos", "tamanho": "pequeno", "preco": 10, "requisito": null, "venda": true, "unico": false, "imagem": "/assets/itens/gominha-ja.svg", "descricao": "Quem gosta de remexer a cobertura." },
+    { "id": "caixa-de-ossos", "nome": "Caixa de Ossos de Rua", "categoria": "petiscos", "tamanho": "pequeno", "preco": 25, "requisito": null, "venda": true, "unico": true, "imagem": "/assets/itens/caixa-de-ossos.svg", "descricao": "Ideal para quem treina na rua." },
+    { "id": "chapeu-explorador", "nome": "Chapéu de Explorador", "categoria": "avatares", "tamanho": "pequeno", "preco": 15, "requisito": null, "venda": true, "unico": true, "imagem": "/assets/itens/chapeu-explorador.svg", "descricao": "Para quem quer descobrir o mundo." },
+    { "id": "casaco-heladio", "nome": "Casaco Hélio", "categoria": "avatares", "tamanho": "pequeno", "preco": 20, "requisito": { "tipo": "nivel", "valor": 2 }, "venda": true, "unico": false, "imagem": "/assets/itens/casaco-heladio.svg", "descricao": "Muito girando e muito leve." },
+    { "id": "luva-de-pulso", "nome": "Luva de Pulso Estrelada", "categoria": "avatares", "tamanho": "pequeno", "preco": 12, "requisito": null, "venda": true, "unico": false, "imagem": "/assets/itens/luva-de-pulso.svg", "descricao": "Para defender a mão da explosão." },
+    { "id": "colar-dourado", "nome": "Colar Dourado", "categoria": "molduras", "tamanho": "pequeno", "preco": 20, "requisito": { "tipo": "nivel", "valor": 3 }, "venda": true, "unico": true, "imagem": "/assets/itens/colar-dourado.svg", "descricao": "O brilho parece pegar no sol." },
+    { "id": "par-de-óculos", "nome": "Par de Óculos de Nasa", "categoria": "avatares", "tamanho": "pequeno", "preco": 25, "requisito": null, "venda": true, "unico": false, "imagem": "/assets/itens/par-de-óculos.svg", "descricao": "Vê melhor com as lentes." },
+    { "id": "boné-voltado", "nome": "Boné Voltado", "categoria": "avatares", "tamanho": "pequeno", "preco": 14, "requisito": null, "venda": true, "unico": false, "imagem": "/assets/itens/boné-voltado.svg", "descricao": "Não perde a cabeça, mesmo sem derrear." },
+    { "id": "mascote-azul", "nome": "Mascote Azul", "categoria": "avatares", "tamanho": "pequeno", "preco": 0, "requisito": null, "venda": true, "unico": true, "imagem": "/assets/itens/mascote-azul.svg", "descricao": "O mascote oficial, por enquanto." },
+    { "id": "capa-de-nuvens", "nome": "Cobertura de Nuvens", "categoria": "molduras", "tamanho": "medio", "preco": 15, "requisito": { "tipo": "nivel", "valor": 1 }, "venda": true, "unico": false, "imagem": "/assets/itens/capa-de-nuvens.svg", "descricao": "Fica atrás do perfil, sentado no ar." },
+    { "id": "estrela-em-laser", "nome": "Estrela em Laser", "categoria": "molduras", "tamanho": "medio", "preco": 18, "requisito": null, "venda": true, "unico": true, "imagem": "/assets/itens/estrela-em-laser.svg", "descricao": "Corta o ar da sala." },
+    { "id": "peca-de-cristal", "nome": "Peça de Cristal", "categoria": "molduras", "tamanho": "medio", "preco": 30, "requisito": { "tipo": "dias_seguidos", "valor": 3 }, "venda": true, "unico": false, "imagem": "/assets/itens/peca-de-cristal.svg", "descricao": "Vibrante e cheia de magia dourada." },
+    { "id": "retangulo-laranja", "nome": "Retângulo Laranja", "categoria": "fondos", "tamanho": "medio", "preco": 10, "requisito": null, "venda": true, "unico": false, "imagem": "/assets/itens/retangulo-laranja.svg", "descricao": "O fundo mais básico, mas que rende." },
+    { "id": "gradiente-riso", "nome": "Gradiente Riso", "categoria": "fondos", "tamanho": "medio", "preco": 12, "requisito": null, "venda": true, "unico": false, "imagem": "/assets/itens/gradiente-riso.svg", "descricao": "Cores que lembram o sorriso do kapivarus." },
+    { "id": "mapa-do-campo", "nome": "Mapa do Campo", "categoria": "fondos", "tamanho": "medio", "preco": 14, "requisito": { "tipo": "dias_seguidos", "valor": 2 }, "venda": true, "unico": false, "imagem": "/assets/itens/mapa-do-campo.svg", "descricao": "Para quem gosta de caminhar." },
+    { "id": "rua-ramificada", "nome": "Rua Ramificada", "categoria": "fondos", "tamanho": "grande", "preco": 20, "requisito": { "tipo": "nivel", "valor": 2 }, "venda": true, "unico": true, "imagem": "/assets/itens/rua-ramificada.svg", "descricao": "Um labirinto de ruas para discutir." },
+    { "id": "estrela-cinzas", "nome": "Estrela de Cinzas Missão", "categoria": "telas", "tamanho": "grande", "preco": 30, "requisito": { "tipo": "quest", "valor": 1 }, "venda": true, "unico": true, "imagem": "/assets/itens/estrela-cinzas.svg", "descricao": "Recompensa futura: a tela da missão." },
+    { "id": "front-espacial", "nome": "Front de Espaço", "categoria": "telas", "tamanho": "grande", "preco": 35, "requisito": null, "venda": true, "unico": false, "imagem": "/assets/itens/front-espacial.svg", "descricao": "Para quem ama missões." },
+    { "id": "tela-blur", "nome": "Tela de Blur", "categoria": "telas", "tamanho": "grande", "preco": 28, "requisito": { "tipo": "dias_seguidos", "valor": 5 }, "venda": true, "unico": false, "imagem": "/assets/itens/tela-blur.svg", "descricao": "Visual mais suave, sem esquecer as cores." },
+    { "id": "titulo-leao", "nome": "Título de Leão", "categoria": "títulos", "tamanho": "grande", "preco": 22, "requisito": null, "venda": true, "unico": false, "imagem": "/assets/itens/titulo-leao.svg", "descricao": "De quem impõe friozinho no corredor." },
+    { "id": "titulo-marte", "nome": "Título de Marte", "categoria": "títulos", "tamanho": "grande", "preco": 30, "requisito": { "tipo": "nivel", "valor": 4 }, "venda": true, "unico": false, "imagem": "/assets/itens/titulo-marte.svg", "descricao": "Sobrevivente de atividades difíceis." },
+    { "id": "titulo-astronauta", "nome": "Título de Astronauta", "categoria": "títulos", "tamanho": "grande", "preco": 45, "requisito": { "tipo": "dias_seguidos", "valor": 7 }, "venda": true, "unico": true, "imagem": "/assets/itens/titulo-astronauta.svg", "descricao": "Para quem mergulhou no espaço." },
+    { "id": "sol-brilhante", "nome": "Sol Brilhante", "categoria": "telas", "tamanho": "grande", "preco": 55, "requisito": { "tipo": "quest", "valor": 2 }, "venda": true, "unico": true, "imagem": "/assets/itens/sol-brilhante.svg", "descricao": "A estrela que manda. Produção futura." },
+    { "id": "medalha-dourada", "nome": "Medalha de Ouro", "categoria": "títulos", "tamanho": "grande", "preco": 60, "requisito": { "tipo": "dias_seguidos", "valor": 7 }, "venda": false, "unico": false, "imagem": "/assets/itens/medalha-dourada.svg", "descricao": "Recompensa de eventos: não aparece na loja." },
+    { "id": "mao-do-talento", "nome": "Mão do Talento", "categoria": "molduras", "tamanho": "grande", "preco": 200, "requisito": { "tipo": "nivel", "valor": 10 }, "venda": false, "unico": true, "imagem": "/assets/itens/mao-do-talento.svg", "descricao": "Recompensa de evento escondida." },
+    { "id": "saci-da-sorte", "nome": "Saci da Sorte", "categoria": "petiscos", "tamanho": "pequeno", "preco": 1, "requisito": null, "venda": true, "unico": true, "imagem": "/assets/itens/saci-da-sorte.svg", "descricao": "No Baby, saicinho não sai pra cima. Cuidado, pode roubar." }
+  ],
+
+  "pets": [
+    { "id": "pet-pequeno", "nome": "Pet Pequeno", "icone": "🐕", "iconeColorido": "#FF8A1F", "descricao": "Pet iniciante. Cansa fácil." }
+  ],
+
+  "quests": [
+    { "id": "quest-iau", "nome": "Querido no Espaço", "descricao": "Conseguir todos os itens do universo." }
+  ],
+
+  "eventos": [
+    { "id": "evento-folhagem", "nome": "Folhagem", "inicio": "2026-04-01", "fim": "2026-04-30" }
+  ],
+
+  "itens_unicos_do_evento": [
+    { "id": "cortina-mistica", "nome": "Cortina Mística", "evento": "folhagem", "descricao": "Premium: de qualquer lugar da sala." }
+  ],
+
+  "falas_loja": [
+    "loja_entrada",
+    "compra_feita",
+    "sem_moedas_suficientes",
+    "item_bloqueado",
+    "item_equipado",
+    "lista_desejos_cumprida"
+  ],
+
+  "falas_loja_variacoes": {
+    "loja_entrada": [
+      { "texto": "Olá! Aqui você pode trocar o que está acumulando! Que bom ter você na loja." },
+      { "texto": "Vish, a lojinha abriu! Tem um petisco que vai combinar." },
+      { "texto": "Bem-vindo(a) à loja! Au au au, a gente vai usar tudo essa semana?" }
+    ],
+    "compra_feita": [
+      { "texto": "Comprou! Pronto, essa peça não vai sair de ti um momento." },
+      { "texto": "Ótimo! Agora a sala fica mais bonita ainda. Parabéns!" },
+      { "texto": "Compra feita! Você é de quem ganha rápido." }
+    ],
+    "sem_moedas_suficientes": [
+      { "texto": "Ainda não tem essas moedas. Toma uma outra, a gente percebe quando a criança não tem." },
+      { "texto": "Essa peça é um pouco carinha hoje. Mas se você se esforçar, vai garantir!" },
+      { "texto": "Ainda não tem moedas sufficentes. Nada de culpa, a gente tenta outra no dia seguinte." }
+    ],
+    "item_bloqueado": [
+      { "texto": "Essa peça está reservada para quem alcançar o próximo nível. Toma um ótimo e volta quando estiver pronto." },
+      { "texto": "Esse item só sai pra quem tem o nível certo! A gente te ajuda a chegar." },
+      { "texto": "Ainda não é o seu momento. Mas não desanima: o aprendizado é o caminho." }
+    ],
+    "item_equipado": [
+      { "texto": "Equipou! Agora o seu perfil é o cara. Tá de parabéns!" },
+      { "texto": "Deu certo! O item vai seguir você em toda aventura." },
+      { "texto": "Equipar feito! Parece que o kapivarus saiu pra aplausar." }
+    ],
+    "lista_desejos_cumprida": [
+      { "texto": "Parei de sonhar, comecei a ter! Essa peça estava esperando por você." },
+      { "texto": "Maravilha! A lista de desejos está ficando um pouco mais bonita." },
+      { "texto": "Aqui vai: você seguiu o objetivo e tudo aconteceu." }
+    ]
+  }
+}

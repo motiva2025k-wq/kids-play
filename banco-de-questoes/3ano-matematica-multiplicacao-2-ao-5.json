@@ -1,0 +1,672 @@
+{
+  "ano": "3º",
+  "materia": "Matemática",
+  "trilha": "Multiplicação e tabuada do 2 ao 5",
+  "missoes": [
+    {
+      "id": "mat3-mult-m1",
+      "titulo": "A Padaria do Kapivarus",
+      "objetivo": "Entender multiplicação como grupos iguais e aprender os fatos do 2 e do 3.",
+      "atividades": [
+        {
+          "id": "mat3-mult-m1-a1",
+          "tipo": "contar_imagens",
+          "dificuldade": 1,
+          "habilidade": "Resolver problemas de multiplicação com grupos iguais apresentados em disposição retangular",
+          "codigo_bncc": "EF03MA07",
+          "enunciado": "🥖🥖🥖🥖 e 🥖🥖🥖🥖. Cada prato tem 4 pães. Quantos pães há no total?",
+          "midia_descricao": null,
+          "opcoes": ["6", "7", "8", "9"],
+          "resposta": "8",
+          "dica1": "Há 2 pratos com a mesma quantidade de pães.",
+          "dica2": "Some 4 + 4.",
+          "explicacao": "2 pratos com 4 pães cada: 4 + 4 = 8. Isso é 2 × 4!",
+          "dados": { "opcoes": [6, 7, 8, 9], "correta": 8, "respostaCorretaTexto": "2 grupos de 4 pães: 4 + 4 = 8." }
+        },
+        {
+          "id": "mat3-mult-m1-a2",
+          "tipo": "multipla_escolha",
+          "dificuldade": 1,
+          "habilidade": "Resolver problemas de multiplicação com grupos iguais",
+          "codigo_bncc": "EF03MA07",
+          "enunciado": "Cada caixa traz 3 figurinhas. A Lina ganhou 3 caixinhas. Quantas figurinhas ela tem?",
+          "midia_descricao": null,
+          "opcoes": ["6", "7", "9", "12"],
+          "resposta": "9",
+          "dica1": "São 3 grupos com a mesma quantidade.",
+          "dica2": "Some 3 + 3 + 3.",
+          "explicacao": "3 grupos de 3 figurinhas: 3 + 3 + 3 = 9. Isso é 3 × 3!",
+          "dados": {
+            "alternativas": [
+              { "texto": "6", "correta": false },
+              { "texto": "7", "correta": false },
+              { "texto": "9", "correta": true },
+              { "texto": "12", "correta": false }
+            ],
+            "respostaCorretaTexto": "3 caixinhas com 3 figurinhas: 3 + 3 + 3 = 9."
+          }
+        },
+        {
+          "id": "mat3-mult-m1-a3",
+          "tipo": "completar",
+          "dificuldade": 1,
+          "habilidade": "Completar situações de multiplicação por 2 e por 5",
+          "codigo_bncc": "EF03MA07",
+          "enunciado": "Cada cartela traz 5 selos. Com 2 cartelas temos ___ selos.",
+          "midia_descricao": null,
+          "opcoes": ["8", "10", "15"],
+          "resposta": "10",
+          "respostas_aceitas": ["10", "dez"],
+          "dica1": "São 2 grupos iguais com 5 selos.",
+          "dica2": "Some 5 + 5.",
+          "explicacao": "2 cartelas de 5 selos: 5 + 5 = 10. Isso é 2 × 5!",
+          "dados": {
+            "opcoes": [{ "texto": "8" }, { "texto": "10" }, { "texto": "15" }],
+            "correta": "10",
+            "respostaCorretaTexto": "2 cartelas com 5 selos: 5 + 5 = 10 selos."
+          }
+        },
+        {
+          "id": "mat3-mult-m1-a4",
+          "tipo": "verdadeiro_falso",
+          "dificuldade": 1,
+          "habilidade": "Relacionar soma de parcelas iguais à multiplicação",
+          "codigo_bncc": "EF03MA07",
+          "enunciado": "Somar 2 + 2 + 2 + 2 é a mesma coisa que fazer 4 × 2. Verdadeiro ou falso?",
+          "midia_descricao": null,
+          "resposta": true,
+          "dica1": "Conte quantas vezes o 2 entra na soma.",
+          "dica2": "São 4 parcelas iguais, todas com o 2.",
+          "explicacao": "Verdadeiro: multiplicar é somar parcelas iguais. Aqui são quatro 2, então 4 × 2 = 8.",
+          "dados": {
+            "correta": true,
+            "respostaCorretaTexto": "Verdadeiro! Quatro parcelas iguais de 2 é a mesma coisa que 4 × 2 = 8."
+          }
+        },
+        {
+          "id": "mat3-mult-m1-a5",
+          "tipo": "multipla_escolha",
+          "dificuldade": 1,
+          "habilidade": "Resolver problemas de multiplicação por 2 no cotidiano",
+          "codigo_bncc": "EF03MA07",
+          "enunciado": "🚲🚲🚲 Quantas rodas têm 3 bicicletas?",
+          "midia_descricao": null,
+          "opcoes": ["4", "6", "5", "8"],
+          "resposta": "6",
+          "dica1": "Cada bicicleta tem 2 rodas.",
+          "dica2": "Some 2 + 2 + 2.",
+          "explicacao": "3 bicicletas com 2 rodas: 2 + 2 + 2 = 6. Isso é 3 × 2!",
+          "dados": {
+            "alternativas": [
+              { "texto": "4", "correta": false },
+              { "texto": "6", "correta": true },
+              { "texto": "5", "correta": false },
+              { "texto": "8", "correta": false }
+            ],
+            "respostaCorretaTexto": "3 bicicletas com 2 rodas cada: 2 + 2 + 2 = 6."
+          }
+        },
+        {
+          "id": "mat3-mult-m1-a6",
+          "tipo": "arrastar_soltar",
+          "dificuldade": 1,
+          "habilidade": "Comparar resultados de multiplicações simples",
+          "codigo_bncc": "EF03MA03",
+          "enunciado": "Calcule e coloque do menor resultado para o maior: 2 × 3, 3 × 3, 2 × 2.",
+          "midia_descricao": null,
+          "itens": [
+            { "id": "dois-por-tres", "texto": "2 × 3" },
+            { "id": "dois-por-dois", "texto": "2 × 2" },
+            { "id": "tres-por-tres", "texto": "3 × 3" }
+          ],
+          "resposta": ["dois-por-dois", "dois-por-tres", "tres-por-tres"],
+          "dica1": "Calcule cada uma antes de ordenar.",
+          "dica2": "2 × 2 dá 4 e 3 × 3 dá 9: use esses para achar os extremos.",
+          "explicacao": "Ordem certa: 2 × 2 = 4, depois 2 × 3 = 6 e por fim 3 × 3 = 9.",
+          "dados": {
+            "modo": "ordenar",
+            "itens": [
+              { "id": "dois-por-tres", "texto": "2 × 3" },
+              { "id": "dois-por-dois", "texto": "2 × 2" },
+              { "id": "tres-por-tres", "texto": "3 × 3" }
+            ],
+            "ordemEsperada": ["dois-por-dois", "dois-por-tres", "tres-por-tres"],
+            "respostaCorretaTexto": "4, depois 6 e por último 9."
+          }
+        }
+      ]
+    },
+    {
+      "id": "mat3-mult-m2",
+      "titulo": "O Quintal dos Coelhos",
+      "objetivo": "Dominar a tabuada do 4 e do 5 usando padrões fáceis de lembrar.",
+      "atividades": [
+        {
+          "id": "mat3-mult-m2-b1",
+          "tipo": "contar_imagens",
+          "dificuldade": 1,
+          "habilidade": "Resolver problemas de multiplicação com grupos iguais",
+          "codigo_bncc": "EF03MA07",
+          "enunciado": "🥚🥚🥚🥚🥚 🥚🥚🥚🥚🥚. Há 2 ninhos com 5 ovos cada. Quantos ovos há no total?",
+          "midia_descricao": null,
+          "opcoes": ["7", "9", "10", "15"],
+          "resposta": "10",
+          "dica1": "São 2 grupos iguais com 5 ovos.",
+          "dica2": "Some 5 + 5.",
+          "explicacao": "2 ninhos com 5 ovos: 5 + 5 = 10. Isso é 2 × 5!",
+          "dados": { "opcoes": [7, 9, 10, 15], "correta": 10, "respostaCorretaTexto": "2 grupos de 5 ovos: 5 + 5 = 10." }
+        },
+        {
+          "id": "mat3-mult-m2-b2",
+          "tipo": "multipla_escolha",
+          "dificuldade": 1,
+          "habilidade": "Resolver problemas de multiplicação por 5 no cotidiano",
+          "codigo_bncc": "EF03MA07",
+          "enunciado": "Cada mão tem 5 dedos. Quantos dedos há em 4 mãos?",
+          "midia_descricao": null,
+          "opcoes": ["15", "18", "20", "25"],
+          "resposta": "20",
+          "dica1": "São 4 grupos com 5 dedos cada.",
+          "dica2": "Some 5 + 5 + 5 + 5.",
+          "explicacao": "4 mãos com 5 dedos: 5 + 5 + 5 + 5 = 20. Isso é 4 × 5!",
+          "dados": {
+            "alternativas": [
+              { "texto": "15", "correta": false },
+              { "texto": "18", "correta": false },
+              { "texto": "20", "correta": true },
+              { "texto": "25", "correta": false }
+            ],
+            "respostaCorretaTexto": "4 grupos de 5 dedos: 5 + 5 + 5 + 5 = 20."
+          }
+        },
+        {
+          "id": "mat3-mult-m2-b3",
+          "tipo": "completar",
+          "dificuldade": 1,
+          "habilidade": "Completar situações de multiplicação por 4",
+          "codigo_bncc": "EF03MA07",
+          "enunciado": "Cada fila tem 4 alunos. Com 3 filas são ___ alunos.",
+          "midia_descricao": null,
+          "opcoes": ["8", "12", "14"],
+          "resposta": "12",
+          "respostas_aceitas": ["12", "doze"],
+          "dica1": "São 3 grupos iguais com 4 alunos.",
+          "dica2": "Some 4 + 4 + 4.",
+          "explicacao": "3 filas com 4 alunos: 4 + 4 + 4 = 12. Isso é 3 × 4!",
+          "dados": {
+            "opcoes": [{ "texto": "8" }, { "texto": "12" }, { "texto": "14" }],
+            "correta": "12",
+            "respostaCorretaTexto": "3 filas com 4 alunos: 4 + 4 + 4 = 12."
+          }
+        },
+        {
+          "id": "mat3-mult-m2-b4",
+          "tipo": "verdadeiro_falso",
+          "dificuldade": 1,
+          "habilidade": "Identificar regularidade nos múltiplos de 5",
+          "codigo_bncc": "EF03MA10",
+          "enunciado": "Todos os números da tabuada do 5 terminam em 0 ou em 5. Verdadeiro ou falso?",
+          "midia_descricao": null,
+          "resposta": true,
+          "dica1": "Pense em 5 × 1, 5 × 2 e 5 × 3.",
+          "dica2": "5 × 7 = 35 e 5 × 8 = 40: olhe os últimos algarismos.",
+          "explicacao": "Verdadeiro! Todos os múltiplos de 5 terminam em 0 ou 5. Isso ajuda a conferir os cálculos.",
+          "dados": {
+            "correta": true,
+            "respostaCorretaTexto": "Verdadeiro: 5, 10, 15, 20... sempre terminam em 0 ou 5."
+          }
+        },
+        {
+          "id": "mat3-mult-m2-b5",
+          "tipo": "multipla_escolha",
+          "dificuldade": 2,
+          "habilidade": "Resolver problemas de multiplicação com valores monetários simples",
+          "codigo_bncc": "EF03MA07",
+          "enunciado": "Um caderno custa R$ 5. Quanto custam 6 cadernos?",
+          "midia_descricao": null,
+          "opcoes": ["25", "30", "35", "36"],
+          "resposta": "30",
+          "dica1": "É 6 grupos com R$ 5 cada.",
+          "dica2": "Some 5 seis vezes, ou lembre da tabuada do 5.",
+          "explicacao": "6 × 5 = 30 reais. A tabuada do 5 é ótima para dinheiro: os resultados terminam em 0 ou 5!",
+          "dados": {
+            "alternativas": [
+              { "texto": "25", "correta": false },
+              { "texto": "30", "correta": true },
+              { "texto": "35", "correta": false },
+              { "texto": "36", "correta": false }
+            ],
+            "respostaCorretaTexto": "6 cadernos com R$ 5: 6 × 5 = 30 reais."
+          }
+        },
+        {
+          "id": "mat3-mult-m2-b6",
+          "tipo": "arrastar_soltar",
+          "dificuldade": 2,
+          "habilidade": "Comparar resultados de multiplicações com os fatores 4 e 5",
+          "codigo_bncc": "EF03MA03",
+          "enunciado": "Coloque do menor resultado para o maior: 4 × 5, 5 × 5, 4 × 4.",
+          "midia_descricao": null,
+          "itens": [
+            { "id": "cinco-por-cinco", "texto": "5 × 5" },
+            { "id": "quatro-por-quatro", "texto": "4 × 4" },
+            { "id": "quatro-por-cinco", "texto": "4 × 5" }
+          ],
+          "resposta": ["quatro-por-quatro", "quatro-por-cinco", "cinco-por-cinco"],
+          "dica1": "Calcule os três resultados primeiro.",
+          "dica2": "4 × 4 = 16 é o menor e 5 × 5 = 25 é o maior.",
+          "explicacao": "Ordem certa: 4 × 4 = 16, depois 4 × 5 = 20 e por fim 5 × 5 = 25.",
+          "dados": {
+            "modo": "ordenar",
+            "itens": [
+              { "id": "cinco-por-cinco", "texto": "5 × 5" },
+              { "id": "quatro-por-quatro", "texto": "4 × 4" },
+              { "id": "quatro-por-cinco", "texto": "4 × 5" }
+            ],
+            "ordemEsperada": ["quatro-por-quatro", "quatro-por-cinco", "cinco-por-cinco"],
+            "respostaCorretaTexto": "16, depois 20 e por último 25."
+          }
+        }
+      ]
+    },
+    {
+      "id": "mat3-mult-m3",
+      "titulo": "A Feira da Capivara",
+      "objetivo": "Misturar as tabuadas do 2 ao 5 e descobrir padrões nos resultados.",
+      "atividades": [
+        {
+          "id": "mat3-mult-m3-c1",
+          "tipo": "contar_imagens",
+          "dificuldade": 1,
+          "habilidade": "Resolver problemas de multiplicação com grupos iguais",
+          "codigo_bncc": "EF03MA07",
+          "enunciado": "🍊🍊🍊 🍊🍊🍊 🍊🍊🍊. São 3 cestas com 3 laranjas cada. Quantas laranjas há?",
+          "midia_descricao": null,
+          "opcoes": ["6", "8", "9", "12"],
+          "resposta": "9",
+          "dica1": "São 3 grupos iguais com 3 laranjas.",
+          "dica2": "Some 3 + 3 + 3.",
+          "explicacao": "3 cestas com 3 laranjas: 3 + 3 + 3 = 9. Isso é 3 × 3!",
+          "dados": { "opcoes": [6, 8, 9, 12], "correta": 9, "respostaCorretaTexto": "3 grupos de 3 laranjas: 3 + 3 + 3 = 9." }
+        },
+        {
+          "id": "mat3-mult-m3-c2",
+          "tipo": "completar",
+          "dificuldade": 1,
+          "habilidade": "Completar situações de multiplicação por 5",
+          "codigo_bncc": "EF03MA07",
+          "enunciado": "Um pincel custa R$ 2. Com 5 pincéis pagamos ___ reais.",
+          "midia_descricao": null,
+          "opcoes": ["7", "10", "12"],
+          "resposta": "10",
+          "respostas_aceitas": ["10", "dez"],
+          "dica1": "São 5 grupos com R$ 2 cada.",
+          "dica2": "Some 2 + 2 + 2 + 2 + 2.",
+          "explicacao": "5 × 2 = 10 reais. Somar 2 cinco vezes dá exatamente o mesmo resultado!",
+          "dados": {
+            "opcoes": [{ "texto": "7" }, { "texto": "10" }, { "texto": "12" }],
+            "correta": "10",
+            "respostaCorretaTexto": "5 pincéis com R$ 2: 5 × 2 = 10 reais."
+          }
+        },
+        {
+          "id": "mat3-mult-m3-c3",
+          "tipo": "multipla_escolha",
+          "dificuldade": 2,
+          "habilidade": "Construir e usar fatos básicos da multiplicação no cálculo mental",
+          "codigo_bncc": "EF03MA03",
+          "enunciado": "Calcule 4 × 7.",
+          "midia_descricao": null,
+          "opcoes": ["21", "24", "28", "32"],
+          "resposta": "28",
+          "dica1": "São 4 grupos de 7.",
+          "dica2": "7 + 7 = 14, e 14 + 14 = 28.",
+          "explicacao": "4 × 7 = 28. Dobre o 14 e confira: ficou certinho!",
+          "dados": {
+            "alternativas": [
+              { "texto": "21", "correta": false },
+              { "texto": "24", "correta": false },
+              { "texto": "28", "correta": true },
+              { "texto": "32", "correta": false }
+            ],
+            "respostaCorretaTexto": "4 × 7 = 28."
+          }
+        },
+        {
+          "id": "mat3-mult-m3-c4",
+          "tipo": "verdadeiro_falso",
+          "dificuldade": 2,
+          "habilidade": "Construir e usar fatos básicos da multiplicação, percebendo que trocar os fatores não muda o resultado",
+          "codigo_bncc": "EF03MA03",
+          "enunciado": "3 × 4 dá o mesmo resultado que 4 × 3. Verdadeiro ou falso?",
+          "midia_descricao": null,
+          "resposta": true,
+          "dica1": "Calcule os dois: um deles dá 12.",
+          "dica2": "Os fatores são os mesmos, só trocaram de lugar.",
+          "explicacao": "Verdadeiro: trocar os fatores não muda nada. Os dois resultados são 12.",
+          "dados": {
+            "correta": true,
+            "respostaCorretaTexto": "Verdadeiro: 3 × 4 = 12 e 4 × 3 = 12."
+          }
+        },
+        {
+          "id": "mat3-mult-m3-c5",
+          "tipo": "multipla_escolha",
+          "dificuldade": 2,
+          "habilidade": "Resolver problemas de multiplicação por 5 em contextos variados",
+          "codigo_bncc": "EF03MA07",
+          "enunciado": "Na estante há 5 prateleiras com 6 livros em cada. Quantos livros há?",
+          "midia_descricao": null,
+          "opcoes": ["25", "30", "35", "36"],
+          "resposta": "30",
+          "dica1": "São 5 grupos com 6 livros.",
+          "dica2": "É tabuada do 5: o resultado termina em 0 ou em 5.",
+          "explicacao": "5 × 6 = 30 livros. Como é tabuada do 5, o resultado termina em 0. Conferiu certo!",
+          "dados": {
+            "alternativas": [
+              { "texto": "25", "correta": false },
+              { "texto": "30", "correta": true },
+              { "texto": "35", "correta": false },
+              { "texto": "36", "correta": false }
+            ],
+            "respostaCorretaTexto": "5 prateleiras com 6 livros: 5 × 6 = 30."
+          }
+        },
+        {
+          "id": "mat3-mult-m3-c6",
+          "tipo": "arrastar_soltar",
+          "dificuldade": 3,
+          "habilidade": "Comparar resultados de multiplicações com fatores maiores",
+          "codigo_bncc": "EF03MA03",
+          "enunciado": "Coloque do menor resultado para o maior: 5 × 3, 4 × 5, 5 × 6.",
+          "midia_descricao": null,
+          "itens": [
+            { "id": "cinco-por-seis", "texto": "5 × 6" },
+            { "id": "cinco-por-tres", "texto": "5 × 3" },
+            { "id": "quatro-por-cinco", "texto": "4 × 5" }
+          ],
+          "resposta": ["cinco-por-tres", "quatro-por-cinco", "cinco-por-seis"],
+          "dica1": "Calcule as três antes de ordenar.",
+          "dica2": "Os três resultados são múltiplos de 5: olhe os últimos algarismos.",
+          "explicacao": "5 × 3 = 15, depois 4 × 5 = 20 e por fim 5 × 6 = 30.",
+          "dados": {
+            "modo": "ordenar",
+            "itens": [
+              { "id": "cinco-por-seis", "texto": "5 × 6" },
+              { "id": "cinco-por-tres", "texto": "5 × 3" },
+              { "id": "quatro-por-cinco", "texto": "4 × 5" }
+            ],
+            "ordemEsperada": ["cinco-por-tres", "quatro-por-cinco", "cinco-por-seis"],
+            "respostaCorretaTexto": "15, depois 20 e por último 30."
+          }
+        }
+      ]
+    },
+    {
+      "id": "mat3-mult-m4",
+      "titulo": "O Jogo dos Dobros e Triplos",
+      "objetivo": "Completar fatos que faltam e comparar resultados bem parecidos.",
+      "atividades": [
+        {
+          "id": "mat3-mult-m4-d1",
+          "tipo": "completar",
+          "dificuldade": 2,
+          "habilidade": "Completar fatos da tabuada do 4",
+          "codigo_bncc": "EF03MA03",
+          "enunciado": "4 × ___ = 24. Qual fator está faltando?",
+          "midia_descricao": null,
+          "opcoes": ["4", "5", "6"],
+          "resposta": "6",
+          "respostas_aceitas": ["6", "seis"],
+          "dica1": "Pense em quantas vezes o 4 cabe no 24.",
+          "dica2": "4 + 4 + 4 + 4 + 4 + 4 = 24.",
+          "explicacao": "4 × 6 = 24. Faltava o 6. Você acertou o fator!",
+          "dados": {
+            "opcoes": [{ "texto": "4" }, { "texto": "5" }, { "texto": "6" }],
+            "correta": "6",
+            "respostaCorretaTexto": "4 × 6 = 24."
+          }
+        },
+        {
+          "id": "mat3-mult-m4-d2",
+          "tipo": "multipla_escolha",
+          "dificuldade": 2,
+          "habilidade": "Resolver problemas de multiplicação por 5 com fatores maiores",
+          "codigo_bncc": "EF03MA07",
+          "enunciado": "Quantos dedos há em 7 mãos?",
+          "midia_descricao": null,
+          "opcoes": ["30", "32", "35", "40"],
+          "resposta": "35",
+          "dica1": "Cada mão tem 5 dedos: são 7 grupos de 5.",
+          "dica2": "5 × 4 = 20; faltam mais 3 mãos, e 5 + 5 + 5 = 15.",
+          "explicacao": "7 × 5 = 35 dedos. De 20, mais 15, dá 35. Muito bem!",
+          "dados": {
+            "alternativas": [
+              { "texto": "30", "correta": false },
+              { "texto": "32", "correta": false },
+              { "texto": "35", "correta": true },
+              { "texto": "40", "correta": false }
+            ],
+            "respostaCorretaTexto": "7 mãos com 5 dedos: 7 × 5 = 35."
+          }
+        },
+        {
+          "id": "mat3-mult-m4-d3",
+          "tipo": "verdadeiro_falso",
+          "dificuldade": 2,
+          "habilidade": "Identificar regularidade na tabuada do 5",
+          "codigo_bncc": "EF03MA10",
+          "enunciado": "Se 5 × 4 = 20, então 5 × 5 = 25. Verdadeiro ou falso?",
+          "midia_descricao": null,
+          "resposta": true,
+          "dica1": "De 5 × 4 para 5 × 5 entra mais um 5.",
+          "dica2": "20 + 5 = ?",
+          "explicacao": "Verdadeiro: somando mais um 5 ao resultado, 20 + 5 = 25. Assim a tabuada cresce de 5 em 5!",
+          "dados": {
+            "correta": true,
+            "respostaCorretaTexto": "Verdadeiro: 5 × 5 = 25."
+          }
+        },
+        {
+          "id": "mat3-mult-m4-d4",
+          "tipo": "contar_imagens",
+          "dificuldade": 2,
+          "habilidade": "Resolver problemas de multiplicação com grupos iguais",
+          "codigo_bncc": "EF03MA07",
+          "enunciado": "🐱🐱🐱🐱 🐱🐱🐱🐱 🐱🐱🐱🐱 🐱🐱🐱🐱. Cada janela tem 4 gatos. Quantos gatos há nas 4 janelas?",
+          "midia_descricao": "Alternativa à emojis: desenhar 4 janelas com 4 gatos de brinquedo em cada.",
+          "opcoes": ["12", "14", "16", "20"],
+          "resposta": "16",
+          "dica1": "São 4 grupos iguais com 4 gatos.",
+          "dica2": "Some 4 + 4 + 4 + 4.",
+          "explicacao": "4 × 4 = 16 gatos. Quatro grupos de quatro, muito bem!",
+          "dados": { "opcoes": [12, 14, 16, 20], "correta": 16, "respostaCorretaTexto": "4 janelas com 4 gatos: 4 × 4 = 16." }
+        },
+        {
+          "id": "mat3-mult-m4-d5",
+          "tipo": "multipla_escolha",
+          "dificuldade": 3,
+          "habilidade": "Construir e usar fatos básicos da multiplicação no cálculo mental",
+          "codigo_bncc": "EF03MA03",
+          "enunciado": "Cada quadrado tem 4 lados. Quantos lados há em 8 quadrados?",
+          "midia_descricao": null,
+          "opcoes": ["32", "36", "40", "48"],
+          "resposta": "32",
+          "dica1": "São 8 grupos com 4 lados cada.",
+          "dica2": "4 × 5 = 20; faltam mais 3 grupos de 4, e 4 + 4 + 4 = 12.",
+          "explicacao": "8 × 4 = 32 lados. De 20, mais três 4 (12), dá 32.Excelente!",
+          "dados": {
+            "alternativas": [
+              { "texto": "32", "correta": true },
+              { "texto": "36", "correta": false },
+              { "texto": "40", "correta": false },
+              { "texto": "48", "correta": false }
+            ],
+            "respostaCorretaTexto": "8 quadrados com 4 lados: 8 × 4 = 32."
+          }
+        },
+        {
+          "id": "mat3-mult-m4-d6",
+          "tipo": "arrastar_soltar",
+          "dificuldade": 3,
+          "habilidade": "Comparar resultados próximos de multiplicações com fatores maiores",
+          "codigo_bncc": "EF03MA03",
+          "enunciado": "Coloque do menor resultado para o maior: 4 × 8, 5 × 6, 3 × 9.",
+          "midia_descricao": null,
+          "itens": [
+            { "id": "quatro-por-oito", "texto": "4 × 8" },
+            { "id": "tres-por-nove", "texto": "3 × 9" },
+            { "id": "cinco-por-seis", "texto": "5 × 6" }
+          ],
+          "resposta": ["tres-por-nove", "cinco-por-seis", "quatro-por-oito"],
+          "dica1": "Calcule os três com atenção.",
+          "dica2": "Os resultados são 27, 30 e 32: estão bem perto um do outro!",
+          "explicacao": "3 × 9 = 27, depois 5 × 6 = 30 e por último 4 × 8 = 32. Ordem certa: 27, 30, 32.",
+          "dados": {
+            "modo": "ordenar",
+            "itens": [
+              { "id": "quatro-por-oito", "texto": "4 × 8" },
+              { "id": "tres-por-nove", "texto": "3 × 9" },
+              { "id": "cinco-por-seis", "texto": "5 × 6" }
+            ],
+            "ordemEsperada": ["tres-por-nove", "cinco-por-seis", "quatro-por-oito"],
+            "respostaCorretaTexto": "27, depois 30 e por último 32."
+          }
+        }
+      ]
+    },
+    {
+      "id": "mat3-mult-m5",
+      "titulo": "A Grande Missão do Tesouro",
+      "objetivo": "Usar a multiplicação para resolver problemas do dia a dia.",
+      "atividades": [
+        {
+          "id": "mat3-mult-m5-e1",
+          "tipo": "multipla_escolha",
+          "dificuldade": 2,
+          "habilidade": "Resolver problemas de multiplicação por 5 em contextos da escola",
+          "codigo_bncc": "EF03MA07",
+          "enunciado": "A professora levou 5 caixas de giz com 8 gizes em cada. Quantos gizes ela levou?",
+          "midia_descricao": null,
+          "opcoes": ["35", "40", "45", "48"],
+          "resposta": "40",
+          "dica1": "São 5 grupos com 8 gizes.",
+          "dica2": "Tabuada do 5: o resultado termina em 0 ou 5.",
+          "explicacao": "5 × 8 = 40 gizes. Termina em 0, como não poderia deixar de ser na tabuada do 5!",
+          "dados": {
+            "alternativas": [
+              { "texto": "35", "correta": false },
+              { "texto": "40", "correta": true },
+              { "texto": "45", "correta": false },
+              { "texto": "48", "correta": false }
+            ],
+            "respostaCorretaTexto": "5 caixas com 8 gizes: 5 × 8 = 40."
+          }
+        },
+        {
+          "id": "mat3-mult-m5-e2",
+          "tipo": "completar",
+          "dificuldade": 2,
+          "habilidade": "Completar situações de multiplicação por 6",
+          "codigo_bncc": "EF03MA07",
+          "enunciado": "Cada cartela traz 6 adesivos. Em 4 cartelas são ___ adesivos.",
+          "midia_descricao": null,
+          "opcoes": ["20", "24", "30"],
+          "resposta": "24",
+          "respostas_aceitas": ["24", "vinte e quatro", "vintequatro"],
+          "dica1": "São 4 grupos com 6 adesivos.",
+          "dica2": "Some 6 + 6 + 6 + 6.",
+          "explicacao": "4 × 6 = 24 adesivos. Somar 6 quatro vezes também resolve!",
+          "dados": {
+            "opcoes": [{ "texto": "20" }, { "texto": "24" }, { "texto": "30" }],
+            "correta": "24",
+            "respostaCorretaTexto": "4 cartelas com 6 adesivos: 4 × 6 = 24."
+          }
+        },
+        {
+          "id": "mat3-mult-m5-e3",
+          "tipo": "verdadeiro_falso",
+          "dificuldade": 3,
+          "habilidade": "Construir e usar fatos básicos da multiplicação, comparando fatores vizinhos",
+          "codigo_bncc": "EF03MA03",
+          "enunciado": "Se 4 × 9 = 36, então 4 × 10 = 46. Verdadeiro ou falso?",
+          "midia_descricao": null,
+          "resposta": false,
+          "dica1": "Tabuada do 10: o resultado termina em 0.",
+          "dica2": "De 4 × 9 para 4 × 10 entra mais um 4, não mais um 10.",
+          "explicacao": "Falso! 4 × 10 = 40. De 36, somando mais um 4, chegamos em 40. Cuidado com esse truquinha!",
+          "dados": {
+            "correta": false,
+            "respostaCorretaTexto": "Falso: 4 × 10 = 40."
+          }
+        },
+        {
+          "id": "mat3-mult-m5-e4",
+          "tipo": "arrastar_soltar",
+          "dificuldade": 3,
+          "habilidade": "Comparar resultados próximos de multiplicações com fatores maiores",
+          "codigo_bncc": "EF03MA03",
+          "enunciado": "Coloque do menor resultado para o maior: 5 × 7, 4 × 9, 5 × 8.",
+          "midia_descricao": null,
+          "itens": [
+            { "id": "cinco-por-oito", "texto": "5 × 8" },
+            { "id": "cinco-por-sete", "texto": "5 × 7" },
+            { "id": "quatro-por-nove", "texto": "4 × 9" }
+          ],
+          "resposta": ["cinco-por-sete", "quatro-por-nove", "cinco-por-oito"],
+          "dica1": "Calcule os três resultados.",
+          "dica2": "Dois deles são vizinhos na reta numérica: 35 e 36.",
+          "explicacao": "5 × 7 = 35, depois 4 × 9 = 36 e por fim 5 × 8 = 40. Muito esperto!",
+          "dados": {
+            "modo": "ordenar",
+            "itens": [
+              { "id": "cinco-por-oito", "texto": "5 × 8" },
+              { "id": "cinco-por-sete", "texto": "5 × 7" },
+              { "id": "quatro-por-nove", "texto": "4 × 9" }
+            ],
+            "ordemEsperada": ["cinco-por-sete", "quatro-por-nove", "cinco-por-oito"],
+            "respostaCorretaTexto": "35, depois 36 e por último 40."
+          }
+        },
+        {
+          "id": "mat3-mult-m5-e5",
+          "tipo": "multipla_escolha",
+          "dificuldade": 3,
+          "habilidade": "Resolver problemas de multiplicação em contextos de esporte",
+          "codigo_bncc": "EF03MA07",
+          "enunciado": "O time marcou 4 gols em cada jogo. Em 9 jogos, quantos gols ele marcou?",
+          "midia_descricao": null,
+          "opcoes": ["32", "36", "40", "45"],
+          "resposta": "36",
+          "dica1": "São 9 grupos com 4 gols.",
+          "dica2": "4 × 10 = 40; para voltar a 4 × 9, subtraia 4.",
+          "explicacao": "4 × 9 = 36 gols. Pelo caminho fácil: 40 − 4 = 36. Que time eficiente!",
+          "dados": {
+            "alternativas": [
+              { "texto": "32", "correta": false },
+              { "texto": "36", "correta": true },
+              { "texto": "40", "correta": false },
+              { "texto": "45", "correta": false }
+            ],
+            "respostaCorretaTexto": "9 jogos com 4 gols: 4 × 9 = 36."
+          }
+        },
+        {
+          "id": "mat3-mult-m5-e6",
+          "tipo": "contar_imagens",
+          "dificuldade": 2,
+          "habilidade": "Resolver problemas de multiplicação com grupos iguais",
+          "codigo_bncc": "EF03MA07",
+          "enunciado": "Cada fileira do auditório tem 7 cadeiras. 🪑🪑🪑🪑🪑🪑🪑 são 5 fileiras. Quantas cadeiras há no total?",
+          "midia_descricao": "Alternativa à emojis: desenhar 5 fileiras com 7 cadeiras vermelhas em cada.",
+          "opcoes": ["30", "32", "35", "40"],
+          "resposta": "35",
+          "dica1": "São 5 grupos iguais com 7 cadeiras.",
+          "dica2": "Tabuada do 5: o resultado termina em 0 ou 5.",
+          "explicacao": "5 × 7 = 35 cadeiras. Você contou tudo certinho!",
+          "dados": { "opcoes": [30, 32, 35, 40], "correta": 35, "respostaCorretaTexto": "5 fileiras com 7 cadeiras: 5 × 7 = 35." }
+        }
+      ]
+    }
+  ]
+}

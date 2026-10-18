@@ -1,0 +1,216 @@
+{
+  "versao": 1,
+  "idioma": "pt-BR",
+  "nome_padrao": "aventureiro(a)",
+  "variaveis": ["{nome}", "{xp}", "{nivel}", "{dias}", "{moedas}", "{missoes}"],
+  "regras": {
+    "max_palavras_por_fala": 20,
+    "nao_repetir_a_anterior": true,
+    "intervalo_minimo_toque_ms": 1500,
+    "ocioso_segundos": 25,
+    "ocioso_max_por_tela": 1
+  },
+  "eventos": {
+    "boas_vindas": {
+      "estado": "feliz",
+      "efeito": "estrelinhas",
+      "falas": [
+        "Oi, {nome}! Vamos começar nossa trilha?",
+        "Que bom te ver, {nome}! Pronto para uma aventura?",
+        "Olá, {nome}! Hoje vai ser um dia incrível de aprender!",
+        "Oi, {nome}! Eu estava te esperando. Bora jogar?"
+      ]
+    },
+    "volta_apos_dias": {
+      "estado": "dormindo",
+      "estado_ao_tocar": "feliz",
+      "efeito": "suave",
+      "falas": [
+        "Zzz... Ah, você voltou, {nome}! Que saudade!",
+        "Zzz... Opa, acordei! Que bom que você está aqui, {nome}!",
+        "Zzz... {nome}, você voltou! Vamos recomeçar juntos?"
+      ],
+      "falas_ao_acordar": [
+        "Bom dia, {nome}! Já estou de pé. Vamos estudar um pouquinho?",
+        "Pronto, acordei! Vamos com calma, sem pressa, sempre juntos!",
+        "Que alegria te ver! Vamos fazer uma missão curtinha?"
+      ]
+    },
+    "inicio_missao": {
+      "estado": "explicando",
+      "efeito": "lampada",
+      "falas": [
+        "Vamos lá! Leia com calma e escolha a resposta.",
+        "Missão iniciada! Eu estou aqui para ajudar em cada passo.",
+        "Respire fundo e vamos juntos, {nome}. Você consegue!",
+        "É hora de aventura! Se precisar, peça uma dica."
+      ]
+    },
+    "leitura_inicio": {
+      "estado": "lendo",
+      "efeito": "suave",
+      "falas": [
+        "Vamos ler juntos? Se quiser, toque em ouvir.",
+        "Que história legal! Leia com calma e preste atenção.",
+        "Hora da leitura! Pode ler no seu ritmo, {nome}."
+      ]
+    },
+    "acerto": {
+      "estado": "feliz",
+      "efeito": "estrelinhas",
+      "falas": [
+        "Isso mesmo! Muito bem, {nome}!",
+        "Acertou! Você é demais!",
+        "Boa! Essa foi perfeita!",
+        "Uhul! Resposta certa!",
+        "Mandou bem! Continue assim!"
+      ]
+    },
+    "acerto_sequencia": {
+      "estado": "comemorando",
+      "efeito": "confete",
+      "falas": [
+        "Que sequência incrível! Você está voando, {nome}!",
+        "Três acertos seguidos! Você está arrasando!",
+        "Uau! Você está pegando o jeito. Que orgulho!",
+        "Sequência de campeão! Continue assim!"
+      ]
+    },
+    "erro": {
+      "estado": "incentivando",
+      "efeito": "pulsar",
+      "falas": [
+        "Quase! Vamos tentar de novo juntos?",
+        "Tudo bem errar, é assim que a gente aprende. Tente mais uma vez!",
+        "Não foi dessa vez, mas você está perto. Que tal uma dica?",
+        "Calma, {nome}. Respire e tente de novo. Eu acredito em você!",
+        "Errar faz parte! Vamos ver como resolver essa?"
+      ]
+    },
+    "dica": {
+      "estado": "explicando",
+      "efeito": "lampada",
+      "falas": [
+        "Olha só esta pista que eu trouxe para você.",
+        "Vou te dar uma ajudinha. Pense com calma!",
+        "Aqui vai uma dica de amigo. Você vai conseguir!",
+        "Que tal olhar por este lado? Isso pode ajudar!"
+      ]
+    },
+    "explicacao_apos_erro": {
+      "estado": "explicando",
+      "efeito": "lampada",
+      "falas": [
+        "Vamos entender juntos como chegar nessa resposta.",
+        "Deixa eu te mostrar o caminho, passo a passo.",
+        "Olha como funciona. Da próxima vez você acerta!"
+      ]
+    },
+    "carregando": {
+      "estado": "pensando",
+      "efeito": "suave",
+      "falas": [
+        "Hmm, deixa eu pensar um pouquinho...",
+        "Só um instante, estou preparando a próxima aventura!",
+        "Pensando aqui... já volto!"
+      ]
+    },
+    "missao_concluida": {
+      "estado": "comemorando",
+      "efeito": "confete",
+      "falas": [
+        "Missão cumprida! Você ganhou {xp} de XP, {nome}!",
+        "Parabéns! Mais uma missão concluída. Que orgulho de você!",
+        "Você conseguiu! Olha só quantas estrelas e moedas!",
+        "Uhul! Terminamos a missão. Você merece comemorar!"
+      ]
+    },
+    "missao_concluida_sem_acertar_tudo": {
+      "estado": "feliz",
+      "efeito": "estrelinhas",
+      "falas": [
+        "Você concluiu a missão! O importante é que aprendeu algo novo.",
+        "Missão concluída! Vamos treinar mais um pouquinho depois?",
+        "Muito bem por não desistir, {nome}! Isso é de campeão."
+      ]
+    },
+    "subiu_de_nivel": {
+      "estado": "comemorando",
+      "efeito": "confete",
+      "falas": [
+        "Subiu de nível! Agora você é nível {nivel}, {nome}!",
+        "Uau! Nível {nivel}! Você está ficando cada vez mais forte!",
+        "Parabéns! Novo nível desbloqueado: {nivel}!"
+      ]
+    },
+    "meta_do_dia": {
+      "estado": "comemorando",
+      "efeito": "confete",
+      "falas": [
+        "Meta do dia cumprida! Abra seu baú de recompensas!",
+        "Você completou a meta de hoje, {nome}! Que dia incrível!",
+        "Meta batida! Merece um descanso e uma comemoração!"
+      ]
+    },
+    "dias_seguidos": {
+      "estado": "feliz",
+      "efeito": "estrelinhas",
+      "falas": [
+        "{dias} dias seguidos! Sua chama está acesa!",
+        "Que constância, {nome}! Já são {dias} dias estudando!",
+        "Cada dia conta! {dias} dias seguidos. Parabéns!"
+      ]
+    },
+    "ranking": {
+      "estado": "trono",
+      "efeito": "estrelinhas",
+      "falas": [
+        "Olha só o ranking! Cada passo conta na sua jornada.",
+        "Você está evoluindo, {nome}! Vamos subir mais um degrau?",
+        "Todo mundo aqui está aprendendo. O mais importante é continuar!"
+      ]
+    },
+    "treino_revisao": {
+      "estado": "explicando",
+      "efeito": "lampada",
+      "falas": [
+        "No Treino do Kapivarus, vamos rever o que ficou difícil.",
+        "Vamos treinar juntos aquilo que ainda dá um nozinho?",
+        "Treino é assim: errar, tentar e acertar. Bora?"
+      ]
+    },
+    "toque": {
+      "estado": "feliz",
+      "efeito": "estrelinhas",
+      "falas": [
+        "Hihi, cócegas!",
+        "Oi! Precisa de alguma coisa?",
+        "Bora estudar?",
+        "Você está indo muito bem!",
+        "Eu sou o Kapivarus, seu amigo de estudos!",
+        "Ei, me faz carinho de novo!",
+        "Hoje vai ser um ótimo dia!"
+      ]
+    },
+    "ocioso": {
+      "estado": "incentivando",
+      "efeito": "suave",
+      "falas": [
+        "Estou aqui se precisar de ajuda, {nome}.",
+        "Sem pressa! Quando estiver pronto, é só continuar.",
+        "Quer uma dica? É só pedir!",
+        "Pensando com calma? Isso é ótimo!"
+      ]
+    },
+    "despedida": {
+      "estado": "feliz",
+      "efeito": "estrelinhas",
+      "falas": [
+        "Até a próxima, {nome}! Foi muito legal estudar com você.",
+        "Tchau, tchau! Amanhã tem mais aventura!",
+        "Descanse bem! Eu espero você aqui.",
+        "Bom trabalho hoje, {nome}! Até logo!"
+      ]
+    }
+  }
+}

@@ -352,14 +352,44 @@ body.sem-animacoes *::after {
   to { transform: translateY(105vh) rotate(540deg); opacity: 0.85; }
 }
 
+/* Efeitos do catálogo de falas do Kapivarus (balão e mascote).
+   Todos desligam com prefers-reduced-motion e com body.sem-animacoes
+   (o seletor global abaixo já cobre tudo; o @media reforça por classe). */
+@keyframes kapi-efeito-pulsar {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
+.kapi-efeito-pulsar { animation: kapi-efeito-pulsar 1.4s ease-in-out infinite; transform-origin: left center; }
+
+@keyframes kapi-efeito-brilhar {
+  0%, 100% { box-shadow: 4px 4px 0 0 var(--color-roxo-escuro); }
+  50% { box-shadow: 4px 4px 0 0 var(--color-roxo-escuro), 0 0 18px 2px rgba(245, 179, 1, 0.75); }
+}
+.kapi-efeito-brilhar { animation: kapi-efeito-brilhar 1.8s ease-in-out infinite; }
+
+@keyframes kapi-efeito-lampada {
+  0%, 100% { filter: brightness(1); }
+  40% { filter: brightness(1.18); }
+}
+.kapi-efeito-lampada { animation: kapi-efeito-lampada 2s ease-in-out infinite; }
+
+@keyframes kapi-estrela-cintilar {
+  0% { opacity: 0; transform: translate(-50%, -50%) scale(0.6); }
+  35% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
+}
+.kapi-estrelas-cintilar span {
+  position: absolute;
+  animation: kapi-estrela-cintilar 1.6s ease-out infinite;
+  pointer-events: none;
+  user-select: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .estrela-pulsar,
-  .moeda-girar,
-  .chama-balancar,
-  .barra-meta-preenchimento,
-  .cenario .nuvem,
-  .cenario .moeda-flutuante,
-  .confete span {
+  .kapi-efeito-pulsar,
+  .kapi-efeito-brilhar,
+  .kapi-efeito-lampada,
+  .kapi-estrelas-cintilar span {
     animation: none !important;
   }
 }

@@ -2,13 +2,14 @@
 // Mobile-first: fixo no rodapé; esconde em telas médias (>=sm) onde o
 // espaço horizontal é suficiente para navegar pelas telas.
 import { useLocation, useNavigate } from "react-router-dom"
-import { IconeAvatar, IconeBau, IconeCoroa, IconePergaminho, IconeEstrela } from "./Icones.jsx"
+import { IconeAvatar, IconeBau, IconeCoroa, IconePergaminho, IconeEstrela, IconePets } from "./Icones.jsx"
 
 const ITENS = [
   { rota: "/home", rotulo: "Início", Icone: IconeEstrela },
   { rota: "/missao", rotulo: "Missões", Icone: IconePergaminho },
   { rota: "/ranking", rotulo: "Ranking", Icone: IconeCoroa },
   { rota: "/loja", rotulo: "Loja", Icone: IconeBau },
+  { rota: "/meus-pets", rotulo: "Meus Pets", Icone: IconePets },
   { rota: "/painel", rotulo: "Perfil", Icone: IconeAvatar },
 ]
 
