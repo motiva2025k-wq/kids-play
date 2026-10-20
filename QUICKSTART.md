@@ -42,9 +42,13 @@ O instalador cria `.env.local` com `VITE_MODO_LOCAL=1` e gera o conteúdo das
 missões a partir de `banco-de-questoes/`. Perfis, missões, ranking e relatório
 dos pais ficam em `localStorage` — nada sai do aparelho.
 
-**Limitação:** o conteúdo offline atual cobre apenas **3º ano, Matemática
-(multiplicação 2 ao 5)**. 2º e 4º ano mostram um aviso de conteúdo indisponível,
-e as telas de admin (importar/revisar) explicam que precisam de conexão.
+**O que vem embarcado:** **Matemática do 2º, 3º e 4º ano** — 15 missões e 90
+atividades (adição e subtração até 100 no 2º; multiplicação do 2 ao 5 no 3º;
+multiplicação e divisão no 4º). Para aumentar, basta acrescentar arquivos em
+`banco-de-questoes/` e rodar `npm run gerar-conteudo` — `npm run testar`
+valida cada banco antes de publicar.
+
+As telas de admin (importar/revisar) explicam que precisam de conexão.
 
 Para voltar a usar o Supabase, remova a linha `VITE_MODO_LOCAL=1` do `.env.local`.
 

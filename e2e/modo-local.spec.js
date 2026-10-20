@@ -64,12 +64,13 @@ test.describe('modo local', () => {
     expect(erros).toEqual([])
   })
 
-  test('3º ano lista as missões e 2º ano avisa que não há conteúdo', async ({ page }) => {
+  test('cada ano mostra as missões do seu próprio conteúdo', async ({ page }) => {
+    // 3º ano: multiplicação do 2 ao 5.
     await criarPerfil(page, { apelido: 'Lia', ano: '3º ano' })
     await page.goto('/mapa-de-missoes')
     await expect(page.getByText('A Padaria do Kapivarus')).toBeVisible()
 
-    // Outro perfil, agora de 2º ano: o conteúdo offline só cobre o 3º.
+    // 2º ano: adição e subtração. Não pode aparecer a trilha do 3º.
     await page.goto('/criar-perfil')
     await page.getByLabel('Apelido da criança').fill('Dudu')
     await page.getByRole('button', { name: '2º ano' }).click()
@@ -77,6 +78,7 @@ test.describe('modo local', () => {
     await page.getByRole('button', { name: /Dudu/ }).click()
 
     await page.goto('/mapa-de-missoes')
-    await expect(page.getByText(/ainda não tem missões offline/)).toBeVisible()
+    await expect(page.getByText('A Feira do Kapivarus')).toBeVisible()
+    await expect(page.getByText('A Padaria do Kapivarus')).toHaveCount(0)
   })
 })

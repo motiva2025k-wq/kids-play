@@ -1,0 +1,687 @@
+{
+  "ano": "4º",
+  "materia": "Matemática",
+  "trilha": "Multiplicando e dividindo com números maiores",
+  "missoes": [
+    {
+      "id": "mat4-mult-m1",
+      "titulo": "A Estufa do Kapivarus",
+      "objetivo": "Multiplicar números de dois algarismos por um algarismo.",
+      "atividades": [
+        {
+          "id": "mat4-mult-m1-a1",
+          "tipo": "multipla_escolha",
+          "dificuldade": 2,
+          "habilidade": "Multiplicar número de dois algarismos por um algarismo",
+          "codigo_bncc": "EF04MA06",
+          "enunciado": "3 × 24 = ?",
+          "midia_descricao": null,
+          "opcoes": ["62", "72", "66", "82"],
+          "resposta": "72",
+          "dica1": "Separe 24 em 20 + 4.",
+          "dica2": "3 × 20 = 60 e 3 × 4 = 12. Some os dois.",
+          "explicacao": "3 × 24 = 60 + 12 = 72.",
+          "dados": {
+            "alternativas": [
+              { "texto": "62", "correta": false },
+              { "texto": "72", "correta": true },
+              { "texto": "66", "correta": false },
+              { "texto": "82", "correta": false }
+            ],
+            "respostaCorretaTexto": "3 × 20 = 60 e 3 × 4 = 12: 60 + 12 = 72."
+          }
+        },
+        {
+          "id": "mat4-mult-m1-a2",
+          "tipo": "completar",
+          "dificuldade": 3,
+          "habilidade": "Multiplicar usando o valor posicional",
+          "codigo_bncc": "EF04MA05",
+          "enunciado": "5 × 36 = ___.",
+          "midia_descricao": null,
+          "opcoes": ["150", "180", "186"],
+          "resposta": "180",
+          "dica1": "36 é 30 + 6.",
+          "dica2": "5 × 30 = 150 e 5 × 6 = 30.",
+          "explicacao": "5 × 36 = 150 + 30 = 180.",
+          "dados": {
+            "opcoes": [{ "texto": "150" }, { "texto": "180" }, { "texto": "186" }],
+            "correta": "180",
+            "respostaCorretaTexto": "5 × 30 = 150 e 5 × 6 = 30: 180."
+          }
+        },
+        {
+          "id": "mat4-mult-m1-a3",
+          "tipo": "verdadeiro_falso",
+          "dificuldade": 2,
+          "habilidade": "Multiplicar por dezena exata usando propriedades",
+          "codigo_bncc": "EF04MA05",
+          "enunciado": "4 × 50 = 200. Verdadeiro ou falso?",
+          "midia_descricao": null,
+          "resposta": true,
+          "dica1": "50 é 5 dezenas.",
+          "dica2": "4 × 5 = 20, e 20 dezenas são 200.",
+          "explicacao": "Verdadeiro: 4 × 50 = 200.",
+          "dados": {
+            "correta": true,
+            "respostaCorretaTexto": "Verdadeiro: 4 × 5 = 20, então 4 × 50 = 200."
+          }
+        },
+        {
+          "id": "mat4-mult-m1-a4",
+          "tipo": "multipla_escolha",
+          "dificuldade": 3,
+          "habilidade": "Resolver problema de multiplicação com número de dois algarismos",
+          "codigo_bncc": "EF04MA06",
+          "enunciado": "Cada bandeja tem 28 mudas. Em 6 bandejas há quantas mudas?",
+          "midia_descricao": null,
+          "opcoes": ["168", "158", "148", "178"],
+          "resposta": "168",
+          "dica1": "Faça 6 × 20 e 6 × 8, depois some.",
+          "dica2": "6 × 20 = 120 e 6 × 8 = 48.",
+          "explicacao": "6 × 28 = 120 + 48 = 168 mudas.",
+          "dados": {
+            "alternativas": [
+              { "texto": "168", "correta": true },
+              { "texto": "158", "correta": false },
+              { "texto": "148", "correta": false },
+              { "texto": "178", "correta": false }
+            ],
+            "respostaCorretaTexto": "6 × 20 = 120 e 6 × 8 = 48: 168 mudas."
+          }
+        },
+        {
+          "id": "mat4-mult-m1-a5",
+          "tipo": "multipla_escolha",
+          "dificuldade": 2,
+          "habilidade": "Multiplicar por dezena exata",
+          "codigo_bncc": "EF04MA05",
+          "enunciado": "7 × 40 = ?",
+          "midia_descricao": null,
+          "opcoes": ["280", "270", "240", "2800"],
+          "resposta": "280",
+          "dica1": "Faça 7 × 4 primeiro.",
+          "dica2": "7 × 4 = 28, e cada dezena vale 10.",
+          "explicacao": "7 × 40 = 280.",
+          "dados": {
+            "alternativas": [
+              { "texto": "280", "correta": true },
+              { "texto": "270", "correta": false },
+              { "texto": "240", "correta": false },
+              { "texto": "2800", "correta": false }
+            ],
+            "respostaCorretaTexto": "7 × 4 = 28, então 7 × 40 = 280."
+          }
+        },
+        {
+          "id": "mat4-mult-m1-a6",
+          "tipo": "arrastar_soltar",
+          "dificuldade": 3,
+          "habilidade": "Calcular e ordenar produtos",
+          "codigo_bncc": "EF04MA06",
+          "enunciado": "Coloque os produtos do menor para o maior.",
+          "midia_descricao": null,
+          "opcoes": ["sessenta", "cem", "cento-e-oitenta"],
+          "resposta": ["sessenta", "cem", "cento-e-oitenta"],
+          "dica1": "Calcule cada multiplicação antes de ordenar.",
+          "dica2": "3 × 20 = 60, 4 × 25 = 100 e 2 × 90 = 180.",
+          "explicacao": "60, depois 100 e por último 180.",
+          "dados": {
+            "modo": "ordenar",
+            "itens": [
+              { "id": "cento-e-oitenta", "texto": "2 × 90" },
+              { "id": "sessenta", "texto": "3 × 20" },
+              { "id": "cem", "texto": "4 × 25" }
+            ],
+            "ordemEsperada": ["sessenta", "cem", "cento-e-oitenta"],
+            "respostaCorretaTexto": "3 × 20 = 60, 4 × 25 = 100 e 2 × 90 = 180."
+          }
+        }
+      ]
+    },
+    {
+      "id": "mat4-mult-m2",
+      "titulo": "O Mercadinho",
+      "objetivo": "Multiplicar dois números de dois algarismos decompondo as parcelas.",
+      "atividades": [
+        {
+          "id": "mat4-mult-m2-a1",
+          "tipo": "multipla_escolha",
+          "dificuldade": 3,
+          "habilidade": "Multiplicar dois números de dois algarismos",
+          "codigo_bncc": "EF04MA06",
+          "enunciado": "12 × 15 = ?",
+          "midia_descricao": null,
+          "opcoes": ["180", "170", "165", "190"],
+          "resposta": "180",
+          "dica1": "Faça 12 × 10 e 12 × 5.",
+          "dica2": "12 × 10 = 120 e 12 × 5 = 60.",
+          "explicacao": "12 × 15 = 120 + 60 = 180.",
+          "dados": {
+            "alternativas": [
+              { "texto": "180", "correta": true },
+              { "texto": "170", "correta": false },
+              { "texto": "165", "correta": false },
+              { "texto": "190", "correta": false }
+            ],
+            "respostaCorretaTexto": "12 × 10 = 120 e 12 × 5 = 60: 180."
+          }
+        },
+        {
+          "id": "mat4-mult-m2-a2",
+          "tipo": "completar",
+          "dificuldade": 3,
+          "habilidade": "Multiplicar por 11 usando decomposição",
+          "codigo_bncc": "EF04MA05",
+          "enunciado": "23 × 11 = ___.",
+          "midia_descricao": null,
+          "opcoes": ["253", "243", "233"],
+          "resposta": "253",
+          "dica1": "11 é 10 + 1.",
+          "dica2": "23 × 10 = 230 e 23 × 1 = 23.",
+          "explicacao": "23 × 11 = 230 + 23 = 253.",
+          "dados": {
+            "opcoes": [{ "texto": "253" }, { "texto": "243" }, { "texto": "233" }],
+            "correta": "253",
+            "respostaCorretaTexto": "23 × 10 = 230 e 23 × 1 = 23: 253."
+          }
+        },
+        {
+          "id": "mat4-mult-m2-a3",
+          "tipo": "verdadeiro_falso",
+          "dificuldade": 2,
+          "habilidade": "Multiplicar dezenas exatas entre si",
+          "codigo_bncc": "EF04MA05",
+          "enunciado": "20 × 30 = 600. Verdadeiro ou falso?",
+          "midia_descricao": null,
+          "resposta": true,
+          "dica1": "2 × 3 = 6 e cada dezena vale 10.",
+          "dica2": "2 × 3 = 6. Agora conte os zeros que vêm depois do 6.",
+          "explicacao": "Verdadeiro: 20 × 30 = 600.",
+          "dados": {
+            "correta": true,
+            "respostaCorretaTexto": "Verdadeiro: 2 × 3 = 6, com dois zeros no fim: 600."
+          }
+        },
+        {
+          "id": "mat4-mult-m2-a4",
+          "tipo": "multipla_escolha",
+          "dificuldade": 3,
+          "habilidade": "Resolver problema com multiplicação de dois algarismos",
+          "codigo_bncc": "EF04MA06",
+          "enunciado": "Cada caixa tem 24 ovos. 12 caixas têm quantos ovos?",
+          "midia_descricao": null,
+          "opcoes": ["288", "268", "278", "240"],
+          "resposta": "288",
+          "dica1": "Some 24 × 10 com 24 × 2.",
+          "dica2": "24 × 10 = 240 e 24 × 2 = 48.",
+          "explicacao": "24 × 12 = 240 + 48 = 288 ovos.",
+          "dados": {
+            "alternativas": [
+              { "texto": "288", "correta": true },
+              { "texto": "268", "correta": false },
+              { "texto": "278", "correta": false },
+              { "texto": "240", "correta": false }
+            ],
+            "respostaCorretaTexto": "24 × 10 = 240 e 24 × 2 = 48: 288 ovos."
+          }
+        },
+        {
+          "id": "mat4-mult-m2-a5",
+          "tipo": "multipla_escolha",
+          "dificuldade": 3,
+          "habilidade": "Resolver problema de multiplicação com dois algarismos",
+          "codigo_bncc": "EF04MA06",
+          "enunciado": "Um pano de prato custa 35 reais. Quanto custam 14 panos iguais?",
+          "midia_descricao": null,
+          "opcoes": ["490", "470", "480", "350"],
+          "resposta": "490",
+          "dica1": "Some 35 × 10 com 35 × 4.",
+          "dica2": "35 × 10 = 350 e 35 × 4 = 140.",
+          "explicacao": "35 × 14 = 350 + 140 = 490 reais.",
+          "dados": {
+            "alternativas": [
+              { "texto": "490", "correta": true },
+              { "texto": "470", "correta": false },
+              { "texto": "480", "correta": false },
+              { "texto": "350", "correta": false }
+            ],
+            "respostaCorretaTexto": "35 × 10 = 350 e 35 × 4 = 140: 490 reais."
+          }
+        },
+        {
+          "id": "mat4-mult-m2-a6",
+          "tipo": "arrastar_soltar",
+          "dificuldade": 3,
+          "habilidade": "Calcular e ordenar produtos de dois algarismos",
+          "codigo_bncc": "EF04MA06",
+          "enunciado": "Coloque os produtos do menor para o maior.",
+          "midia_descricao": null,
+          "opcoes": ["cento-e-vinte", "duzentos-e-dez", "duzentos-e-vinte-e-cinco"],
+          "resposta": ["cento-e-vinte", "duzentos-e-dez", "duzentos-e-vinte-e-cinco"],
+          "dica1": "Calcule cada multiplicação antes de ordenar.",
+          "dica2": "10 × 12 = 120, 21 × 10 = 210 e 15 × 15 = 225.",
+          "explicacao": "120, depois 210 e por último 225.",
+          "dados": {
+            "modo": "ordenar",
+            "itens": [
+              { "id": "duzentos-e-vinte-e-cinco", "texto": "15 × 15" },
+              { "id": "cento-e-vinte", "texto": "10 × 12" },
+              { "id": "duzentos-e-dez", "texto": "21 × 10" }
+            ],
+            "ordemEsperada": ["cento-e-vinte", "duzentos-e-dez", "duzentos-e-vinte-e-cinco"],
+            "respostaCorretaTexto": "10 × 12 = 120, 21 × 10 = 210 e 15 × 15 = 225."
+          }
+        }
+      ]
+    },
+    {
+      "id": "mat4-mult-m3",
+      "titulo": "Repartindo a Colheita",
+      "objetivo": "Dividir quantidades em partes iguais, sem sobra.",
+      "atividades": [
+        {
+          "id": "mat4-mult-m3-a1",
+          "tipo": "multipla_escolha",
+          "dificuldade": 2,
+          "habilidade": "Resolver divisão exata com tabuada conhecida",
+          "codigo_bncc": "EF04MA07",
+          "enunciado": "36 ÷ 6 = ?",
+          "midia_descricao": null,
+          "opcoes": ["5", "6", "7", "8"],
+          "resposta": "6",
+          "dica1": "Qual número vezes 6 dá 36?",
+          "dica2": "Conte de 6 em 6 até 36.",
+          "explicacao": "36 ÷ 6 = 6, porque 6 × 6 = 36.",
+          "dados": {
+            "alternativas": [
+              { "texto": "5", "correta": false },
+              { "texto": "6", "correta": true },
+              { "texto": "7", "correta": false },
+              { "texto": "8", "correta": false }
+            ],
+            "respostaCorretaTexto": "36 ÷ 6 = 6, porque 6 × 6 = 36."
+          }
+        },
+        {
+          "id": "mat4-mult-m3-a2",
+          "tipo": "completar",
+          "dificuldade": 2,
+          "habilidade": "Completar uma divisão exata",
+          "codigo_bncc": "EF04MA07",
+          "enunciado": "72 ÷ 8 = ___.",
+          "midia_descricao": null,
+          "opcoes": ["8", "9", "10"],
+          "resposta": "9",
+          "dica1": "Pense: 8 vezes quanto dá 72?",
+          "dica2": "8 × 9 = ?",
+          "explicacao": "72 ÷ 8 = 9, porque 8 × 9 = 72.",
+          "dados": {
+            "opcoes": [{ "texto": "8" }, { "texto": "9" }, { "texto": "10" }],
+            "correta": "9",
+            "respostaCorretaTexto": "8 × 9 = 72, então 72 ÷ 8 = 9."
+          }
+        },
+        {
+          "id": "mat4-mult-m3-a3",
+          "tipo": "verdadeiro_falso",
+          "dificuldade": 2,
+          "habilidade": "Relacionar divisão e multiplicação como operações inversas",
+          "codigo_bncc": "EF04MA07",
+          "enunciado": "Se 48 ÷ 6 = 8, então 8 × 6 = 48. Verdadeiro ou falso?",
+          "midia_descricao": null,
+          "resposta": true,
+          "dica1": "Multiplicar de volta confirma a divisão?",
+          "dica2": "8 × 6 você sabe de cor.",
+          "explicacao": "Verdadeiro: a multiplicação desfaz a divisão.",
+          "dados": {
+            "correta": true,
+            "respostaCorretaTexto": "Verdadeiro: 8 × 6 = 48."
+          }
+        },
+        {
+          "id": "mat4-mult-m3-a4",
+          "tipo": "multipla_escolha",
+          "dificuldade": 3,
+          "habilidade": "Resolver problema de divisão em partes iguais",
+          "codigo_bncc": "EF04MA08",
+          "enunciado": "São 96 tomates em 8 cestos iguais. Quantos tomates há em cada cesto?",
+          "midia_descricao": null,
+          "opcoes": ["12", "11", "13", "14"],
+          "resposta": "12",
+          "dica1": "Divida 96 por 8.",
+          "dica2": "8 × 12 = 96?",
+          "explicacao": "96 ÷ 8 = 12 tomates por cesto.",
+          "dados": {
+            "alternativas": [
+              { "texto": "12", "correta": true },
+              { "texto": "11", "correta": false },
+              { "texto": "13", "correta": false },
+              { "texto": "14", "correta": false }
+            ],
+            "respostaCorretaTexto": "96 ÷ 8 = 12 tomates em cada cesto."
+          }
+        },
+        {
+          "id": "mat4-mult-m3-a5",
+          "tipo": "multipla_escolha",
+          "dificuldade": 3,
+          "habilidade": "Resolver problema de medida com divisão",
+          "codigo_bncc": "EF04MA08",
+          "enunciado": "Uma fita de 84 cm foi cortada em pedaços de 7 cm. Quantos pedaços foram feitos?",
+          "midia_descricao": null,
+          "opcoes": ["12", "11", "13", "14"],
+          "resposta": "12",
+          "dica1": "Quantas vezes 7 cabe em 84?",
+          "dica2": "7 × 12 = 84.",
+          "explicacao": "84 ÷ 7 = 12 pedaços.",
+          "dados": {
+            "alternativas": [
+              { "texto": "12", "correta": true },
+              { "texto": "11", "correta": false },
+              { "texto": "13", "correta": false },
+              { "texto": "14", "correta": false }
+            ],
+            "respostaCorretaTexto": "84 ÷ 7 = 12 pedaços."
+          }
+        },
+        {
+          "id": "mat4-mult-m3-a6",
+          "tipo": "arrastar_soltar",
+          "dificuldade": 3,
+          "habilidade": "Calcular e ordenar quocientes",
+          "codigo_bncc": "EF04MA07",
+          "enunciado": "Coloque os quocientes do menor para o maior.",
+          "midia_descricao": null,
+          "opcoes": ["cinco", "oito", "nove"],
+          "resposta": ["cinco", "oito", "nove"],
+          "dica1": "Calcule cada divisão antes de ordenar.",
+          "dica2": "20 ÷ 4 = 5, 64 ÷ 8 = 8 e 45 ÷ 5 = 9.",
+          "explicacao": "5, depois 8 e por último 9.",
+          "dados": {
+            "modo": "ordenar",
+            "itens": [
+              { "id": "nove", "texto": "45 ÷ 5" },
+              { "id": "cinco", "texto": "20 ÷ 4" },
+              { "id": "oito", "texto": "64 ÷ 8" }
+            ],
+            "ordemEsperada": ["cinco", "oito", "nove"],
+            "respostaCorretaTexto": "20 ÷ 4 = 5, 64 ÷ 8 = 8 e 45 ÷ 5 = 9."
+          }
+        }
+      ]
+    },
+    {
+      "id": "mat4-mult-m4",
+      "titulo": "Sacos e Restos",
+      "objetivo": "Dividir com sobra e entender o que o resto significa.",
+      "atividades": [
+        {
+          "id": "mat4-mult-m4-a1",
+          "tipo": "multipla_escolha",
+          "dificuldade": 3,
+          "habilidade": "Interpretar quociente e resto de uma divisão",
+          "codigo_bncc": "EF04MA07",
+          "enunciado": "Ao dividir 25 figurinhas entre 4 amigos, quantas cada um recebe e quantas sobram?",
+          "midia_descricao": null,
+          "opcoes": ["6 e sobra 1", "5 e sobra 5", "7 e sobra 3", "6 e sobra 2"],
+          "resposta": "6 e sobra 1",
+          "dica1": "Qual o maior número vezes 4 que cabe em 25?",
+          "dica2": "6 × 4 = 24, e para 25 falta 1.",
+          "explicacao": "25 ÷ 4 = 6 e sobra 1, porque 6 × 4 = 24 e 25 − 24 = 1.",
+          "dados": {
+            "alternativas": [
+              { "texto": "6 e sobra 1", "correta": true },
+              { "texto": "5 e sobra 5", "correta": false },
+              { "texto": "7 e sobra 3", "correta": false },
+              { "texto": "6 e sobra 2", "correta": false }
+            ],
+            "respostaCorretaTexto": "6 × 4 = 24 e sobram 1."
+          }
+        },
+        {
+          "id": "mat4-mult-m4-a2",
+          "tipo": "completar",
+          "dificuldade": 3,
+          "habilidade": "Encontrar o quociente conhecendo o resto",
+          "codigo_bncc": "EF04MA07",
+          "enunciado": "38 ÷ 5 tem quociente ___ e resto 3.",
+          "midia_descricao": null,
+          "opcoes": ["6", "7", "8"],
+          "resposta": "7",
+          "dica1": "Se sobra 3, o número antes do resto é 35.",
+          "dica2": "35 ÷ 5 = ?",
+          "explicacao": "38 = 7 × 5 + 3, então o quociente é 7.",
+          "dados": {
+            "opcoes": [{ "texto": "6" }, { "texto": "7" }, { "texto": "8" }],
+            "correta": "7",
+            "respostaCorretaTexto": "7 × 5 = 35 e 35 + 3 = 38."
+          }
+        },
+        {
+          "id": "mat4-mult-m4-a3",
+          "tipo": "verdadeiro_falso",
+          "dificuldade": 3,
+          "habilidade": "Conferir o resto de uma divisão",
+          "codigo_bncc": "EF04MA07",
+          "enunciado": "Ao dividir 30 por 7, sobram 2. Verdadeiro ou falso?",
+          "midia_descricao": null,
+          "resposta": true,
+          "dica1": "Qual o maior múltiplo de 7 até 30?",
+          "dica2": "7 × 4 = 28, e 30 − 28 = ?",
+          "explicacao": "Verdadeiro: 30 = 4 × 7 + 2, então sobram 2.",
+          "dados": {
+            "correta": true,
+            "respostaCorretaTexto": "Verdadeiro: 7 × 4 = 28 e 30 − 28 = 2."
+          }
+        },
+        {
+          "id": "mat4-mult-m4-a4",
+          "tipo": "multipla_escolha",
+          "dificuldade": 3,
+          "habilidade": "Resolver problema de divisão com resto em contexto",
+          "codigo_bncc": "EF04MA08",
+          "enunciado": "18 ovos divididos em caixas de 4: quantas caixas completas e quantos ovos sobram?",
+          "midia_descricao": null,
+          "opcoes": ["4 caixas e sobram 2", "3 caixas e sobram 6", "5 caixas e sobram 2", "4 caixas e sobram 1"],
+          "resposta": "4 caixas e sobram 2",
+          "dica1": "4 × 4 = 16. Quantos ovos ficam de fora?",
+          "dica2": "18 − 16 = ?",
+          "explicacao": "18 ÷ 4 = 4 e sobram 2 ovos.",
+          "dados": {
+            "alternativas": [
+              { "texto": "4 caixas e sobram 2", "correta": true },
+              { "texto": "3 caixas e sobram 6", "correta": false },
+              { "texto": "5 caixas e sobram 2", "correta": false },
+              { "texto": "4 caixas e sobram 1", "correta": false }
+            ],
+            "respostaCorretaTexto": "4 × 4 = 16 e 18 − 16 = 2 ovos sobrando."
+          }
+        },
+        {
+          "id": "mat4-mult-m4-a5",
+          "tipo": "multipla_escolha",
+          "dificuldade": 3,
+          "habilidade": "Calcular o resto de uma divisão",
+          "codigo_bncc": "EF04MA07",
+          "enunciado": "Ao repartir 47 doces em 6 sacos iguais, quantos doces sobram?",
+          "midia_descricao": null,
+          "opcoes": ["5", "3", "1", "2"],
+          "resposta": "5",
+          "dica1": "Procure o maior múltiplo de 6 até 47.",
+          "dica2": "6 × 7 = 42, e 47 − 42 = ?",
+          "explicacao": "47 = 7 × 6 + 5, então sobram 5 doces.",
+          "dados": {
+            "alternativas": [
+              { "texto": "5", "correta": true },
+              { "texto": "3", "correta": false },
+              { "texto": "1", "correta": false },
+              { "texto": "2", "correta": false }
+            ],
+            "respostaCorretaTexto": "6 × 7 = 42 e 47 − 42 = 5."
+          }
+        },
+        {
+          "id": "mat4-mult-m4-a6",
+          "tipo": "arrastar_soltar",
+          "dificuldade": 3,
+          "habilidade": "Calcular e ordenar restos de divisões",
+          "codigo_bncc": "EF04MA07",
+          "enunciado": "Coloque os restos do menor para o maior.",
+          "midia_descricao": null,
+          "opcoes": ["resto-um", "resto-dois", "resto-quatro"],
+          "resposta": ["resto-um", "resto-dois", "resto-quatro"],
+          "dica1": "Faça cada divisão e olhe só para o resto.",
+          "dica2": "10 ÷ 3 sobra 1, 14 ÷ 4 sobra 2 e 19 ÷ 5 sobra 4.",
+          "explicacao": "Restos 1, depois 2 e por último 4.",
+          "dados": {
+            "modo": "ordenar",
+            "itens": [
+              { "id": "resto-quatro", "texto": "19 ÷ 5" },
+              { "id": "resto-um", "texto": "10 ÷ 3" },
+              { "id": "resto-dois", "texto": "14 ÷ 4" }
+            ],
+            "ordemEsperada": ["resto-um", "resto-dois", "resto-quatro"],
+            "respostaCorretaTexto": "10 ÷ 3 sobra 1, 14 ÷ 4 sobra 2 e 19 ÷ 5 sobra 4."
+          }
+        }
+      ]
+    },
+    {
+      "id": "mat4-mult-m5",
+      "titulo": "A Gincana das Medidas",
+      "objetivo": "Usar dobro, triplo, metade e medidas em problemas de gincana.",
+      "atividades": [
+        {
+          "id": "mat4-mult-m5-a1",
+          "tipo": "multipla_escolha",
+          "dificuldade": 2,
+          "habilidade": "Calcular o triplo de um número",
+          "codigo_bncc": "EF04MA05",
+          "enunciado": "O triplo de 45 é quanto?",
+          "midia_descricao": null,
+          "opcoes": ["135", "125", "90", "145"],
+          "resposta": "135",
+          "dica1": "Triplo é três vezes o número.",
+          "dica2": "3 × 40 = 120 e 3 × 5 = 15.",
+          "explicacao": "3 × 45 = 135.",
+          "dados": {
+            "alternativas": [
+              { "texto": "135", "correta": true },
+              { "texto": "125", "correta": false },
+              { "texto": "90", "correta": false },
+              { "texto": "145", "correta": false }
+            ],
+            "respostaCorretaTexto": "3 × 40 = 120 e 3 × 5 = 15: 135."
+          }
+        },
+        {
+          "id": "mat4-mult-m5-a2",
+          "tipo": "completar",
+          "dificuldade": 2,
+          "habilidade": "Encontrar a metade de um número de dois algarismos",
+          "codigo_bncc": "EF04MA05",
+          "enunciado": "A metade de 96 é ___.",
+          "midia_descricao": null,
+          "opcoes": ["46", "48", "36"],
+          "resposta": "48",
+          "dica1": "Metade é dividir por 2.",
+          "dica2": "48 + 48 = ?",
+          "explicacao": "96 ÷ 2 = 48.",
+          "dados": {
+            "opcoes": [{ "texto": "46" }, { "texto": "48" }, { "texto": "36" }],
+            "correta": "48",
+            "respostaCorretaTexto": "48 + 48 = 96, então a metade de 96 é 48."
+          }
+        },
+        {
+          "id": "mat4-mult-m5-a3",
+          "tipo": "verdadeiro_falso",
+          "dificuldade": 2,
+          "habilidade": "Converter quilômetros em metros",
+          "codigo_bncc": "EF04MA09",
+          "enunciado": "2 km são 2000 metros. Verdadeiro ou falso?",
+          "midia_descricao": null,
+          "resposta": true,
+          "dica1": "Quantos metros tem 1 km?",
+          "dica2": "1000 + 1000.",
+          "explicacao": "Verdadeiro: 1 km = 1000 m, então 2 km = 2000 m.",
+          "dados": {
+            "correta": true,
+            "respostaCorretaTexto": "Verdadeiro: 2 × 1000 = 2000 metros."
+          }
+        },
+        {
+          "id": "mat4-mult-m5-a4",
+          "tipo": "multipla_escolha",
+          "dificuldade": 2,
+          "habilidade": "Multiplicar medidas de capacidade",
+          "codigo_bncc": "EF04MA09",
+          "enunciado": "Uma garrafa tem 2 litros. 9 garrafas iguais têm quantos litros?",
+          "midia_descricao": null,
+          "opcoes": ["18", "11", "16", "20"],
+          "resposta": "18",
+          "dica1": "Multiplique 9 por 2.",
+          "dica2": "9 × 2 = ?",
+          "explicacao": "9 × 2 = 18 litros.",
+          "dados": {
+            "alternativas": [
+              { "texto": "18", "correta": true },
+              { "texto": "11", "correta": false },
+              { "texto": "16", "correta": false },
+              { "texto": "20", "correta": false }
+            ],
+            "respostaCorretaTexto": "9 × 2 = 18 litros."
+          }
+        },
+        {
+          "id": "mat4-mult-m5-a5",
+          "tipo": "multipla_escolha",
+          "dificuldade": 3,
+          "habilidade": "Multiplicar medida de comprimento",
+          "codigo_bncc": "EF04MA09",
+          "enunciado": "Uma volta na pista tem 250 metros. 4 voltas são quantos metros?",
+          "midia_descricao": null,
+          "opcoes": ["1000", "900", "800", "1250"],
+          "resposta": "1000",
+          "dica1": "Multiplique 250 por 4.",
+          "dica2": "4 × 200 = 800 e 4 × 50 = 200.",
+          "explicacao": "4 × 250 = 1000 metros (1 km).",
+          "dados": {
+            "alternativas": [
+              { "texto": "1000", "correta": true },
+              { "texto": "900", "correta": false },
+              { "texto": "800", "correta": false },
+              { "texto": "1250", "correta": false }
+            ],
+            "respostaCorretaTexto": "4 × 250 = 1000 metros."
+          }
+        },
+        {
+          "id": "mat4-mult-m5-a6",
+          "tipo": "arrastar_soltar",
+          "dificuldade": 3,
+          "habilidade": "Comparar medidas de comprimento em unidades diferentes",
+          "codigo_bncc": "EF04MA09",
+          "enunciado": "Coloque as medidas do menor para o maior: 500 m, 1500 m, 2 km.",
+          "midia_descricao": null,
+          "opcoes": ["quinhentos-metros", "mil-e-quinhentos-metros", "dois-quilometros"],
+          "resposta": ["quinhentos-metros", "mil-e-quinhentos-metros", "dois-quilometros"],
+          "dica1": "Transforme o quilômetro em metros antes de comparar.",
+          "dica2": "2 km são 2000 m, então 1500 m vem antes.",
+          "explicacao": "500 m, 1500 m e 2 km (2000 m).",
+          "dados": {
+            "modo": "ordenar",
+            "itens": [
+              { "id": "dois-quilometros", "texto": "2 km" },
+              { "id": "quinhentos-metros", "texto": "500 m" },
+              { "id": "mil-e-quinhentos-metros", "texto": "1500 m" }
+            ],
+            "ordemEsperada": ["quinhentos-metros", "mil-e-quinhentos-metros", "dois-quilometros"],
+            "respostaCorretaTexto": "500 m, 1500 m e 2000 m (2 km)."
+          }
+        }
+      ]
+    }
+  ]
+}

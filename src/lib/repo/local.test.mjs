@@ -57,11 +57,20 @@ test('criarPerfil grava os mesmos defaults que o banco daria', async () => {
 test('carregarMissoes casa o ano do perfil ("3") com o do conteúdo ("3º")', async () => {
   const terceiro = await repo.carregarMissoes('3')
   assert.equal(terceiro.length, 5)
+  assert.equal(terceiro[0].id, 'mat3-mult-m1')
   // O conteúdo embarcado é de Matemática; `materiaId` é ignorado de propósito.
   assert.equal(terceiro[0].concluida_por.length, 0)
 
-  assert.deepEqual(await repo.carregarMissoes('2'), [])
-  assert.deepEqual(await repo.carregarMissoes('4'), [])
+  // Cada ano entrega a sua própria trilha, não a de outro ano.
+  const segundo = await repo.carregarMissoes('2')
+  assert.equal(segundo[0].id, 'mat2-soma-m1')
+
+  // Aceita o ano com ordinal também.
+  const quarto = await repo.carregarMissoes('4º')
+  assert.equal(quarto[0].id, 'mat4-mult-m1')
+
+  // Ano sem banco embarcado devolve [] — é o caso que mostra o aviso na tela.
+  assert.deepEqual(await repo.carregarMissoes('1'), [])
 })
 
 test('carregarMissaoComPerguntas traz perguntas ordenadas e a matéria', async () => {

@@ -1,6 +1,835 @@
 {
-  "gerado_em": "2026-10-20T02:28:51.584Z",
+  "gerado_em": "2026-10-20T03:59:30.499Z",
   "anos": [
+    {
+      "ano": "2º",
+      "materia": "Matemática",
+      "materia_id": "local-mat",
+      "missoes": [
+        {
+          "id": "mat2-soma-m1",
+          "titulo": "A Feira do Kapivarus",
+          "descricao": "Somar quantidades pequenas juntando grupos e conferir o total.",
+          "dificuldade": 1,
+          "ordem": 1,
+          "ano": "2º",
+          "materia_id": "local-mat",
+          "ativa": true,
+          "perguntas": [
+            {
+              "id": "mat2-soma-m1-a1",
+              "missao_id": "mat2-soma-m1",
+              "tipo": "contar_imagens",
+              "enunciado": "🍎🍎🍎 e 🍎🍎🍎. Quantas maçãs há na cesta?",
+              "dados": {
+                "opcoes": [
+                  5,
+                  6,
+                  7,
+                  8
+                ],
+                "correta": 6,
+                "respostaCorretaTexto": "3 maçãs e mais 3 maçãs: 3 + 3 = 6."
+              },
+              "dica": "Conte primeiro as maçãs do primeiro grupo. São 3 maçãs e mais 3 maçãs.",
+              "explicacao": "3 maçãs + 3 maçãs = 6 maçãs.",
+              "ordem": 1
+            },
+            {
+              "id": "mat2-soma-m1-a2",
+              "missao_id": "mat2-soma-m1",
+              "tipo": "multipla_escolha",
+              "enunciado": "O Kapivarus comprou 7 bananas de manhã e 5 à tarde. Quantas bananas comprou no total?",
+              "dados": {
+                "alternativas": [
+                  {
+                    "texto": "11",
+                    "correta": false
+                  },
+                  {
+                    "texto": "12",
+                    "correta": true
+                  },
+                  {
+                    "texto": "13",
+                    "correta": false
+                  },
+                  {
+                    "texto": "10",
+                    "correta": false
+                  }
+                ],
+                "respostaCorretaTexto": "7 + 5 = 12 bananas."
+              },
+              "dica": "Junte as bananas da manhã com as da tarde. 7 + 5: conte 7, 8, 9, 10, 11, 12.",
+              "explicacao": "7 + 5 = 12 bananas.",
+              "ordem": 2
+            },
+            {
+              "id": "mat2-soma-m1-a3",
+              "missao_id": "mat2-soma-m1",
+              "tipo": "verdadeiro_falso",
+              "enunciado": "Se 8 + 4 = 12, então 4 + 8 também dá 12. Verdadeiro ou falso?",
+              "dados": {
+                "correta": true,
+                "respostaCorretaTexto": "Verdadeiro: 8 + 4 e 4 + 8 dão 12."
+              },
+              "dica": "Trocar a ordem das parcelas muda o resultado? Conte 4 e depois 8, e compare com 8 e depois 4.",
+              "explicacao": "Verdadeiro: 4 + 8 = 12, igual a 8 + 4. A ordem não muda a soma.",
+              "ordem": 3
+            },
+            {
+              "id": "mat2-soma-m1-a4",
+              "missao_id": "mat2-soma-m1",
+              "tipo": "completar",
+              "enunciado": "A Dona Coruja tinha 9 lápis e ganhou mais 6. Agora ela tem ___ lápis.",
+              "dados": {
+                "opcoes": [
+                  {
+                    "texto": "13"
+                  },
+                  {
+                    "texto": "14"
+                  },
+                  {
+                    "texto": "15"
+                  }
+                ],
+                "correta": "15",
+                "respostaCorretaTexto": "9 + 6 = 15 lápis."
+              },
+              "dica": "Comece no 9 e conte mais 6. 9 + 6: do 9 ao 10 é 1, e ainda faltam 5.",
+              "explicacao": "9 + 6 = 15 lápis.",
+              "ordem": 4
+            },
+            {
+              "id": "mat2-soma-m1-a5",
+              "missao_id": "mat2-soma-m1",
+              "tipo": "multipla_escolha",
+              "enunciado": "Na banca havia 14 laranjas. Venderam 5. Quantas laranjas sobraram?",
+              "dados": {
+                "alternativas": [
+                  {
+                    "texto": "8",
+                    "correta": false
+                  },
+                  {
+                    "texto": "9",
+                    "correta": true
+                  },
+                  {
+                    "texto": "10",
+                    "correta": false
+                  },
+                  {
+                    "texto": "19",
+                    "correta": false
+                  }
+                ],
+                "respostaCorretaTexto": "14 − 5 = 9 laranjas."
+              },
+              "dica": "Sobrar é o que fica quando tiramos uma parte. Conte de 14 para trás 5 vezes.",
+              "explicacao": "14 − 5 = 9 laranjas.",
+              "ordem": 5
+            },
+            {
+              "id": "mat2-soma-m1-a6",
+              "missao_id": "mat2-soma-m1",
+              "tipo": "arrastar_soltar",
+              "enunciado": "Coloque as somas do menor resultado para o maior.",
+              "dados": {
+                "modo": "ordenar",
+                "itens": [
+                  {
+                    "id": "soma-5-2",
+                    "texto": "5 + 2"
+                  },
+                  {
+                    "id": "soma-8-4",
+                    "texto": "8 + 4"
+                  },
+                  {
+                    "id": "soma-3-3",
+                    "texto": "3 + 3"
+                  }
+                ],
+                "ordemEsperada": [
+                  "soma-3-3",
+                  "soma-5-2",
+                  "soma-8-4"
+                ],
+                "respostaCorretaTexto": "3 + 3 = 6, 5 + 2 = 7 e 8 + 4 = 12."
+              },
+              "dica": "Calcule cada soma antes de ordenar. 3 + 3 = 6, 5 + 2 = 7 e 8 + 4 = 12.",
+              "explicacao": "6, depois 7 e por último 12.",
+              "ordem": 6
+            }
+          ]
+        },
+        {
+          "id": "mat2-soma-m2",
+          "titulo": "Dezenas na Horta",
+          "descricao": "Reconhecer dezenas e compor números com dezenas e unidades.",
+          "dificuldade": 1,
+          "ordem": 2,
+          "ano": "2º",
+          "materia_id": "local-mat",
+          "ativa": true,
+          "perguntas": [
+            {
+              "id": "mat2-soma-m2-a1",
+              "missao_id": "mat2-soma-m2",
+              "tipo": "multipla_escolha",
+              "enunciado": "3 dezenas de cenouras são quantas cenouras?",
+              "dados": {
+                "alternativas": [
+                  {
+                    "texto": "13",
+                    "correta": false
+                  },
+                  {
+                    "texto": "30",
+                    "correta": true
+                  },
+                  {
+                    "texto": "3",
+                    "correta": false
+                  },
+                  {
+                    "texto": "33",
+                    "correta": false
+                  }
+                ],
+                "respostaCorretaTexto": "3 dezenas = 10 + 10 + 10 = 30."
+              },
+              "dica": "Uma dezena é um grupo de 10. 3 dezenas: 10 + 10 + 10.",
+              "explicacao": "3 dezenas = 30 cenouras.",
+              "ordem": 1
+            },
+            {
+              "id": "mat2-soma-m2-a2",
+              "missao_id": "mat2-soma-m2",
+              "tipo": "completar",
+              "enunciado": "4 dezenas e 5 unidades formam o número ___.",
+              "dados": {
+                "opcoes": [
+                  {
+                    "texto": "54"
+                  },
+                  {
+                    "texto": "45"
+                  },
+                  {
+                    "texto": "405"
+                  }
+                ],
+                "correta": "45",
+                "respostaCorretaTexto": "4 dezenas e 5 unidades: 40 + 5 = 45."
+              },
+              "dica": "Primeiro as dezenas, depois as unidades: 40 e 5. 40 + 5 é o número procurado.",
+              "explicacao": "4 dezenas (40) e 5 unidades (5) formam 45.",
+              "ordem": 2
+            },
+            {
+              "id": "mat2-soma-m2-a3",
+              "missao_id": "mat2-soma-m2",
+              "tipo": "verdadeiro_falso",
+              "enunciado": "10 + 10 + 10 é o mesmo que 3 dezenas. Verdadeiro ou falso?",
+              "dados": {
+                "correta": true,
+                "respostaCorretaTexto": "Verdadeiro: 10 + 10 + 10 = 30 = 3 dezenas."
+              },
+              "dica": "Quanto vale uma dezena? Conte de 10 em 10: 10, 20, 30.",
+              "explicacao": "Verdadeiro: 10 + 10 + 10 = 30, que são 3 dezenas.",
+              "ordem": 3
+            },
+            {
+              "id": "mat2-soma-m2-a4",
+              "missao_id": "mat2-soma-m2",
+              "tipo": "multipla_escolha",
+              "enunciado": "A horta tem 20 pés de alface e 20 pés de couve. Quantos pés há ao todo?",
+              "dados": {
+                "alternativas": [
+                  {
+                    "texto": "22",
+                    "correta": false
+                  },
+                  {
+                    "texto": "40",
+                    "correta": true
+                  },
+                  {
+                    "texto": "30",
+                    "correta": false
+                  },
+                  {
+                    "texto": "44",
+                    "correta": false
+                  }
+                ],
+                "respostaCorretaTexto": "20 + 20 = 40 pés."
+              },
+              "dica": "Some duas dezenas. 2 dezenas + 2 dezenas = 4 dezenas.",
+              "explicacao": "20 + 20 = 40 pés.",
+              "ordem": 4
+            },
+            {
+              "id": "mat2-soma-m2-a5",
+              "missao_id": "mat2-soma-m2",
+              "tipo": "contar_imagens",
+              "enunciado": "🥕🥕🥕🥕🥕 🥕🥕🥕🥕🥕 e mais um grupo de 10. Quantas cenouras são 3 grupos de 10?",
+              "dados": {
+                "opcoes": [
+                  20,
+                  25,
+                  30,
+                  40
+                ],
+                "correta": 30,
+                "respostaCorretaTexto": "Três grupos de 10: 10 + 10 + 10 = 30."
+              },
+              "dica": "Cada grupo tem 10 cenouras. Conte de 10 em 10: 10, 20, 30.",
+              "explicacao": "3 grupos de 10 cenouras são 30 cenouras.",
+              "ordem": 5
+            },
+            {
+              "id": "mat2-soma-m2-a6",
+              "missao_id": "mat2-soma-m2",
+              "tipo": "arrastar_soltar",
+              "enunciado": "Coloque do menor para o maior: 2 dezenas e 5 unidades, 3 dezenas, 4 dezenas.",
+              "dados": {
+                "modo": "ordenar",
+                "itens": [
+                  {
+                    "id": "trinta",
+                    "texto": "3 dezenas"
+                  },
+                  {
+                    "id": "quarenta",
+                    "texto": "4 dezenas"
+                  },
+                  {
+                    "id": "vinte-cinco",
+                    "texto": "2 dezenas e 5 unidades"
+                  }
+                ],
+                "ordemEsperada": [
+                  "vinte-cinco",
+                  "trinta",
+                  "quarenta"
+                ],
+                "respostaCorretaTexto": "25, 30 e 40."
+              },
+              "dica": "2 dezenas e 5 unidades não é só 20. 20 + 5 = 25, depois 30 e depois 40.",
+              "explicacao": "25, 30 e 40.",
+              "ordem": 6
+            }
+          ]
+        },
+        {
+          "id": "mat2-soma-m3",
+          "titulo": "A Loja de Brinquedos",
+          "descricao": "Resolver subtrações até 20 tirando uma quantidade do total.",
+          "dificuldade": 1,
+          "ordem": 3,
+          "ano": "2º",
+          "materia_id": "local-mat",
+          "ativa": true,
+          "perguntas": [
+            {
+              "id": "mat2-soma-m3-a1",
+              "missao_id": "mat2-soma-m3",
+              "tipo": "multipla_escolha",
+              "enunciado": "A loja tinha 15 pipas e vendeu 7. Quantas pipas ficaram?",
+              "dados": {
+                "alternativas": [
+                  {
+                    "texto": "7",
+                    "correta": false
+                  },
+                  {
+                    "texto": "8",
+                    "correta": true
+                  },
+                  {
+                    "texto": "9",
+                    "correta": false
+                  },
+                  {
+                    "texto": "22",
+                    "correta": false
+                  }
+                ],
+                "respostaCorretaTexto": "15 − 7 = 8 pipas."
+              },
+              "dica": "Tire 7 de 15. 15 − 5 = 10 e ainda faltam tirar 2.",
+              "explicacao": "15 − 7 = 8 pipas.",
+              "ordem": 1
+            },
+            {
+              "id": "mat2-soma-m3-a2",
+              "missao_id": "mat2-soma-m3",
+              "tipo": "completar",
+              "enunciado": "18 − 9 = ___.",
+              "dados": {
+                "opcoes": [
+                  {
+                    "texto": "7"
+                  },
+                  {
+                    "texto": "8"
+                  },
+                  {
+                    "texto": "9"
+                  }
+                ],
+                "correta": "9",
+                "respostaCorretaTexto": "18 − 9 = 9."
+              },
+              "dica": "Pense: 9 + quanto dá 18? Conte de 9 até 18.",
+              "explicacao": "18 − 9 = 9, porque 9 + 9 = 18.",
+              "ordem": 2
+            },
+            {
+              "id": "mat2-soma-m3-a3",
+              "missao_id": "mat2-soma-m3",
+              "tipo": "verdadeiro_falso",
+              "enunciado": "Se 12 − 5 = 7, então 7 + 5 = 12. Verdadeiro ou falso?",
+              "dados": {
+                "correta": true,
+                "respostaCorretaTexto": "Verdadeiro: 7 + 5 = 12."
+              },
+              "dica": "Somar de volta devolve o número do começo? 7 + 5 você já sabe calcular.",
+              "explicacao": "Verdadeiro: somar de volta é o caminho inverso da subtração.",
+              "ordem": 3
+            },
+            {
+              "id": "mat2-soma-m3-a4",
+              "missao_id": "mat2-soma-m3",
+              "tipo": "multipla_escolha",
+              "enunciado": "O Kapivarus tinha 20 figurinhas e deu 6 para a amiga. Com quantas figurinhas ele ficou?",
+              "dados": {
+                "alternativas": [
+                  {
+                    "texto": "14",
+                    "correta": true
+                  },
+                  {
+                    "texto": "13",
+                    "correta": false
+                  },
+                  {
+                    "texto": "15",
+                    "correta": false
+                  },
+                  {
+                    "texto": "26",
+                    "correta": false
+                  }
+                ],
+                "respostaCorretaTexto": "20 − 6 = 14 figurinhas."
+              },
+              "dica": "Ele deu, então o número diminui. 20 − 6: de 20 para trás, 6 passos.",
+              "explicacao": "20 − 6 = 14 figurinhas.",
+              "ordem": 4
+            },
+            {
+              "id": "mat2-soma-m3-a5",
+              "missao_id": "mat2-soma-m3",
+              "tipo": "multipla_escolha",
+              "enunciado": "Numa caixa havia 16 carrinhos. 8 foram para a vitrine. Quantos carrinhos ficaram na caixa?",
+              "dados": {
+                "alternativas": [
+                  {
+                    "texto": "8",
+                    "correta": true
+                  },
+                  {
+                    "texto": "9",
+                    "correta": false
+                  },
+                  {
+                    "texto": "7",
+                    "correta": false
+                  },
+                  {
+                    "texto": "24",
+                    "correta": false
+                  }
+                ],
+                "respostaCorretaTexto": "16 − 8 = 8 carrinhos."
+              },
+              "dica": "A metade de 16 saiu da caixa. 16 − 8 = ?",
+              "explicacao": "16 − 8 = 8 carrinhos.",
+              "ordem": 5
+            },
+            {
+              "id": "mat2-soma-m3-a6",
+              "missao_id": "mat2-soma-m3",
+              "tipo": "arrastar_soltar",
+              "enunciado": "Coloque as subtrações do menor resultado para o maior.",
+              "dados": {
+                "modo": "ordenar",
+                "itens": [
+                  {
+                    "id": "dez-menos-dois",
+                    "texto": "10 − 2"
+                  },
+                  {
+                    "id": "nove-menos-cinco",
+                    "texto": "9 − 5"
+                  },
+                  {
+                    "id": "oito-menos-oito",
+                    "texto": "8 − 8"
+                  }
+                ],
+                "ordemEsperada": [
+                  "oito-menos-oito",
+                  "nove-menos-cinco",
+                  "dez-menos-dois"
+                ],
+                "respostaCorretaTexto": "8 − 8 = 0, 9 − 5 = 4 e 10 − 2 = 8."
+              },
+              "dica": "Calcule cada subtração antes de ordenar. 8 − 8 = 0, 9 − 5 = 4 e 10 − 2 = 8.",
+              "explicacao": "0, depois 4 e por último 8.",
+              "ordem": 6
+            }
+          ]
+        },
+        {
+          "id": "mat2-soma-m4",
+          "titulo": "Corrida de Tampinhas",
+          "descricao": "Somar números de dois algarismos, inclusive quando precisa reagrupar.",
+          "dificuldade": 1,
+          "ordem": 4,
+          "ano": "2º",
+          "materia_id": "local-mat",
+          "ativa": true,
+          "perguntas": [
+            {
+              "id": "mat2-soma-m4-a1",
+              "missao_id": "mat2-soma-m4",
+              "tipo": "multipla_escolha",
+              "enunciado": "24 + 13 = ?",
+              "dados": {
+                "alternativas": [
+                  {
+                    "texto": "37",
+                    "correta": true
+                  },
+                  {
+                    "texto": "36",
+                    "correta": false
+                  },
+                  {
+                    "texto": "27",
+                    "correta": false
+                  },
+                  {
+                    "texto": "47",
+                    "correta": false
+                  }
+                ],
+                "respostaCorretaTexto": "24 + 13 = 37."
+              },
+              "dica": "Some primeiro as unidades: 4 + 3. Depois some as dezenas: 20 + 10.",
+              "explicacao": "4 + 3 = 7 e 20 + 10 = 30, então 37.",
+              "ordem": 1
+            },
+            {
+              "id": "mat2-soma-m4-a2",
+              "missao_id": "mat2-soma-m4",
+              "tipo": "completar",
+              "enunciado": "36 + 28 = ___.",
+              "dados": {
+                "opcoes": [
+                  {
+                    "texto": "54"
+                  },
+                  {
+                    "texto": "64"
+                  },
+                  {
+                    "texto": "58"
+                  }
+                ],
+                "correta": "64",
+                "respostaCorretaTexto": "36 + 28 = 64."
+              },
+              "dica": "6 + 8 passa de 10: isso forma uma nova dezena. 30 + 20 = 50, 6 + 8 = 14, e 50 + 14 = ?",
+              "explicacao": "36 + 28 = 64, com reagrupamento das unidades.",
+              "ordem": 2
+            },
+            {
+              "id": "mat2-soma-m4-a3",
+              "missao_id": "mat2-soma-m4",
+              "tipo": "verdadeiro_falso",
+              "enunciado": "45 + 7 = 52. Verdadeiro ou falso?",
+              "dados": {
+                "correta": true,
+                "respostaCorretaTexto": "Verdadeiro: 45 + 7 = 52."
+              },
+              "dica": "5 + 7 passa de 10? 45 + 5 = 50 e ainda falta somar 2.",
+              "explicacao": "Verdadeiro: 45 + 7 = 52.",
+              "ordem": 3
+            },
+            {
+              "id": "mat2-soma-m4-a4",
+              "missao_id": "mat2-soma-m4",
+              "tipo": "multipla_escolha",
+              "enunciado": "Uma criança juntou 38 tampinhas e a outra juntou 47. Quantas tampinhas juntaram ao todo?",
+              "dados": {
+                "alternativas": [
+                  {
+                    "texto": "75",
+                    "correta": false
+                  },
+                  {
+                    "texto": "85",
+                    "correta": true
+                  },
+                  {
+                    "texto": "95",
+                    "correta": false
+                  },
+                  {
+                    "texto": "74",
+                    "correta": false
+                  }
+                ],
+                "respostaCorretaTexto": "38 + 47 = 85 tampinhas."
+              },
+              "dica": "Some 30 + 40 e depois 8 + 7. 8 + 7 = 15: isso dá uma dezena a mais.",
+              "explicacao": "38 + 47 = 85 tampinhas.",
+              "ordem": 4
+            },
+            {
+              "id": "mat2-soma-m4-a5",
+              "missao_id": "mat2-soma-m4",
+              "tipo": "multipla_escolha",
+              "enunciado": "Das 62 tampinhas, 25 são azuis. Quantas não são azuis?",
+              "dados": {
+                "alternativas": [
+                  {
+                    "texto": "37",
+                    "correta": true
+                  },
+                  {
+                    "texto": "47",
+                    "correta": false
+                  },
+                  {
+                    "texto": "27",
+                    "correta": false
+                  },
+                  {
+                    "texto": "36",
+                    "correta": false
+                  }
+                ],
+                "respostaCorretaTexto": "62 − 25 = 37."
+              },
+              "dica": "O total menos as azuis dá as outras. 62 − 25: tire 20 e depois 5.",
+              "explicacao": "62 − 25 = 37 tampinhas que não são azuis.",
+              "ordem": 5
+            },
+            {
+              "id": "mat2-soma-m4-a6",
+              "missao_id": "mat2-soma-m4",
+              "tipo": "arrastar_soltar",
+              "enunciado": "Coloque as somas do menor resultado para o maior.",
+              "dados": {
+                "modo": "ordenar",
+                "itens": [
+                  {
+                    "id": "quarenta-e-um",
+                    "texto": "40 + 1"
+                  },
+                  {
+                    "id": "vinte-e-nove",
+                    "texto": "20 + 9"
+                  },
+                  {
+                    "id": "trinta-e-quatro",
+                    "texto": "30 + 4"
+                  }
+                ],
+                "ordemEsperada": [
+                  "vinte-e-nove",
+                  "trinta-e-quatro",
+                  "quarenta-e-um"
+                ],
+                "respostaCorretaTexto": "29, 34 e 41."
+              },
+              "dica": "Calcule cada soma antes de ordenar. 20 + 9 = 29, 30 + 4 = 34 e 40 + 1 = 41.",
+              "explicacao": "29, depois 34 e por último 41.",
+              "ordem": 6
+            }
+          ]
+        },
+        {
+          "id": "mat2-soma-m5",
+          "titulo": "A Festa da Turma",
+          "descricao": "Usar dobro, metade e soma para resolver problemas de festa.",
+          "dificuldade": 1,
+          "ordem": 5,
+          "ano": "2º",
+          "materia_id": "local-mat",
+          "ativa": true,
+          "perguntas": [
+            {
+              "id": "mat2-soma-m5-a1",
+              "missao_id": "mat2-soma-m5",
+              "tipo": "multipla_escolha",
+              "enunciado": "Cada amigo trouxe 2 balões. 5 amigos trouxeram quantos balões?",
+              "dados": {
+                "alternativas": [
+                  {
+                    "texto": "10",
+                    "correta": true
+                  },
+                  {
+                    "texto": "7",
+                    "correta": false
+                  },
+                  {
+                    "texto": "12",
+                    "correta": false
+                  },
+                  {
+                    "texto": "5",
+                    "correta": false
+                  }
+                ],
+                "respostaCorretaTexto": "2 + 2 + 2 + 2 + 2 = 10 balões."
+              },
+              "dica": "Conte de 2 em 2, cinco vezes. 2 + 2 + 2 + 2 + 2.",
+              "explicacao": "5 grupos de 2 balões são 10 balões.",
+              "ordem": 1
+            },
+            {
+              "id": "mat2-soma-m5-a2",
+              "missao_id": "mat2-soma-m5",
+              "tipo": "completar",
+              "enunciado": "O dobro de 12 é ___.",
+              "dados": {
+                "opcoes": [
+                  {
+                    "texto": "22"
+                  },
+                  {
+                    "texto": "24"
+                  },
+                  {
+                    "texto": "14"
+                  }
+                ],
+                "correta": "24",
+                "respostaCorretaTexto": "12 + 12 = 24."
+              },
+              "dica": "Dobro é o número somado com ele mesmo. 12 + 12 = ?",
+              "explicacao": "O dobro de 12 é 24.",
+              "ordem": 2
+            },
+            {
+              "id": "mat2-soma-m5-a3",
+              "missao_id": "mat2-soma-m5",
+              "tipo": "verdadeiro_falso",
+              "enunciado": "A metade de 18 é 9. Verdadeiro ou falso?",
+              "dados": {
+                "correta": true,
+                "respostaCorretaTexto": "Verdadeiro: 9 + 9 = 18."
+              },
+              "dica": "Metade é dividir em duas partes iguais. 9 + 9 dá 18?",
+              "explicacao": "Verdadeiro: 9 + 9 = 18, então a metade de 18 é 9.",
+              "ordem": 3
+            },
+            {
+              "id": "mat2-soma-m5-a4",
+              "missao_id": "mat2-soma-m5",
+              "tipo": "multipla_escolha",
+              "enunciado": "Havia 45 salgadinhos na mesa. Foram comidos 18. Quantos salgadinhos sobraram?",
+              "dados": {
+                "alternativas": [
+                  {
+                    "texto": "27",
+                    "correta": true
+                  },
+                  {
+                    "texto": "37",
+                    "correta": false
+                  },
+                  {
+                    "texto": "23",
+                    "correta": false
+                  },
+                  {
+                    "texto": "33",
+                    "correta": false
+                  }
+                ],
+                "respostaCorretaTexto": "45 − 18 = 27 salgadinhos."
+              },
+              "dica": "Tire 18 de 45. 45 − 10 = 35 e depois 35 − 8.",
+              "explicacao": "45 − 18 = 27 salgadinhos.",
+              "ordem": 4
+            },
+            {
+              "id": "mat2-soma-m5-a5",
+              "missao_id": "mat2-soma-m5",
+              "tipo": "contar_imagens",
+              "enunciado": "🧁🧁🧁 🧁🧁🧁 🧁🧁🧁 🧁🧁🧁. Quantos bolinhos há nos 4 pratos?",
+              "dados": {
+                "opcoes": [
+                  9,
+                  12,
+                  15,
+                  16
+                ],
+                "correta": 12,
+                "respostaCorretaTexto": "3 + 3 + 3 + 3 = 12 bolinhos."
+              },
+              "dica": "Cada prato tem 3 bolinhos. Conte de 3 em 3: 3, 6, 9, 12.",
+              "explicacao": "4 pratos com 3 bolinhos: 12 bolinhos.",
+              "ordem": 5
+            },
+            {
+              "id": "mat2-soma-m5-a6",
+              "missao_id": "mat2-soma-m5",
+              "tipo": "arrastar_soltar",
+              "enunciado": "Coloque do menor para o maior: 3 + 2, o dobro de 5, 2 dezenas.",
+              "dados": {
+                "modo": "ordenar",
+                "itens": [
+                  {
+                    "id": "vinte",
+                    "texto": "2 dezenas"
+                  },
+                  {
+                    "id": "cinco",
+                    "texto": "3 + 2"
+                  },
+                  {
+                    "id": "dez",
+                    "texto": "o dobro de 5"
+                  }
+                ],
+                "ordemEsperada": [
+                  "cinco",
+                  "dez",
+                  "vinte"
+                ],
+                "respostaCorretaTexto": "3 + 2 = 5, dobro de 5 = 10 e 2 dezenas = 20."
+              },
+              "dica": "Calcule cada valor antes de ordenar. 3 + 2 = 5, dobro de 5 = 10 e 2 dezenas = 20.",
+              "explicacao": "5, depois 10 e por último 20.",
+              "ordem": 6
+            }
+          ]
+        }
+      ]
+    },
     {
       "ano": "3º",
       "materia": "Matemática",
@@ -711,6 +1540,19 @@
               "ordem": 2
             },
             {
+              "id": "mat3-mult-m5-e3",
+              "missao_id": "mat3-mult-m5",
+              "tipo": "verdadeiro_falso",
+              "enunciado": "Se 4 × 9 = 36, então 4 × 10 = 46. Verdadeiro ou falso?",
+              "dados": {
+                "correta": false,
+                "respostaCorretaTexto": "Falso: 4 × 10 = 40."
+              },
+              "dica": "Tabuada do 10: o resultado termina em 0. De 4 × 9 para 4 × 10 entra mais um 4, não mais um 10.",
+              "explicacao": "Falso! 4 × 10 = 40. De 36, somando mais um 4, chegamos em 40. Cuidado com esse truquinha!",
+              "ordem": 3
+            },
+            {
               "id": "mat3-mult-m5-e4",
               "missao_id": "mat3-mult-m5",
               "tipo": "arrastar_soltar",
@@ -789,6 +1631,868 @@
               },
               "dica": "São 5 grupos iguais com 7 cadeiras. Tabuada do 5: o resultado termina em 0 ou 5.",
               "explicacao": "5 × 7 = 35 cadeiras. Você contou tudo certinho!",
+              "ordem": 6
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ano": "4º",
+      "materia": "Matemática",
+      "materia_id": "local-mat",
+      "missoes": [
+        {
+          "id": "mat4-mult-m1",
+          "titulo": "A Estufa do Kapivarus",
+          "descricao": "Multiplicar números de dois algarismos por um algarismo.",
+          "dificuldade": 1,
+          "ordem": 1,
+          "ano": "4º",
+          "materia_id": "local-mat",
+          "ativa": true,
+          "perguntas": [
+            {
+              "id": "mat4-mult-m1-a1",
+              "missao_id": "mat4-mult-m1",
+              "tipo": "multipla_escolha",
+              "enunciado": "3 × 24 = ?",
+              "dados": {
+                "alternativas": [
+                  {
+                    "texto": "62",
+                    "correta": false
+                  },
+                  {
+                    "texto": "72",
+                    "correta": true
+                  },
+                  {
+                    "texto": "66",
+                    "correta": false
+                  },
+                  {
+                    "texto": "82",
+                    "correta": false
+                  }
+                ],
+                "respostaCorretaTexto": "3 × 20 = 60 e 3 × 4 = 12: 60 + 12 = 72."
+              },
+              "dica": "Separe 24 em 20 + 4. 3 × 20 = 60 e 3 × 4 = 12. Some os dois.",
+              "explicacao": "3 × 24 = 60 + 12 = 72.",
+              "ordem": 1
+            },
+            {
+              "id": "mat4-mult-m1-a2",
+              "missao_id": "mat4-mult-m1",
+              "tipo": "completar",
+              "enunciado": "5 × 36 = ___.",
+              "dados": {
+                "opcoes": [
+                  {
+                    "texto": "150"
+                  },
+                  {
+                    "texto": "180"
+                  },
+                  {
+                    "texto": "186"
+                  }
+                ],
+                "correta": "180",
+                "respostaCorretaTexto": "5 × 30 = 150 e 5 × 6 = 30: 180."
+              },
+              "dica": "36 é 30 + 6. 5 × 30 = 150 e 5 × 6 = 30.",
+              "explicacao": "5 × 36 = 150 + 30 = 180.",
+              "ordem": 2
+            },
+            {
+              "id": "mat4-mult-m1-a3",
+              "missao_id": "mat4-mult-m1",
+              "tipo": "verdadeiro_falso",
+              "enunciado": "4 × 50 = 200. Verdadeiro ou falso?",
+              "dados": {
+                "correta": true,
+                "respostaCorretaTexto": "Verdadeiro: 4 × 5 = 20, então 4 × 50 = 200."
+              },
+              "dica": "50 é 5 dezenas. 4 × 5 = 20, e 20 dezenas são 200.",
+              "explicacao": "Verdadeiro: 4 × 50 = 200.",
+              "ordem": 3
+            },
+            {
+              "id": "mat4-mult-m1-a4",
+              "missao_id": "mat4-mult-m1",
+              "tipo": "multipla_escolha",
+              "enunciado": "Cada bandeja tem 28 mudas. Em 6 bandejas há quantas mudas?",
+              "dados": {
+                "alternativas": [
+                  {
+                    "texto": "168",
+                    "correta": true
+                  },
+                  {
+                    "texto": "158",
+                    "correta": false
+                  },
+                  {
+                    "texto": "148",
+                    "correta": false
+                  },
+                  {
+                    "texto": "178",
+                    "correta": false
+                  }
+                ],
+                "respostaCorretaTexto": "6 × 20 = 120 e 6 × 8 = 48: 168 mudas."
+              },
+              "dica": "Faça 6 × 20 e 6 × 8, depois some. 6 × 20 = 120 e 6 × 8 = 48.",
+              "explicacao": "6 × 28 = 120 + 48 = 168 mudas.",
+              "ordem": 4
+            },
+            {
+              "id": "mat4-mult-m1-a5",
+              "missao_id": "mat4-mult-m1",
+              "tipo": "multipla_escolha",
+              "enunciado": "7 × 40 = ?",
+              "dados": {
+                "alternativas": [
+                  {
+                    "texto": "280",
+                    "correta": true
+                  },
+                  {
+                    "texto": "270",
+                    "correta": false
+                  },
+                  {
+                    "texto": "240",
+                    "correta": false
+                  },
+                  {
+                    "texto": "2800",
+                    "correta": false
+                  }
+                ],
+                "respostaCorretaTexto": "7 × 4 = 28, então 7 × 40 = 280."
+              },
+              "dica": "Faça 7 × 4 primeiro. 7 × 4 = 28, e cada dezena vale 10.",
+              "explicacao": "7 × 40 = 280.",
+              "ordem": 5
+            },
+            {
+              "id": "mat4-mult-m1-a6",
+              "missao_id": "mat4-mult-m1",
+              "tipo": "arrastar_soltar",
+              "enunciado": "Coloque os produtos do menor para o maior.",
+              "dados": {
+                "modo": "ordenar",
+                "itens": [
+                  {
+                    "id": "cento-e-oitenta",
+                    "texto": "2 × 90"
+                  },
+                  {
+                    "id": "sessenta",
+                    "texto": "3 × 20"
+                  },
+                  {
+                    "id": "cem",
+                    "texto": "4 × 25"
+                  }
+                ],
+                "ordemEsperada": [
+                  "sessenta",
+                  "cem",
+                  "cento-e-oitenta"
+                ],
+                "respostaCorretaTexto": "3 × 20 = 60, 4 × 25 = 100 e 2 × 90 = 180."
+              },
+              "dica": "Calcule cada multiplicação antes de ordenar. 3 × 20 = 60, 4 × 25 = 100 e 2 × 90 = 180.",
+              "explicacao": "60, depois 100 e por último 180.",
+              "ordem": 6
+            }
+          ]
+        },
+        {
+          "id": "mat4-mult-m2",
+          "titulo": "O Mercadinho",
+          "descricao": "Multiplicar dois números de dois algarismos decompondo as parcelas.",
+          "dificuldade": 1,
+          "ordem": 2,
+          "ano": "4º",
+          "materia_id": "local-mat",
+          "ativa": true,
+          "perguntas": [
+            {
+              "id": "mat4-mult-m2-a1",
+              "missao_id": "mat4-mult-m2",
+              "tipo": "multipla_escolha",
+              "enunciado": "12 × 15 = ?",
+              "dados": {
+                "alternativas": [
+                  {
+                    "texto": "180",
+                    "correta": true
+                  },
+                  {
+                    "texto": "170",
+                    "correta": false
+                  },
+                  {
+                    "texto": "165",
+                    "correta": false
+                  },
+                  {
+                    "texto": "190",
+                    "correta": false
+                  }
+                ],
+                "respostaCorretaTexto": "12 × 10 = 120 e 12 × 5 = 60: 180."
+              },
+              "dica": "Faça 12 × 10 e 12 × 5. 12 × 10 = 120 e 12 × 5 = 60.",
+              "explicacao": "12 × 15 = 120 + 60 = 180.",
+              "ordem": 1
+            },
+            {
+              "id": "mat4-mult-m2-a2",
+              "missao_id": "mat4-mult-m2",
+              "tipo": "completar",
+              "enunciado": "23 × 11 = ___.",
+              "dados": {
+                "opcoes": [
+                  {
+                    "texto": "253"
+                  },
+                  {
+                    "texto": "243"
+                  },
+                  {
+                    "texto": "233"
+                  }
+                ],
+                "correta": "253",
+                "respostaCorretaTexto": "23 × 10 = 230 e 23 × 1 = 23: 253."
+              },
+              "dica": "11 é 10 + 1. 23 × 10 = 230 e 23 × 1 = 23.",
+              "explicacao": "23 × 11 = 230 + 23 = 253.",
+              "ordem": 2
+            },
+            {
+              "id": "mat4-mult-m2-a3",
+              "missao_id": "mat4-mult-m2",
+              "tipo": "verdadeiro_falso",
+              "enunciado": "20 × 30 = 600. Verdadeiro ou falso?",
+              "dados": {
+                "correta": true,
+                "respostaCorretaTexto": "Verdadeiro: 2 × 3 = 6, com dois zeros no fim: 600."
+              },
+              "dica": "2 × 3 = 6 e cada dezena vale 10. 2 × 3 = 6. Agora conte os zeros que vêm depois do 6.",
+              "explicacao": "Verdadeiro: 20 × 30 = 600.",
+              "ordem": 3
+            },
+            {
+              "id": "mat4-mult-m2-a4",
+              "missao_id": "mat4-mult-m2",
+              "tipo": "multipla_escolha",
+              "enunciado": "Cada caixa tem 24 ovos. 12 caixas têm quantos ovos?",
+              "dados": {
+                "alternativas": [
+                  {
+                    "texto": "288",
+                    "correta": true
+                  },
+                  {
+                    "texto": "268",
+                    "correta": false
+                  },
+                  {
+                    "texto": "278",
+                    "correta": false
+                  },
+                  {
+                    "texto": "240",
+                    "correta": false
+                  }
+                ],
+                "respostaCorretaTexto": "24 × 10 = 240 e 24 × 2 = 48: 288 ovos."
+              },
+              "dica": "Some 24 × 10 com 24 × 2. 24 × 10 = 240 e 24 × 2 = 48.",
+              "explicacao": "24 × 12 = 240 + 48 = 288 ovos.",
+              "ordem": 4
+            },
+            {
+              "id": "mat4-mult-m2-a5",
+              "missao_id": "mat4-mult-m2",
+              "tipo": "multipla_escolha",
+              "enunciado": "Um pano de prato custa 35 reais. Quanto custam 14 panos iguais?",
+              "dados": {
+                "alternativas": [
+                  {
+                    "texto": "490",
+                    "correta": true
+                  },
+                  {
+                    "texto": "470",
+                    "correta": false
+                  },
+                  {
+                    "texto": "480",
+                    "correta": false
+                  },
+                  {
+                    "texto": "350",
+                    "correta": false
+                  }
+                ],
+                "respostaCorretaTexto": "35 × 10 = 350 e 35 × 4 = 140: 490 reais."
+              },
+              "dica": "Some 35 × 10 com 35 × 4. 35 × 10 = 350 e 35 × 4 = 140.",
+              "explicacao": "35 × 14 = 350 + 140 = 490 reais.",
+              "ordem": 5
+            },
+            {
+              "id": "mat4-mult-m2-a6",
+              "missao_id": "mat4-mult-m2",
+              "tipo": "arrastar_soltar",
+              "enunciado": "Coloque os produtos do menor para o maior.",
+              "dados": {
+                "modo": "ordenar",
+                "itens": [
+                  {
+                    "id": "duzentos-e-vinte-e-cinco",
+                    "texto": "15 × 15"
+                  },
+                  {
+                    "id": "cento-e-vinte",
+                    "texto": "10 × 12"
+                  },
+                  {
+                    "id": "duzentos-e-dez",
+                    "texto": "21 × 10"
+                  }
+                ],
+                "ordemEsperada": [
+                  "cento-e-vinte",
+                  "duzentos-e-dez",
+                  "duzentos-e-vinte-e-cinco"
+                ],
+                "respostaCorretaTexto": "10 × 12 = 120, 21 × 10 = 210 e 15 × 15 = 225."
+              },
+              "dica": "Calcule cada multiplicação antes de ordenar. 10 × 12 = 120, 21 × 10 = 210 e 15 × 15 = 225.",
+              "explicacao": "120, depois 210 e por último 225.",
+              "ordem": 6
+            }
+          ]
+        },
+        {
+          "id": "mat4-mult-m3",
+          "titulo": "Repartindo a Colheita",
+          "descricao": "Dividir quantidades em partes iguais, sem sobra.",
+          "dificuldade": 1,
+          "ordem": 3,
+          "ano": "4º",
+          "materia_id": "local-mat",
+          "ativa": true,
+          "perguntas": [
+            {
+              "id": "mat4-mult-m3-a1",
+              "missao_id": "mat4-mult-m3",
+              "tipo": "multipla_escolha",
+              "enunciado": "36 ÷ 6 = ?",
+              "dados": {
+                "alternativas": [
+                  {
+                    "texto": "5",
+                    "correta": false
+                  },
+                  {
+                    "texto": "6",
+                    "correta": true
+                  },
+                  {
+                    "texto": "7",
+                    "correta": false
+                  },
+                  {
+                    "texto": "8",
+                    "correta": false
+                  }
+                ],
+                "respostaCorretaTexto": "36 ÷ 6 = 6, porque 6 × 6 = 36."
+              },
+              "dica": "Qual número vezes 6 dá 36? Conte de 6 em 6 até 36.",
+              "explicacao": "36 ÷ 6 = 6, porque 6 × 6 = 36.",
+              "ordem": 1
+            },
+            {
+              "id": "mat4-mult-m3-a2",
+              "missao_id": "mat4-mult-m3",
+              "tipo": "completar",
+              "enunciado": "72 ÷ 8 = ___.",
+              "dados": {
+                "opcoes": [
+                  {
+                    "texto": "8"
+                  },
+                  {
+                    "texto": "9"
+                  },
+                  {
+                    "texto": "10"
+                  }
+                ],
+                "correta": "9",
+                "respostaCorretaTexto": "8 × 9 = 72, então 72 ÷ 8 = 9."
+              },
+              "dica": "Pense: 8 vezes quanto dá 72? 8 × 9 = ?",
+              "explicacao": "72 ÷ 8 = 9, porque 8 × 9 = 72.",
+              "ordem": 2
+            },
+            {
+              "id": "mat4-mult-m3-a3",
+              "missao_id": "mat4-mult-m3",
+              "tipo": "verdadeiro_falso",
+              "enunciado": "Se 48 ÷ 6 = 8, então 8 × 6 = 48. Verdadeiro ou falso?",
+              "dados": {
+                "correta": true,
+                "respostaCorretaTexto": "Verdadeiro: 8 × 6 = 48."
+              },
+              "dica": "Multiplicar de volta confirma a divisão? 8 × 6 você sabe de cor.",
+              "explicacao": "Verdadeiro: a multiplicação desfaz a divisão.",
+              "ordem": 3
+            },
+            {
+              "id": "mat4-mult-m3-a4",
+              "missao_id": "mat4-mult-m3",
+              "tipo": "multipla_escolha",
+              "enunciado": "São 96 tomates em 8 cestos iguais. Quantos tomates há em cada cesto?",
+              "dados": {
+                "alternativas": [
+                  {
+                    "texto": "12",
+                    "correta": true
+                  },
+                  {
+                    "texto": "11",
+                    "correta": false
+                  },
+                  {
+                    "texto": "13",
+                    "correta": false
+                  },
+                  {
+                    "texto": "14",
+                    "correta": false
+                  }
+                ],
+                "respostaCorretaTexto": "96 ÷ 8 = 12 tomates em cada cesto."
+              },
+              "dica": "Divida 96 por 8. 8 × 12 = 96?",
+              "explicacao": "96 ÷ 8 = 12 tomates por cesto.",
+              "ordem": 4
+            },
+            {
+              "id": "mat4-mult-m3-a5",
+              "missao_id": "mat4-mult-m3",
+              "tipo": "multipla_escolha",
+              "enunciado": "Uma fita de 84 cm foi cortada em pedaços de 7 cm. Quantos pedaços foram feitos?",
+              "dados": {
+                "alternativas": [
+                  {
+                    "texto": "12",
+                    "correta": true
+                  },
+                  {
+                    "texto": "11",
+                    "correta": false
+                  },
+                  {
+                    "texto": "13",
+                    "correta": false
+                  },
+                  {
+                    "texto": "14",
+                    "correta": false
+                  }
+                ],
+                "respostaCorretaTexto": "84 ÷ 7 = 12 pedaços."
+              },
+              "dica": "Quantas vezes 7 cabe em 84? 7 × 12 = 84.",
+              "explicacao": "84 ÷ 7 = 12 pedaços.",
+              "ordem": 5
+            },
+            {
+              "id": "mat4-mult-m3-a6",
+              "missao_id": "mat4-mult-m3",
+              "tipo": "arrastar_soltar",
+              "enunciado": "Coloque os quocientes do menor para o maior.",
+              "dados": {
+                "modo": "ordenar",
+                "itens": [
+                  {
+                    "id": "nove",
+                    "texto": "45 ÷ 5"
+                  },
+                  {
+                    "id": "cinco",
+                    "texto": "20 ÷ 4"
+                  },
+                  {
+                    "id": "oito",
+                    "texto": "64 ÷ 8"
+                  }
+                ],
+                "ordemEsperada": [
+                  "cinco",
+                  "oito",
+                  "nove"
+                ],
+                "respostaCorretaTexto": "20 ÷ 4 = 5, 64 ÷ 8 = 8 e 45 ÷ 5 = 9."
+              },
+              "dica": "Calcule cada divisão antes de ordenar. 20 ÷ 4 = 5, 64 ÷ 8 = 8 e 45 ÷ 5 = 9.",
+              "explicacao": "5, depois 8 e por último 9.",
+              "ordem": 6
+            }
+          ]
+        },
+        {
+          "id": "mat4-mult-m4",
+          "titulo": "Sacos e Restos",
+          "descricao": "Dividir com sobra e entender o que o resto significa.",
+          "dificuldade": 1,
+          "ordem": 4,
+          "ano": "4º",
+          "materia_id": "local-mat",
+          "ativa": true,
+          "perguntas": [
+            {
+              "id": "mat4-mult-m4-a1",
+              "missao_id": "mat4-mult-m4",
+              "tipo": "multipla_escolha",
+              "enunciado": "Ao dividir 25 figurinhas entre 4 amigos, quantas cada um recebe e quantas sobram?",
+              "dados": {
+                "alternativas": [
+                  {
+                    "texto": "6 e sobra 1",
+                    "correta": true
+                  },
+                  {
+                    "texto": "5 e sobra 5",
+                    "correta": false
+                  },
+                  {
+                    "texto": "7 e sobra 3",
+                    "correta": false
+                  },
+                  {
+                    "texto": "6 e sobra 2",
+                    "correta": false
+                  }
+                ],
+                "respostaCorretaTexto": "6 × 4 = 24 e sobram 1."
+              },
+              "dica": "Qual o maior número vezes 4 que cabe em 25? 6 × 4 = 24, e para 25 falta 1.",
+              "explicacao": "25 ÷ 4 = 6 e sobra 1, porque 6 × 4 = 24 e 25 − 24 = 1.",
+              "ordem": 1
+            },
+            {
+              "id": "mat4-mult-m4-a2",
+              "missao_id": "mat4-mult-m4",
+              "tipo": "completar",
+              "enunciado": "38 ÷ 5 tem quociente ___ e resto 3.",
+              "dados": {
+                "opcoes": [
+                  {
+                    "texto": "6"
+                  },
+                  {
+                    "texto": "7"
+                  },
+                  {
+                    "texto": "8"
+                  }
+                ],
+                "correta": "7",
+                "respostaCorretaTexto": "7 × 5 = 35 e 35 + 3 = 38."
+              },
+              "dica": "Se sobra 3, o número antes do resto é 35. 35 ÷ 5 = ?",
+              "explicacao": "38 = 7 × 5 + 3, então o quociente é 7.",
+              "ordem": 2
+            },
+            {
+              "id": "mat4-mult-m4-a3",
+              "missao_id": "mat4-mult-m4",
+              "tipo": "verdadeiro_falso",
+              "enunciado": "Ao dividir 30 por 7, sobram 2. Verdadeiro ou falso?",
+              "dados": {
+                "correta": true,
+                "respostaCorretaTexto": "Verdadeiro: 7 × 4 = 28 e 30 − 28 = 2."
+              },
+              "dica": "Qual o maior múltiplo de 7 até 30? 7 × 4 = 28, e 30 − 28 = ?",
+              "explicacao": "Verdadeiro: 30 = 4 × 7 + 2, então sobram 2.",
+              "ordem": 3
+            },
+            {
+              "id": "mat4-mult-m4-a4",
+              "missao_id": "mat4-mult-m4",
+              "tipo": "multipla_escolha",
+              "enunciado": "18 ovos divididos em caixas de 4: quantas caixas completas e quantos ovos sobram?",
+              "dados": {
+                "alternativas": [
+                  {
+                    "texto": "4 caixas e sobram 2",
+                    "correta": true
+                  },
+                  {
+                    "texto": "3 caixas e sobram 6",
+                    "correta": false
+                  },
+                  {
+                    "texto": "5 caixas e sobram 2",
+                    "correta": false
+                  },
+                  {
+                    "texto": "4 caixas e sobram 1",
+                    "correta": false
+                  }
+                ],
+                "respostaCorretaTexto": "4 × 4 = 16 e 18 − 16 = 2 ovos sobrando."
+              },
+              "dica": "4 × 4 = 16. Quantos ovos ficam de fora? 18 − 16 = ?",
+              "explicacao": "18 ÷ 4 = 4 e sobram 2 ovos.",
+              "ordem": 4
+            },
+            {
+              "id": "mat4-mult-m4-a5",
+              "missao_id": "mat4-mult-m4",
+              "tipo": "multipla_escolha",
+              "enunciado": "Ao repartir 47 doces em 6 sacos iguais, quantos doces sobram?",
+              "dados": {
+                "alternativas": [
+                  {
+                    "texto": "5",
+                    "correta": true
+                  },
+                  {
+                    "texto": "3",
+                    "correta": false
+                  },
+                  {
+                    "texto": "1",
+                    "correta": false
+                  },
+                  {
+                    "texto": "2",
+                    "correta": false
+                  }
+                ],
+                "respostaCorretaTexto": "6 × 7 = 42 e 47 − 42 = 5."
+              },
+              "dica": "Procure o maior múltiplo de 6 até 47. 6 × 7 = 42, e 47 − 42 = ?",
+              "explicacao": "47 = 7 × 6 + 5, então sobram 5 doces.",
+              "ordem": 5
+            },
+            {
+              "id": "mat4-mult-m4-a6",
+              "missao_id": "mat4-mult-m4",
+              "tipo": "arrastar_soltar",
+              "enunciado": "Coloque os restos do menor para o maior.",
+              "dados": {
+                "modo": "ordenar",
+                "itens": [
+                  {
+                    "id": "resto-quatro",
+                    "texto": "19 ÷ 5"
+                  },
+                  {
+                    "id": "resto-um",
+                    "texto": "10 ÷ 3"
+                  },
+                  {
+                    "id": "resto-dois",
+                    "texto": "14 ÷ 4"
+                  }
+                ],
+                "ordemEsperada": [
+                  "resto-um",
+                  "resto-dois",
+                  "resto-quatro"
+                ],
+                "respostaCorretaTexto": "10 ÷ 3 sobra 1, 14 ÷ 4 sobra 2 e 19 ÷ 5 sobra 4."
+              },
+              "dica": "Faça cada divisão e olhe só para o resto. 10 ÷ 3 sobra 1, 14 ÷ 4 sobra 2 e 19 ÷ 5 sobra 4.",
+              "explicacao": "Restos 1, depois 2 e por último 4.",
+              "ordem": 6
+            }
+          ]
+        },
+        {
+          "id": "mat4-mult-m5",
+          "titulo": "A Gincana das Medidas",
+          "descricao": "Usar dobro, triplo, metade e medidas em problemas de gincana.",
+          "dificuldade": 1,
+          "ordem": 5,
+          "ano": "4º",
+          "materia_id": "local-mat",
+          "ativa": true,
+          "perguntas": [
+            {
+              "id": "mat4-mult-m5-a1",
+              "missao_id": "mat4-mult-m5",
+              "tipo": "multipla_escolha",
+              "enunciado": "O triplo de 45 é quanto?",
+              "dados": {
+                "alternativas": [
+                  {
+                    "texto": "135",
+                    "correta": true
+                  },
+                  {
+                    "texto": "125",
+                    "correta": false
+                  },
+                  {
+                    "texto": "90",
+                    "correta": false
+                  },
+                  {
+                    "texto": "145",
+                    "correta": false
+                  }
+                ],
+                "respostaCorretaTexto": "3 × 40 = 120 e 3 × 5 = 15: 135."
+              },
+              "dica": "Triplo é três vezes o número. 3 × 40 = 120 e 3 × 5 = 15.",
+              "explicacao": "3 × 45 = 135.",
+              "ordem": 1
+            },
+            {
+              "id": "mat4-mult-m5-a2",
+              "missao_id": "mat4-mult-m5",
+              "tipo": "completar",
+              "enunciado": "A metade de 96 é ___.",
+              "dados": {
+                "opcoes": [
+                  {
+                    "texto": "46"
+                  },
+                  {
+                    "texto": "48"
+                  },
+                  {
+                    "texto": "36"
+                  }
+                ],
+                "correta": "48",
+                "respostaCorretaTexto": "48 + 48 = 96, então a metade de 96 é 48."
+              },
+              "dica": "Metade é dividir por 2. 48 + 48 = ?",
+              "explicacao": "96 ÷ 2 = 48.",
+              "ordem": 2
+            },
+            {
+              "id": "mat4-mult-m5-a3",
+              "missao_id": "mat4-mult-m5",
+              "tipo": "verdadeiro_falso",
+              "enunciado": "2 km são 2000 metros. Verdadeiro ou falso?",
+              "dados": {
+                "correta": true,
+                "respostaCorretaTexto": "Verdadeiro: 2 × 1000 = 2000 metros."
+              },
+              "dica": "Quantos metros tem 1 km? 1000 + 1000.",
+              "explicacao": "Verdadeiro: 1 km = 1000 m, então 2 km = 2000 m.",
+              "ordem": 3
+            },
+            {
+              "id": "mat4-mult-m5-a4",
+              "missao_id": "mat4-mult-m5",
+              "tipo": "multipla_escolha",
+              "enunciado": "Uma garrafa tem 2 litros. 9 garrafas iguais têm quantos litros?",
+              "dados": {
+                "alternativas": [
+                  {
+                    "texto": "18",
+                    "correta": true
+                  },
+                  {
+                    "texto": "11",
+                    "correta": false
+                  },
+                  {
+                    "texto": "16",
+                    "correta": false
+                  },
+                  {
+                    "texto": "20",
+                    "correta": false
+                  }
+                ],
+                "respostaCorretaTexto": "9 × 2 = 18 litros."
+              },
+              "dica": "Multiplique 9 por 2. 9 × 2 = ?",
+              "explicacao": "9 × 2 = 18 litros.",
+              "ordem": 4
+            },
+            {
+              "id": "mat4-mult-m5-a5",
+              "missao_id": "mat4-mult-m5",
+              "tipo": "multipla_escolha",
+              "enunciado": "Uma volta na pista tem 250 metros. 4 voltas são quantos metros?",
+              "dados": {
+                "alternativas": [
+                  {
+                    "texto": "1000",
+                    "correta": true
+                  },
+                  {
+                    "texto": "900",
+                    "correta": false
+                  },
+                  {
+                    "texto": "800",
+                    "correta": false
+                  },
+                  {
+                    "texto": "1250",
+                    "correta": false
+                  }
+                ],
+                "respostaCorretaTexto": "4 × 250 = 1000 metros."
+              },
+              "dica": "Multiplique 250 por 4. 4 × 200 = 800 e 4 × 50 = 200.",
+              "explicacao": "4 × 250 = 1000 metros (1 km).",
+              "ordem": 5
+            },
+            {
+              "id": "mat4-mult-m5-a6",
+              "missao_id": "mat4-mult-m5",
+              "tipo": "arrastar_soltar",
+              "enunciado": "Coloque as medidas do menor para o maior: 500 m, 1500 m, 2 km.",
+              "dados": {
+                "modo": "ordenar",
+                "itens": [
+                  {
+                    "id": "dois-quilometros",
+                    "texto": "2 km"
+                  },
+                  {
+                    "id": "quinhentos-metros",
+                    "texto": "500 m"
+                  },
+                  {
+                    "id": "mil-e-quinhentos-metros",
+                    "texto": "1500 m"
+                  }
+                ],
+                "ordemEsperada": [
+                  "quinhentos-metros",
+                  "mil-e-quinhentos-metros",
+                  "dois-quilometros"
+                ],
+                "respostaCorretaTexto": "500 m, 1500 m e 2000 m (2 km)."
+              },
+              "dica": "Transforme o quilômetro em metros antes de comparar. 2 km são 2000 m, então 1500 m vem antes.",
+              "explicacao": "500 m, 1500 m e 2 km (2000 m).",
               "ordem": 6
             }
           ]

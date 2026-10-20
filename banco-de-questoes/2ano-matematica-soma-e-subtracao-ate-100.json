@@ -1,0 +1,675 @@
+{
+  "ano": "2º",
+  "materia": "Matemática",
+  "trilha": "Somando e subtraindo até 100",
+  "missoes": [
+    {
+      "id": "mat2-soma-m1",
+      "titulo": "A Feira do Kapivarus",
+      "objetivo": "Somar quantidades pequenas juntando grupos e conferir o total.",
+      "atividades": [
+        {
+          "id": "mat2-soma-m1-a1",
+          "tipo": "contar_imagens",
+          "dificuldade": 1,
+          "habilidade": "Contar objetos em dois grupos e juntar as quantidades",
+          "codigo_bncc": "EF02MA05",
+          "enunciado": "🍎🍎🍎 e 🍎🍎🍎. Quantas maçãs há na cesta?",
+          "midia_descricao": null,
+          "opcoes": ["5", "6", "7", "8"],
+          "resposta": "6",
+          "dica1": "Conte primeiro as maçãs do primeiro grupo.",
+          "dica2": "São 3 maçãs e mais 3 maçãs.",
+          "explicacao": "3 maçãs + 3 maçãs = 6 maçãs.",
+          "dados": {
+            "opcoes": [5, 6, 7, 8],
+            "correta": 6,
+            "respostaCorretaTexto": "3 maçãs e mais 3 maçãs: 3 + 3 = 6."
+          }
+        },
+        {
+          "id": "mat2-soma-m1-a2",
+          "tipo": "multipla_escolha",
+          "dificuldade": 1,
+          "habilidade": "Resolver problema de adição de dois números de um algarismo",
+          "codigo_bncc": "EF02MA06",
+          "enunciado": "O Kapivarus comprou 7 bananas de manhã e 5 à tarde. Quantas bananas comprou no total?",
+          "midia_descricao": null,
+          "opcoes": ["11", "12", "13", "10"],
+          "resposta": "12",
+          "dica1": "Junte as bananas da manhã com as da tarde.",
+          "dica2": "7 + 5: conte 7, 8, 9, 10, 11, 12.",
+          "explicacao": "7 + 5 = 12 bananas.",
+          "dados": {
+            "alternativas": [
+              { "texto": "11", "correta": false },
+              { "texto": "12", "correta": true },
+              { "texto": "13", "correta": false },
+              { "texto": "10", "correta": false }
+            ],
+            "respostaCorretaTexto": "7 + 5 = 12 bananas."
+          }
+        },
+        {
+          "id": "mat2-soma-m1-a3",
+          "tipo": "verdadeiro_falso",
+          "dificuldade": 1,
+          "habilidade": "Reconhecer que a ordem das parcelas não muda a soma",
+          "codigo_bncc": "EF02MA05",
+          "enunciado": "Se 8 + 4 = 12, então 4 + 8 também dá 12. Verdadeiro ou falso?",
+          "midia_descricao": null,
+          "resposta": true,
+          "dica1": "Trocar a ordem das parcelas muda o resultado?",
+          "dica2": "Conte 4 e depois 8, e compare com 8 e depois 4.",
+          "explicacao": "Verdadeiro: 4 + 8 = 12, igual a 8 + 4. A ordem não muda a soma.",
+          "dados": {
+            "correta": true,
+            "respostaCorretaTexto": "Verdadeiro: 8 + 4 e 4 + 8 dão 12."
+          }
+        },
+        {
+          "id": "mat2-soma-m1-a4",
+          "tipo": "completar",
+          "dificuldade": 1,
+          "habilidade": "Completar a soma de dois números com apoio de contexto",
+          "codigo_bncc": "EF02MA06",
+          "enunciado": "A Dona Coruja tinha 9 lápis e ganhou mais 6. Agora ela tem ___ lápis.",
+          "midia_descricao": null,
+          "opcoes": ["13", "14", "15"],
+          "resposta": "15",
+          "dica1": "Comece no 9 e conte mais 6.",
+          "dica2": "9 + 6: do 9 ao 10 é 1, e ainda faltam 5.",
+          "explicacao": "9 + 6 = 15 lápis.",
+          "dados": {
+            "opcoes": [{ "texto": "13" }, { "texto": "14" }, { "texto": "15" }],
+            "correta": "15",
+            "respostaCorretaTexto": "9 + 6 = 15 lápis."
+          }
+        },
+        {
+          "id": "mat2-soma-m1-a5",
+          "tipo": "multipla_escolha",
+          "dificuldade": 2,
+          "habilidade": "Resolver problema de subtração tirando uma quantidade",
+          "codigo_bncc": "EF02MA06",
+          "enunciado": "Na banca havia 14 laranjas. Venderam 5. Quantas laranjas sobraram?",
+          "midia_descricao": null,
+          "opcoes": ["8", "9", "10", "19"],
+          "resposta": "9",
+          "dica1": "Sobrar é o que fica quando tiramos uma parte.",
+          "dica2": "Conte de 14 para trás 5 vezes.",
+          "explicacao": "14 − 5 = 9 laranjas.",
+          "dados": {
+            "alternativas": [
+              { "texto": "8", "correta": false },
+              { "texto": "9", "correta": true },
+              { "texto": "10", "correta": false },
+              { "texto": "19", "correta": false }
+            ],
+            "respostaCorretaTexto": "14 − 5 = 9 laranjas."
+          }
+        },
+        {
+          "id": "mat2-soma-m1-a6",
+          "tipo": "arrastar_soltar",
+          "dificuldade": 2,
+          "habilidade": "Comparar resultados de adições e ordená-los",
+          "codigo_bncc": "EF02MA05",
+          "enunciado": "Coloque as somas do menor resultado para o maior.",
+          "midia_descricao": null,
+          "opcoes": ["soma-3-3", "soma-5-2", "soma-8-4"],
+          "resposta": ["soma-3-3", "soma-5-2", "soma-8-4"],
+          "dica1": "Calcule cada soma antes de ordenar.",
+          "dica2": "3 + 3 = 6, 5 + 2 = 7 e 8 + 4 = 12.",
+          "explicacao": "6, depois 7 e por último 12.",
+          "dados": {
+            "modo": "ordenar",
+            "itens": [
+              { "id": "soma-5-2", "texto": "5 + 2" },
+              { "id": "soma-8-4", "texto": "8 + 4" },
+              { "id": "soma-3-3", "texto": "3 + 3" }
+            ],
+            "ordemEsperada": ["soma-3-3", "soma-5-2", "soma-8-4"],
+            "respostaCorretaTexto": "3 + 3 = 6, 5 + 2 = 7 e 8 + 4 = 12."
+          }
+        }
+      ]
+    },
+    {
+      "id": "mat2-soma-m2",
+      "titulo": "Dezenas na Horta",
+      "objetivo": "Reconhecer dezenas e compor números com dezenas e unidades.",
+      "atividades": [
+        {
+          "id": "mat2-soma-m2-a1",
+          "tipo": "multipla_escolha",
+          "dificuldade": 1,
+          "habilidade": "Reconhecer que uma dezena equivale a dez unidades",
+          "codigo_bncc": "EF02MA04",
+          "enunciado": "3 dezenas de cenouras são quantas cenouras?",
+          "midia_descricao": null,
+          "opcoes": ["13", "30", "3", "33"],
+          "resposta": "30",
+          "dica1": "Uma dezena é um grupo de 10.",
+          "dica2": "3 dezenas: 10 + 10 + 10.",
+          "explicacao": "3 dezenas = 30 cenouras.",
+          "dados": {
+            "alternativas": [
+              { "texto": "13", "correta": false },
+              { "texto": "30", "correta": true },
+              { "texto": "3", "correta": false },
+              { "texto": "33", "correta": false }
+            ],
+            "respostaCorretaTexto": "3 dezenas = 10 + 10 + 10 = 30."
+          }
+        },
+        {
+          "id": "mat2-soma-m2-a2",
+          "tipo": "completar",
+          "dificuldade": 2,
+          "habilidade": "Compor números a partir de dezenas e unidades",
+          "codigo_bncc": "EF02MA04",
+          "enunciado": "4 dezenas e 5 unidades formam o número ___.",
+          "midia_descricao": null,
+          "opcoes": ["54", "45", "405"],
+          "resposta": "45",
+          "dica1": "Primeiro as dezenas, depois as unidades: 40 e 5.",
+          "dica2": "40 + 5 é o número procurado.",
+          "explicacao": "4 dezenas (40) e 5 unidades (5) formam 45.",
+          "dados": {
+            "opcoes": [{ "texto": "54" }, { "texto": "45" }, { "texto": "405" }],
+            "correta": "45",
+            "respostaCorretaTexto": "4 dezenas e 5 unidades: 40 + 5 = 45."
+          }
+        },
+        {
+          "id": "mat2-soma-m2-a3",
+          "tipo": "verdadeiro_falso",
+          "dificuldade": 1,
+          "habilidade": "Relacionar três dezenas com a soma 10 + 10 + 10",
+          "codigo_bncc": "EF02MA04",
+          "enunciado": "10 + 10 + 10 é o mesmo que 3 dezenas. Verdadeiro ou falso?",
+          "midia_descricao": null,
+          "resposta": true,
+          "dica1": "Quanto vale uma dezena?",
+          "dica2": "Conte de 10 em 10: 10, 20, 30.",
+          "explicacao": "Verdadeiro: 10 + 10 + 10 = 30, que são 3 dezenas.",
+          "dados": {
+            "correta": true,
+            "respostaCorretaTexto": "Verdadeiro: 10 + 10 + 10 = 30 = 3 dezenas."
+          }
+        },
+        {
+          "id": "mat2-soma-m2-a4",
+          "tipo": "multipla_escolha",
+          "dificuldade": 2,
+          "habilidade": "Somar dezenas exatas em contexto",
+          "codigo_bncc": "EF02MA06",
+          "enunciado": "A horta tem 20 pés de alface e 20 pés de couve. Quantos pés há ao todo?",
+          "midia_descricao": null,
+          "opcoes": ["22", "40", "30", "44"],
+          "resposta": "40",
+          "dica1": "Some duas dezenas.",
+          "dica2": "2 dezenas + 2 dezenas = 4 dezenas.",
+          "explicacao": "20 + 20 = 40 pés.",
+          "dados": {
+            "alternativas": [
+              { "texto": "22", "correta": false },
+              { "texto": "40", "correta": true },
+              { "texto": "30", "correta": false },
+              { "texto": "44", "correta": false }
+            ],
+            "respostaCorretaTexto": "20 + 20 = 40 pés."
+          }
+        },
+        {
+          "id": "mat2-soma-m2-a5",
+          "tipo": "contar_imagens",
+          "dificuldade": 2,
+          "habilidade": "Contar de 10 em 10 em grupos de cenouras",
+          "codigo_bncc": "EF02MA04",
+          "enunciado": "🥕🥕🥕🥕🥕 🥕🥕🥕🥕🥕 e mais um grupo de 10. Quantas cenouras são 3 grupos de 10?",
+          "midia_descricao": null,
+          "opcoes": ["20", "25", "30", "40"],
+          "resposta": "30",
+          "dica1": "Cada grupo tem 10 cenouras.",
+          "dica2": "Conte de 10 em 10: 10, 20, 30.",
+          "explicacao": "3 grupos de 10 cenouras são 30 cenouras.",
+          "dados": {
+            "opcoes": [20, 25, 30, 40],
+            "correta": 30,
+            "respostaCorretaTexto": "Três grupos de 10: 10 + 10 + 10 = 30."
+          }
+        },
+        {
+          "id": "mat2-soma-m2-a6",
+          "tipo": "arrastar_soltar",
+          "dificuldade": 2,
+          "habilidade": "Ordenar dezenas e um número composto",
+          "codigo_bncc": "EF02MA04",
+          "enunciado": "Coloque do menor para o maior: 2 dezenas e 5 unidades, 3 dezenas, 4 dezenas.",
+          "midia_descricao": null,
+          "opcoes": ["vinte-cinco", "trinta", "quarenta"],
+          "resposta": ["vinte-cinco", "trinta", "quarenta"],
+          "dica1": "2 dezenas e 5 unidades não é só 20.",
+          "dica2": "20 + 5 = 25, depois 30 e depois 40.",
+          "explicacao": "25, 30 e 40.",
+          "dados": {
+            "modo": "ordenar",
+            "itens": [
+              { "id": "trinta", "texto": "3 dezenas" },
+              { "id": "quarenta", "texto": "4 dezenas" },
+              { "id": "vinte-cinco", "texto": "2 dezenas e 5 unidades" }
+            ],
+            "ordemEsperada": ["vinte-cinco", "trinta", "quarenta"],
+            "respostaCorretaTexto": "25, 30 e 40."
+          }
+        }
+      ]
+    },
+    {
+      "id": "mat2-soma-m3",
+      "titulo": "A Loja de Brinquedos",
+      "objetivo": "Resolver subtrações até 20 tirando uma quantidade do total.",
+      "atividades": [
+        {
+          "id": "mat2-soma-m3-a1",
+          "tipo": "multipla_escolha",
+          "dificuldade": 2,
+          "habilidade": "Resolver subtração simples em situação de loja",
+          "codigo_bncc": "EF02MA06",
+          "enunciado": "A loja tinha 15 pipas e vendeu 7. Quantas pipas ficaram?",
+          "midia_descricao": null,
+          "opcoes": ["7", "8", "9", "22"],
+          "resposta": "8",
+          "dica1": "Tire 7 de 15.",
+          "dica2": "15 − 5 = 10 e ainda faltam tirar 2.",
+          "explicacao": "15 − 7 = 8 pipas.",
+          "dados": {
+            "alternativas": [
+              { "texto": "7", "correta": false },
+              { "texto": "8", "correta": true },
+              { "texto": "9", "correta": false },
+              { "texto": "22", "correta": false }
+            ],
+            "respostaCorretaTexto": "15 − 7 = 8 pipas."
+          }
+        },
+        {
+          "id": "mat2-soma-m3-a2",
+          "tipo": "completar",
+          "dificuldade": 2,
+          "habilidade": "Completar uma subtração com resultado de um algarismo",
+          "codigo_bncc": "EF02MA05",
+          "enunciado": "18 − 9 = ___.",
+          "midia_descricao": null,
+          "opcoes": ["7", "8", "9"],
+          "resposta": "9",
+          "dica1": "Pense: 9 + quanto dá 18?",
+          "dica2": "Conte de 9 até 18.",
+          "explicacao": "18 − 9 = 9, porque 9 + 9 = 18.",
+          "dados": {
+            "opcoes": [{ "texto": "7" }, { "texto": "8" }, { "texto": "9" }],
+            "correta": "9",
+            "respostaCorretaTexto": "18 − 9 = 9."
+          }
+        },
+        {
+          "id": "mat2-soma-m3-a3",
+          "tipo": "verdadeiro_falso",
+          "dificuldade": 2,
+          "habilidade": "Relacionar subtração e adição como operações inversas",
+          "codigo_bncc": "EF02MA05",
+          "enunciado": "Se 12 − 5 = 7, então 7 + 5 = 12. Verdadeiro ou falso?",
+          "midia_descricao": null,
+          "resposta": true,
+          "dica1": "Somar de volta devolve o número do começo?",
+          "dica2": "7 + 5 você já sabe calcular.",
+          "explicacao": "Verdadeiro: somar de volta é o caminho inverso da subtração.",
+          "dados": {
+            "correta": true,
+            "respostaCorretaTexto": "Verdadeiro: 7 + 5 = 12."
+          }
+        },
+        {
+          "id": "mat2-soma-m3-a4",
+          "tipo": "multipla_escolha",
+          "dificuldade": 2,
+          "habilidade": "Resolver subtração de um algarismo a partir de 20",
+          "codigo_bncc": "EF02MA06",
+          "enunciado": "O Kapivarus tinha 20 figurinhas e deu 6 para a amiga. Com quantas figurinhas ele ficou?",
+          "midia_descricao": null,
+          "opcoes": ["14", "13", "15", "26"],
+          "resposta": "14",
+          "dica1": "Ele deu, então o número diminui.",
+          "dica2": "20 − 6: de 20 para trás, 6 passos.",
+          "explicacao": "20 − 6 = 14 figurinhas.",
+          "dados": {
+            "alternativas": [
+              { "texto": "14", "correta": true },
+              { "texto": "13", "correta": false },
+              { "texto": "15", "correta": false },
+              { "texto": "26", "correta": false }
+            ],
+            "respostaCorretaTexto": "20 − 6 = 14 figurinhas."
+          }
+        },
+        {
+          "id": "mat2-soma-m3-a5",
+          "tipo": "multipla_escolha",
+          "dificuldade": 3,
+          "habilidade": "Resolver subtração com números de dois algarismos",
+          "codigo_bncc": "EF02MA06",
+          "enunciado": "Numa caixa havia 16 carrinhos. 8 foram para a vitrine. Quantos carrinhos ficaram na caixa?",
+          "midia_descricao": null,
+          "opcoes": ["8", "9", "7", "24"],
+          "resposta": "8",
+          "dica1": "A metade de 16 saiu da caixa.",
+          "dica2": "16 − 8 = ?",
+          "explicacao": "16 − 8 = 8 carrinhos.",
+          "dados": {
+            "alternativas": [
+              { "texto": "8", "correta": true },
+              { "texto": "9", "correta": false },
+              { "texto": "7", "correta": false },
+              { "texto": "24", "correta": false }
+            ],
+            "respostaCorretaTexto": "16 − 8 = 8 carrinhos."
+          }
+        },
+        {
+          "id": "mat2-soma-m3-a6",
+          "tipo": "arrastar_soltar",
+          "dificuldade": 3,
+          "habilidade": "Comparar resultados de subtrações, inclusive o zero",
+          "codigo_bncc": "EF02MA05",
+          "enunciado": "Coloque as subtrações do menor resultado para o maior.",
+          "midia_descricao": null,
+          "opcoes": ["oito-menos-oito", "nove-menos-cinco", "dez-menos-dois"],
+          "resposta": ["oito-menos-oito", "nove-menos-cinco", "dez-menos-dois"],
+          "dica1": "Calcule cada subtração antes de ordenar.",
+          "dica2": "8 − 8 = 0, 9 − 5 = 4 e 10 − 2 = 8.",
+          "explicacao": "0, depois 4 e por último 8.",
+          "dados": {
+            "modo": "ordenar",
+            "itens": [
+              { "id": "dez-menos-dois", "texto": "10 − 2" },
+              { "id": "nove-menos-cinco", "texto": "9 − 5" },
+              { "id": "oito-menos-oito", "texto": "8 − 8" }
+            ],
+            "ordemEsperada": ["oito-menos-oito", "nove-menos-cinco", "dez-menos-dois"],
+            "respostaCorretaTexto": "8 − 8 = 0, 9 − 5 = 4 e 10 − 2 = 8."
+          }
+        }
+      ]
+    },
+    {
+      "id": "mat2-soma-m4",
+      "titulo": "Corrida de Tampinhas",
+      "objetivo": "Somar números de dois algarismos, inclusive quando precisa reagrupar.",
+      "atividades": [
+        {
+          "id": "mat2-soma-m4-a1",
+          "tipo": "multipla_escolha",
+          "dificuldade": 2,
+          "habilidade": "Somar dois números de dois algarismos sem reagrupamento",
+          "codigo_bncc": "EF02MA06",
+          "enunciado": "24 + 13 = ?",
+          "midia_descricao": null,
+          "opcoes": ["37", "36", "27", "47"],
+          "resposta": "37",
+          "dica1": "Some primeiro as unidades: 4 + 3.",
+          "dica2": "Depois some as dezenas: 20 + 10.",
+          "explicacao": "4 + 3 = 7 e 20 + 10 = 30, então 37.",
+          "dados": {
+            "alternativas": [
+              { "texto": "37", "correta": true },
+              { "texto": "36", "correta": false },
+              { "texto": "27", "correta": false },
+              { "texto": "47", "correta": false }
+            ],
+            "respostaCorretaTexto": "24 + 13 = 37."
+          }
+        },
+        {
+          "id": "mat2-soma-m4-a2",
+          "tipo": "completar",
+          "dificuldade": 3,
+          "habilidade": "Somar com reagrupamento das unidades para a dezena",
+          "codigo_bncc": "EF02MA06",
+          "enunciado": "36 + 28 = ___.",
+          "midia_descricao": null,
+          "opcoes": ["54", "64", "58"],
+          "resposta": "64",
+          "dica1": "6 + 8 passa de 10: isso forma uma nova dezena.",
+          "dica2": "30 + 20 = 50, 6 + 8 = 14, e 50 + 14 = ?",
+          "explicacao": "36 + 28 = 64, com reagrupamento das unidades.",
+          "dados": {
+            "opcoes": [{ "texto": "54" }, { "texto": "64" }, { "texto": "58" }],
+            "correta": "64",
+            "respostaCorretaTexto": "36 + 28 = 64."
+          }
+        },
+        {
+          "id": "mat2-soma-m4-a3",
+          "tipo": "verdadeiro_falso",
+          "dificuldade": 2,
+          "habilidade": "Conferir o resultado de uma adição com reagrupamento",
+          "codigo_bncc": "EF02MA06",
+          "enunciado": "45 + 7 = 52. Verdadeiro ou falso?",
+          "midia_descricao": null,
+          "resposta": true,
+          "dica1": "5 + 7 passa de 10?",
+          "dica2": "45 + 5 = 50 e ainda falta somar 2.",
+          "explicacao": "Verdadeiro: 45 + 7 = 52.",
+          "dados": {
+            "correta": true,
+            "respostaCorretaTexto": "Verdadeiro: 45 + 7 = 52."
+          }
+        },
+        {
+          "id": "mat2-soma-m4-a4",
+          "tipo": "multipla_escolha",
+          "dificuldade": 3,
+          "habilidade": "Resolver problema de adição com reagrupamento",
+          "codigo_bncc": "EF02MA06",
+          "enunciado": "Uma criança juntou 38 tampinhas e a outra juntou 47. Quantas tampinhas juntaram ao todo?",
+          "midia_descricao": null,
+          "opcoes": ["75", "85", "95", "74"],
+          "resposta": "85",
+          "dica1": "Some 30 + 40 e depois 8 + 7.",
+          "dica2": "8 + 7 = 15: isso dá uma dezena a mais.",
+          "explicacao": "38 + 47 = 85 tampinhas.",
+          "dados": {
+            "alternativas": [
+              { "texto": "75", "correta": false },
+              { "texto": "85", "correta": true },
+              { "texto": "95", "correta": false },
+              { "texto": "74", "correta": false }
+            ],
+            "respostaCorretaTexto": "38 + 47 = 85 tampinhas."
+          }
+        },
+        {
+          "id": "mat2-soma-m4-a5",
+          "tipo": "multipla_escolha",
+          "dificuldade": 3,
+          "habilidade": "Encontrar a parte que falta a partir do total",
+          "codigo_bncc": "EF02MA06",
+          "enunciado": "Das 62 tampinhas, 25 são azuis. Quantas não são azuis?",
+          "midia_descricao": null,
+          "opcoes": ["37", "47", "27", "36"],
+          "resposta": "37",
+          "dica1": "O total menos as azuis dá as outras.",
+          "dica2": "62 − 25: tire 20 e depois 5.",
+          "explicacao": "62 − 25 = 37 tampinhas que não são azuis.",
+          "dados": {
+            "alternativas": [
+              { "texto": "37", "correta": true },
+              { "texto": "47", "correta": false },
+              { "texto": "27", "correta": false },
+              { "texto": "36", "correta": false }
+            ],
+            "respostaCorretaTexto": "62 − 25 = 37."
+          }
+        },
+        {
+          "id": "mat2-soma-m4-a6",
+          "tipo": "arrastar_soltar",
+          "dificuldade": 3,
+          "habilidade": "Ordenar somas de dezenas com unidades",
+          "codigo_bncc": "EF02MA06",
+          "enunciado": "Coloque as somas do menor resultado para o maior.",
+          "midia_descricao": null,
+          "opcoes": ["vinte-e-nove", "trinta-e-quatro", "quarenta-e-um"],
+          "resposta": ["vinte-e-nove", "trinta-e-quatro", "quarenta-e-um"],
+          "dica1": "Calcule cada soma antes de ordenar.",
+          "dica2": "20 + 9 = 29, 30 + 4 = 34 e 40 + 1 = 41.",
+          "explicacao": "29, depois 34 e por último 41.",
+          "dados": {
+            "modo": "ordenar",
+            "itens": [
+              { "id": "quarenta-e-um", "texto": "40 + 1" },
+              { "id": "vinte-e-nove", "texto": "20 + 9" },
+              { "id": "trinta-e-quatro", "texto": "30 + 4" }
+            ],
+            "ordemEsperada": ["vinte-e-nove", "trinta-e-quatro", "quarenta-e-um"],
+            "respostaCorretaTexto": "29, 34 e 41."
+          }
+        }
+      ]
+    },
+    {
+      "id": "mat2-soma-m5",
+      "titulo": "A Festa da Turma",
+      "objetivo": "Usar dobro, metade e soma para resolver problemas de festa.",
+      "atividades": [
+        {
+          "id": "mat2-soma-m5-a1",
+          "tipo": "multipla_escolha",
+          "dificuldade": 2,
+          "habilidade": "Resolver adição de parcelas iguais em contexto",
+          "codigo_bncc": "EF02MA07",
+          "enunciado": "Cada amigo trouxe 2 balões. 5 amigos trouxeram quantos balões?",
+          "midia_descricao": null,
+          "opcoes": ["10", "7", "12", "5"],
+          "resposta": "10",
+          "dica1": "Conte de 2 em 2, cinco vezes.",
+          "dica2": "2 + 2 + 2 + 2 + 2.",
+          "explicacao": "5 grupos de 2 balões são 10 balões.",
+          "dados": {
+            "alternativas": [
+              { "texto": "10", "correta": true },
+              { "texto": "7", "correta": false },
+              { "texto": "12", "correta": false },
+              { "texto": "5", "correta": false }
+            ],
+            "respostaCorretaTexto": "2 + 2 + 2 + 2 + 2 = 10 balões."
+          }
+        },
+        {
+          "id": "mat2-soma-m5-a2",
+          "tipo": "completar",
+          "dificuldade": 2,
+          "habilidade": "Calcular o dobro de um número de dois algarismos",
+          "codigo_bncc": "EF02MA07",
+          "enunciado": "O dobro de 12 é ___.",
+          "midia_descricao": null,
+          "opcoes": ["22", "24", "14"],
+          "resposta": "24",
+          "dica1": "Dobro é o número somado com ele mesmo.",
+          "dica2": "12 + 12 = ?",
+          "explicacao": "O dobro de 12 é 24.",
+          "dados": {
+            "opcoes": [{ "texto": "22" }, { "texto": "24" }, { "texto": "14" }],
+            "correta": "24",
+            "respostaCorretaTexto": "12 + 12 = 24."
+          }
+        },
+        {
+          "id": "mat2-soma-m5-a3",
+          "tipo": "verdadeiro_falso",
+          "dificuldade": 2,
+          "habilidade": "Reconhecer a metade de um número par",
+          "codigo_bncc": "EF02MA07",
+          "enunciado": "A metade de 18 é 9. Verdadeiro ou falso?",
+          "midia_descricao": null,
+          "resposta": true,
+          "dica1": "Metade é dividir em duas partes iguais.",
+          "dica2": "9 + 9 dá 18?",
+          "explicacao": "Verdadeiro: 9 + 9 = 18, então a metade de 18 é 9.",
+          "dados": {
+            "correta": true,
+            "respostaCorretaTexto": "Verdadeiro: 9 + 9 = 18."
+          }
+        },
+        {
+          "id": "mat2-soma-m5-a4",
+          "tipo": "multipla_escolha",
+          "dificuldade": 3,
+          "habilidade": "Resolver problema de subtração com dois algarismos",
+          "codigo_bncc": "EF02MA06",
+          "enunciado": "Havia 45 salgadinhos na mesa. Foram comidos 18. Quantos salgadinhos sobraram?",
+          "midia_descricao": null,
+          "opcoes": ["27", "37", "23", "33"],
+          "resposta": "27",
+          "dica1": "Tire 18 de 45.",
+          "dica2": "45 − 10 = 35 e depois 35 − 8.",
+          "explicacao": "45 − 18 = 27 salgadinhos.",
+          "dados": {
+            "alternativas": [
+              { "texto": "27", "correta": true },
+              { "texto": "37", "correta": false },
+              { "texto": "23", "correta": false },
+              { "texto": "33", "correta": false }
+            ],
+            "respostaCorretaTexto": "45 − 18 = 27 salgadinhos."
+          }
+        },
+        {
+          "id": "mat2-soma-m5-a5",
+          "tipo": "contar_imagens",
+          "dificuldade": 2,
+          "habilidade": "Contar objetos em pratos com a mesma quantidade",
+          "codigo_bncc": "EF02MA07",
+          "enunciado": "🧁🧁🧁 🧁🧁🧁 🧁🧁🧁 🧁🧁🧁. Quantos bolinhos há nos 4 pratos?",
+          "midia_descricao": null,
+          "opcoes": ["9", "12", "15", "16"],
+          "resposta": "12",
+          "dica1": "Cada prato tem 3 bolinhos.",
+          "dica2": "Conte de 3 em 3: 3, 6, 9, 12.",
+          "explicacao": "4 pratos com 3 bolinhos: 12 bolinhos.",
+          "dados": {
+            "opcoes": [9, 12, 15, 16],
+            "correta": 12,
+            "respostaCorretaTexto": "3 + 3 + 3 + 3 = 12 bolinhos."
+          }
+        },
+        {
+          "id": "mat2-soma-m5-a6",
+          "tipo": "arrastar_soltar",
+          "dificuldade": 3,
+          "habilidade": "Comparar soma, dobro e uma dezena",
+          "codigo_bncc": "EF02MA07",
+          "enunciado": "Coloque do menor para o maior: 3 + 2, o dobro de 5, 2 dezenas.",
+          "midia_descricao": null,
+          "opcoes": ["cinco", "dez", "vinte"],
+          "resposta": ["cinco", "dez", "vinte"],
+          "dica1": "Calcule cada valor antes de ordenar.",
+          "dica2": "3 + 2 = 5, dobro de 5 = 10 e 2 dezenas = 20.",
+          "explicacao": "5, depois 10 e por último 20.",
+          "dados": {
+            "modo": "ordenar",
+            "itens": [
+              { "id": "vinte", "texto": "2 dezenas" },
+              { "id": "cinco", "texto": "3 + 2" },
+              { "id": "dez", "texto": "o dobro de 5" }
+            ],
+            "ordemEsperada": ["cinco", "dez", "vinte"],
+            "respostaCorretaTexto": "3 + 2 = 5, dobro de 5 = 10 e 2 dezenas = 20."
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -179,9 +179,9 @@ export default function MapaDeMissoes() {
                 Este ano ainda não tem missões offline 😴
               </p>
               <p className="mt-1 opacity-80">
-                As missões sem internet estão disponíveis para o 3º ano.
-                Escolha outro perfil ou conecte o app ao Supabase para ver
-                todas.
+                As missões sem internet cobrem o 2º, o 3º e o 4º ano em
+                Matemática. Escolha outro perfil ou conecte o app ao Supabase
+                para ver todas.
               </p>
             </>
           ) : (
