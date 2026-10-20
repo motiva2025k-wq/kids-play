@@ -1,4 +1,6 @@
 import { test, expect } from '@playwright/test'
+import { readFileSync, writeFileSync } from 'node:fs'
+import { join } from 'node:path'
 
 // Estes testes rodam contra o BUILD (`vite preview`), porque o service worker
 // só é gerado em `dist/` e só é registrado em produção. Use `npm run testar-pwa`.
@@ -96,5 +98,56 @@ test.describe('PWA', () => {
     await page.getByRole('button', { name: 'Entendi' }).click()
     await page.getByRole('button', { name: '8', exact: true }).click()
     await expect(page.getByText(/Pergunta 2 de 6/)).toBeVisible()
+  })
+
+  test('avisa quando há versão nova e recarrega só quando alguém aceita', async ({ page }) => {
+    await comServiceWorker(page)
+    await page.goto('/perfis')
+
+    // Simula um deploy: o sw.js servido muda de versão, como aconteceria
+    // depois de um build novo.
+    const arquivo = join(process.cwd(), 'dist', 'sw.js')
+    const original = readFileSync(arquivo, 'utf8')
+    const versaoDeTeste = `teste-${Date.now()}`
+    writeFileSync(
+      arquivo,
+      original.replace(/const VERSAO = '[^']+'/, `const VERSAO = '${versaoDeTeste}'`),
+    )
+
+    try {
+      const faixa = page.getByTestId('aviso-atualizacao')
+
+      await page.evaluate(async () => {
+        const registro = await navigator.serviceWorker.getRegistration()
+        await registro.update()
+      })
+
+      await expect(faixa).toBeVisible({ timeout: 20000 })
+      await expect(faixa).toContainText(/Versão nova/)
+
+      // "Depois" esconde a faixa sem recarregar nem trocar de versão.
+      await faixa.getByRole('button', { name: 'Depois' }).click()
+      await expect(faixa).toHaveCount(0)
+
+      // Recarregar não perde o aviso: a versão nova continua esperando.
+      await page.reload()
+      await expect(page.getByTestId('aviso-atualizacao')).toBeVisible({ timeout: 15000 })
+
+      // Agora sim: a página recarrega já na versão nova.
+      await Promise.all([
+        page.waitForEvent('load', { timeout: 20000 }),
+        page.getByRole('button', { name: 'Atualizar agora' }).click(),
+      ])
+      await expect(page.getByTestId('aviso-atualizacao')).toHaveCount(0)
+
+      // Prova que a versão nova assumiu: só o cache dela sobrou.
+      const cachesDoApp = await page.evaluate(() =>
+        caches.keys().then((nomes) => nomes.filter((n) => n.startsWith('kids-play-app-'))),
+      )
+      expect(cachesDoApp).toHaveLength(1)
+      expect(cachesDoApp[0]).toContain(versaoDeTeste)
+    } finally {
+      writeFileSync(arquivo, original)
+    }
   })
 })

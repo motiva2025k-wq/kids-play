@@ -77,6 +77,10 @@ estático serve — ou até abrir pelo `npm run preview` uma vez.
 O service worker **só existe em produção** (no `npm run dev` ele atrapalharia o
 hot reload), e requisições para o Supabase passam direto, sem cache.
 
+Quando você publica uma versão nova, quem já tem o app aberto vê uma faixa
+"Versão nova do Kids_Play" com **Depois** e **Atualizar agora**. O app não
+troca de versão sozinho justamente para não apagar uma missão em andamento.
+
 Testes do PWA (constroem, servem e desligam a rede):
 
 ```bash

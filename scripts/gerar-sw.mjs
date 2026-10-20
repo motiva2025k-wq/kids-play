@@ -72,8 +72,14 @@ self.addEventListener('install', (evento) => {
     )
     const falhas = resultados.filter((r) => r.status === 'rejected').length
     if (falhas) console.warn('[sw] ' + falhas + ' arquivo(s) não entraram no cache')
-    await self.skipWaiting()
+    // NÃO chama skipWaiting: a versão nova fica esperando para que a tela
+    // possa avisar. Quem decide é a criança/adulto, em src/lib/pwa.js.
   })())
+})
+
+// A tela pede a troca quando a pessoa toca em "Atualizar agora".
+self.addEventListener('message', (evento) => {
+  if (evento.data === 'assumir-controle') self.skipWaiting()
 })
 
 self.addEventListener('activate', (evento) => {

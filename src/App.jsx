@@ -29,6 +29,7 @@ import Termos from './pages/Termos.jsx'
 import SegurancaParaPais from './pages/SegurancaParaPais.jsx'
 import SelecionarPerfil from './pages/SelecionarPerfil.jsx'
 import MapaDeMissoes from './pages/MapaDeMissoes.jsx'
+import AvisoAtualizacao from './components/AvisoAtualizacao.jsx'
 
 function TelaCarregando() {
   return (
@@ -71,8 +72,11 @@ export default function App() {
   // já está ativo e o app funciona. Qualquer condição aqui ou quebraria o
   // app publicado (mostrando o aviso para quem tem chaves) ou seria morta.
   return (
-    <Routes>
-      <Route path="/" element={<Navigate to="/home" replace />} />
+    <>
+      {/* Fora das rotas: o aviso aparece em qualquer tela. */}
+      <AvisoAtualizacao />
+      <Routes>
+        <Route path="/" element={<Navigate to="/home" replace />} />
       <Route
         path="/login"
         element={
@@ -283,7 +287,8 @@ export default function App() {
       <Route path="/__teste/painel" element={<Painel />} />
       <Route path="/__teste/missao/:id" element={<MissaoNova />} />
 
-      <Route path="*" element={<Navigate to="/" replace />} />
-    </Routes>
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </>
   )
 }
