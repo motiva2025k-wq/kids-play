@@ -31,7 +31,10 @@ export function normalizarBanco(banco, { materiaId = 'local-mat' } = {}) {
     for (const [j, at] of (missao?.atividades ?? []).entries()) {
       const onde = { missao: missao?.id ?? `missao-${i}`, atividade: at?.id ?? `atividade-${j}` }
 
-      if (!at?.resposta) {
+      // `false` é resposta válida de verdadeiro/falso, e `0` pode ser o
+      // resultado de uma conta. Só ausência de verdade descarta a atividade:
+      // `!at.resposta` jogava fora a `mat3-mult-m5-e3` (resposta `false`).
+      if (at?.resposta === undefined || at?.resposta === null || at?.resposta === '') {
         descartadas.push({ ...onde, motivo: 'sem_resposta' })
         continue
       }

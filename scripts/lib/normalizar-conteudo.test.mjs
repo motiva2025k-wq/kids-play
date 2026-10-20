@@ -63,6 +63,28 @@ test('descarta atividade sem resposta e relata o motivo', () => {
   assert.equal(r.descartadas[0].atividade, 'm1-a1')
 })
 
+test('resposta false é resposta válida (verdadeiro/falso) e não é descartada', () => {
+  const b = bancoExemplo()
+  const at = b.missoes[0].atividades[0]
+  at.tipo = 'verdadeiro_falso'
+  at.resposta = false
+  at.dados = { correta: false }
+
+  const r = normalizarBanco(b)
+  assert.equal(r.descartadas.length, 0)
+  assert.equal(r.missoes[0].perguntas[0].dados.correta, false)
+})
+
+test('resposta 0 também é resposta válida', () => {
+  const b = bancoExemplo()
+  const at = b.missoes[0].atividades[0]
+  at.resposta = 0
+  at.dados = { opcoes: [0, 1, 2], correta: 0 }
+
+  const r = normalizarBanco(b)
+  assert.equal(r.descartadas.length, 0)
+})
+
 test('descarta tipo fora da lista suportada', () => {
   const b = bancoExemplo()
   b.missoes[0].atividades[0].tipo = 'arrastar_e_solte'
