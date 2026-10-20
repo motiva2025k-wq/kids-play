@@ -3,7 +3,8 @@
 // Nenhuma requisição de rede acontece aqui. As chaves de localStorage são as
 // mesmas já usadas pelo app (spec §5), para reaproveitar o que existia.
 import conteudo from '../../data/conteudo-local.json' with { type: 'json' }
-import { montarRanking, calcularRelatorio } from './logica-local.mjs'
+import { montarRanking, calcularRelatorio, semanaDoAno } from './logica-local.mjs'
+import { limparPerfilSelecionado } from '../perfil.js'
 
 const CHAVE_PERFIS = 'kids_play_perfis_v1'
 const CHAVE_RANKS = 'kids_play_ranks_v1'
@@ -64,7 +65,6 @@ export async function obterUsuario() {
 
 export async function sair() {
   // Não há sessão a encerrar: só esquecemos qual criança estava jogando.
-  const { limparPerfilSelecionado } = await import('../perfil.js')
   limparPerfilSelecionado()
 }
 
@@ -262,7 +262,6 @@ async function somarRanking(idCrianca, xp) {
   if (!idCrianca || !valor) return
 
   const hoje = new Date()
-  const { semanaDoAno } = await import('./logica-local.mjs')
   const semana = semanaDoAno(hoje)
   const mes = hoje.getMonth() + 1
   const ano = hoje.getFullYear()
@@ -283,7 +282,13 @@ async function somarRanking(idCrianca, xp) {
     if (i >= 0) {
       linhas[i] = { ...linhas[i], xp_total: (Number(linhas[i].xp_total) || 0) + valor }
     } else {
-      linhas.push({ child_id: idCrianca, periodo, ano, semana, mes, xp_total: valor })
+      // Cada período guarda só o campo que o identifica: semana na semanal,
+      // mês na mensal, nenhum dos dois na global. Misturar os campos fazia
+      // a linha global aparecer também no ranking semanal.
+      const linha = { child_id: idCrianca, periodo, ano, xp_total: valor }
+      if (periodo === 'semanal') linha.semana = semana
+      if (periodo === 'mensal') linha.mes = mes
+      linhas.push(linha)
     }
   }
   guardar(CHAVE_RANKS, linhas)

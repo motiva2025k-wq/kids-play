@@ -29,6 +29,28 @@ SQL Editor:
 - Bucket `fotos-perfis` (privado)
 - Deploy: `supabase functions deploy ranking/foto`
 
+## Uso local (sem Supabase, offline)
+
+Para rodar o app sem internet e sem projeto Supabase:
+
+```bash
+npm run instalar-local
+npm run dev
+```
+
+O instalador cria `.env.local` com `VITE_MODO_LOCAL=1` e gera o conteúdo das
+missões a partir de `banco-de-questoes/`. Perfis, missões, ranking e relatório
+dos pais ficam em `localStorage` — nada sai do aparelho.
+
+**Limitação:** o conteúdo offline atual cobre apenas **3º ano, Matemática
+(multiplicação 2 ao 5)**. 2º e 4º ano mostram um aviso de conteúdo indisponível,
+e as telas de admin (importar/revisar) explicam que precisam de conexão.
+
+Para voltar a usar o Supabase, remova a linha `VITE_MODO_LOCAL=1` do `.env.local`.
+
+Testes do modo local: `npm run testar` (unitários) e `npm run testar-modo-local`
+(E2E — pare o `npm run dev` antes).
+
 ## 6. Build
 ```bash
 npm run build && npm run preview
@@ -36,5 +58,6 @@ npm run build && npm run preview
 
 ## 7. Testes
 ```bash
-npx playwright test  # E2E (opcional)
+npm run testar            # unitários (node --test)
+npx playwright test       # E2E (opcional, com o app online)
 ```

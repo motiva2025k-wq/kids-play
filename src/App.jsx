@@ -28,6 +28,7 @@ import Privacidade from './pages/Privacidade.jsx'
 import Termos from './pages/Termos.jsx'
 import SegurancaParaPais from './pages/SegurancaParaPais.jsx'
 import SelecionarPerfil from './pages/SelecionarPerfil.jsx'
+import MapaDeMissoes from './pages/MapaDeMissoes.jsx'
 
 function TelaCarregando() {
   return (
@@ -133,6 +134,14 @@ export default function App() {
         element={
           <RotaProtegida>
             <Missao />
+          </RotaProtegida>
+        }
+      />
+      <Route
+        path="/mapa-de-missoes"
+        element={
+          <RotaProtegida>
+            <MapaDeMissoes />
           </RotaProtegida>
         }
       />

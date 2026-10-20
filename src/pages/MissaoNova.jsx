@@ -49,7 +49,9 @@ export default function MissaoNova() {
   const auth = useAuth()
   const perfil = lerPerfilSelecionado()
 
-  const idMissao = Number(id) || 0
+  // O id vai como está: `Number(id)` transformava ids de texto
+  // ('mat3-mult-m1') em 0 e a missão nunca carregava.
+  const idMissao = id || null
   const idCrianca = perfil?.id
 
   // ref para o bark.evento achar a falarEvento mais recente (definida abaixo)

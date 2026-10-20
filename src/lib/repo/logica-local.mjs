@@ -32,6 +32,9 @@ export function montarRanking(linhas, { periodo, agora = new Date(), perfis = []
 
   const filtradas = (linhas ?? []).filter((l) => {
     if (l.ano !== ano) return false
+    // A linha de 'global' não pertence às listas de semana/mês (e vice-versa).
+    // Sem isto, uma mesma criança aparecia 3 vezes no ranking.
+    if (l.periodo && l.periodo !== periodo) return false
     // Global ignora semana/mes, igual à consulta do app online.
     if (periodo === 'semanal' && l.semana !== semana) return false
     if (periodo === 'mensal' && l.mes !== mes) return false
