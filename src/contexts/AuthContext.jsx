@@ -1,7 +1,13 @@
 import { createContext, useContext, useEffect, useState } from 'react'
-import { supabase, supabaseConfigurado } from '../lib/supabase'
+import { supabase } from '../lib/supabase'
+import { supabaseConfigurado, modoLocal } from '../lib/modo'
 
 const AuthContext = createContext(null)
+
+// No modo local não há sessão, mas o app inteiro depende de um `usuario` para
+// passar por RotaProtegida/RotaPublica. Devolvemos um usuário estável — e por
+// isso nenhuma rota precisa mudar.
+const USUARIO_LOCAL = { id: 'local', email: 'Modo local' }
 
 // Traduz os erros do Supabase para uma linguagem simples.
 function mensagemAmigavel(erro) {
@@ -29,7 +35,9 @@ export function AuthProvider({ children }) {
   const [carregando, setCarregando] = useState(true)
 
   useEffect(() => {
-    if (!supabaseConfigurado) {
+    // Sem Supabase configurado, ou no modo local (onde supabase é null),
+    // não há sessão a carregar: saímos do estado de carregamento na hora.
+    if (!supabaseConfigurado || !supabase) {
       setCarregando(false)
       return
     }
@@ -51,9 +59,10 @@ export function AuthProvider({ children }) {
 
   const valor = {
     session,
-    usuario: session?.user ?? null,
+    usuario: modoLocal ? USUARIO_LOCAL : (session?.user ?? null),
     carregando,
     supabaseConfigurado,
+    modoLocal,
 
     // Retorna true quando o login aconteceu na hora (confirmação de e-mail
     // desligada no Supabase); false quando é preciso confirmar o e-mail.
