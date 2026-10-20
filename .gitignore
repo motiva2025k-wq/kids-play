@@ -22,3 +22,6 @@ Thumbs.db
 test-results/
 playwright-report/
 c/
+
+# Relatórios do Lighthouse CI
+.lighthouseci/

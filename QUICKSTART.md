@@ -87,6 +87,22 @@ Testes do PWA (constroem, servem e desligam a rede):
 npm run testar-pwa
 ```
 
+### Lighthouse no CI
+
+```bash
+npm run testar-lighthouse
+```
+
+O script constrói o `dist/` e manda o Lighthouse auditar a categoria PWA três
+vezes. Se o app deixar de ser instalável (manifest quebrado, ícone maskable
+sumido), o comando sai com erro. É exatamente o que faz o workflow
+`.github/workflows/lighthouse.yml`, que roda a cada push e falha a build no
+GitHub; quando isso acontece, os relatórios HTML ficam disponíveis como
+artefato da execução (localmente, em `.lighthouseci/reports/`).
+
+No Windows sem Chrome instalado, o script usa automaticamente o Chromium do
+Playwright ou o Edge (defina `CHROME_PATH` para escolher outro navegador).
+
 ## 6. Build
 ```bash
 npm run build && npm run preview
