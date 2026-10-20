@@ -55,6 +55,34 @@ Para voltar a usar o Supabase, remova a linha `VITE_MODO_LOCAL=1` do `.env.local
 Testes do modo local: `npm run testar` (unitários) e `npm run testar-modo-local`
 (E2E — pare o `npm run dev` antes).
 
+## Instalar como app (PWA)
+
+O build gera um service worker e o app passa a funcionar como aplicativo:
+
+```bash
+npm run build      # gera dist/ + dist/sw.js
+npm run preview    # serve em http://localhost:4173
+```
+
+Abra no navegador: o Chrome/Edge mostram **Instalar** na barra de endereço; no
+Android, "Adicionar à tela inicial"; no iPhone, Compartilhar → "Adicionar à
+Tela de Início".
+
+Depois da primeira visita o app abre **sem servidor e sem internet**: o service
+worker guarda o build inteiro (`dist/sw.js` é gerado no `npm run build`), o
+conteúdo das missões vai embutido no bundle e o progresso fica em
+`localStorage`. Para servir o `dist/` de um jeito simples, qualquer servidor
+estático serve — ou até abrir pelo `npm run preview` uma vez.
+
+O service worker **só existe em produção** (no `npm run dev` ele atrapalharia o
+hot reload), e requisições para o Supabase passam direto, sem cache.
+
+Testes do PWA (constroem, servem e desligam a rede):
+
+```bash
+npm run testar-pwa
+```
+
 ## 6. Build
 ```bash
 npm run build && npm run preview

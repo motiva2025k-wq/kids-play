@@ -5,11 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node scripts/gerar-sw.mjs",
     "preview": "vite preview",
     "gerar-conteudo": "node scripts/gerar-conteudo-local.mjs",
     "instalar-local": "node scripts/instalar-local.mjs",
     "testar-modo-local": "node scripts/testar-modo-local.mjs",
+    "testar-pwa": "node scripts/testar-pwa.mjs",
     "testar": "node --test \"src/lib/*.test.mjs\" \"src/lib/repo/*.test.mjs\" \"scripts/**/*.test.mjs\""
   },
   "dependencies": {
