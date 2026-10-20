@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "gerar-conteudo": "node scripts/gerar-conteudo-local.mjs",
     "testar": "node --test \"src/lib/*.test.mjs\" \"src/lib/repo/*.test.mjs\" \"scripts/**/*.test.mjs\""
   },
   "dependencies": {
