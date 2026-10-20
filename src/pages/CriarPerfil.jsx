@@ -5,7 +5,7 @@ import Botao from '../components/ui/Botao.jsx'
 import Campo from '../components/ui/Campo.jsx'
 import { useAuth } from '../contexts/AuthContext.jsx'
 import { AVATARES } from '../data/avatares.js'
-import { supabase } from '../lib/supabase.js'
+import { repo } from '../lib/repo/index.js'
 
 const ANOS = [
   { valor: '2', texto: '2º ano' },
@@ -34,19 +34,22 @@ export default function CriarPerfil() {
     }
 
     setSalvando(true)
-    const { error } = await supabase.from('children').insert({
-      guardian_id: usuario.id,
-      nickname: apelido,
-      school_year: schoolYear,
-      avatar_id: avatarId,
-    })
-    setSalvando(false)
-
-    if (error) {
+    try {
+      // `usuario.id` é o id do responsável online e 'local' no modo local:
+      // uma única chamada atende os dois modos.
+      await repo.criarPerfil({
+        guardian_id: usuario?.id,
+        nickname: apelido,
+        school_year: schoolYear,
+        avatar_id: avatarId,
+      })
+    } catch (erroSalvar) {
+      console.error(erroSalvar)
       setErro('Não deu para salvar o perfil. Tente de novo.')
-      console.error(error)
+      setSalvando(false)
       return
     }
+    setSalvando(false)
     navegar('/perfis')
   }
 

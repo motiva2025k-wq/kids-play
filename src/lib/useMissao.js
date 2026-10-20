@@ -1,8 +1,9 @@
 // useMissao — hook que orquestra o fluxo real de uma missão.
 //
 // Agora usa o motor puro (motorMissao.mjs) para a lógica de progressão e
-// resultado, e o serviço missoes.js para ler do Supabase e gravar tentativa +
-// respostas (com fallback offline já pronto no serviço).
+// resultado, e o repositório (repo/index.js) para ler e gravar. O repositório
+// escolhe sozinho entre Supabase e localStorage, então esta tela funciona
+// igual online e no modo local.
 //
 // API pública (inalterada em relação ao que o MissaoNova consome):
 //   status, pergunta, posicao, total, resultado, enunciadoLido,
@@ -14,12 +15,7 @@
 // O MissaoNova pode preferir ler o retorno de `responder` diretamente.
 
 import { useCallback, useRef, useState } from 'react'
-import { supabase } from './supabase.js'
-import {
-  carregarMissaoComPerguntas,
-  ultimaTentativa,
-  enviarRespostas,
-} from './missoes.js'
+import { repo } from './repo/index.js'
 import {
   criarMotor,
   perguntaAtual,
@@ -73,13 +69,7 @@ export function useMissao({ idCrianca, idMissao, bark } = {}) {
     setResultado(null)
     tentativaIdRef.current = null
 
-    // sem Supabase configurado → erro gentil (sem crash)
-    if (!supabase) {
-      setStatus(STATUS.erro)
-      return
-    }
-
-    const detalhe = await carregarMissaoComPerguntas(idMissaoRef.current)
+    const detalhe = await repo.carregarMissaoComPerguntas(idMissaoRef.current)
     const perguntas = detalhe?.perguntas ?? []
 
     if (!detalhe || perguntas.length === 0) {
@@ -90,7 +80,7 @@ export function useMissao({ idCrianca, idMissao, bark } = {}) {
     // se a criança já concluiu antes, esta missão é "refeita" (XP pela metade)
     let refeita = false
     if (idCriancaRef.current) {
-      const anterior = await ultimaTentativa(idCriancaRef.current, idMissaoRef.current)
+      const anterior = await repo.ultimaTentativa(idCriancaRef.current, idMissaoRef.current)
       refeita = Boolean(anterior?.concluida_em)
     }
 
@@ -113,12 +103,7 @@ export function useMissao({ idCrianca, idMissao, bark } = {}) {
 
   async function criarTentativa(campos) {
     try {
-      const { data, error } = await supabase
-        .from('tentativas_missao')
-        .insert(campos)
-        .select('id')
-        .single()
-      if (!error && data?.id) tentativaIdRef.current = data.id
+      tentativaIdRef.current = await repo.iniciarTentativa(campos)
     } catch (e) {
       console.warn('[useMissao] não deu pra criar tentativa:', e?.message)
     }
@@ -135,14 +120,16 @@ export function useMissao({ idCrianca, idMissao, bark } = {}) {
       // grava a resposta desta pergunta no banco (best-effort)
       const ultima = motor.respostas[motor.respostas.length - 1]
       if (tentativaIdRef.current && ultima) {
-        enviarRespostas([
-          {
-            tentativa_id: tentativaIdRef.current,
-            pergunta_id: ultima.pergunta_id,
-            correta: ultima.correta,
-            dica_usada: ultima.dica_usada,
-          },
-        ]).catch(() => {})
+        repo
+          .enviarRespostas([
+            {
+              tentativa_id: tentativaIdRef.current,
+              pergunta_id: ultima.pergunta_id,
+              correta: ultima.correta,
+              dica_usada: ultima.dica_usada,
+            },
+          ])
+          .catch(() => {})
       }
 
       // dispara o evento de fala correspondente
@@ -166,17 +153,7 @@ export function useMissao({ idCrianca, idMissao, bark } = {}) {
   async function concluirTentativa(res) {
     if (!tentativaIdRef.current) return
     try {
-      await supabase
-        .from('tentativas_missao')
-        .update({
-          concluida_em: new Date().toISOString(),
-          acertos: res.acertos,
-          total: res.total,
-          xp_ganho: res.xp,
-          moedas_ganhas: res.moedas,
-          refeita: res.refeita,
-        })
-        .eq('id', tentativaIdRef.current)
+      await repo.concluirTentativa(tentativaIdRef.current, res)
     } catch (e) {
       console.warn('[useMissao] não deu pra concluir tentativa:', e?.message)
     }
@@ -197,7 +174,7 @@ export function useMissao({ idCrianca, idMissao, bark } = {}) {
   }, [])
 
   // ------- envio (mantém contrato antigo: retorna { online }) -------
-  const confirmarEnvio = useCallback(async () => ({ online: !!supabase }), [])
+  const confirmarEnvio = useCallback(async () => ({ online: Boolean(repo.cliente) }), [])
 
   // setPergunta mantido por compatibilidade (o motor cuida do fluxo)
   const setPergunta = useCallback(() => {}, [])

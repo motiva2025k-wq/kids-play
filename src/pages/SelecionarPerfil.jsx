@@ -4,7 +4,7 @@ import Layout from '../components/Layout.jsx'
 import { useAuth } from '../contexts/AuthContext.jsx'
 import { avatarPorId } from '../data/avatares.js'
 import { guardarPerfilSelecionado } from '../lib/perfil.js'
-import { supabase } from '../lib/supabase.js'
+import { repo } from '../lib/repo/index.js'
 
 export default function SelecionarPerfil() {
   const { usuario, sair } = useAuth()
@@ -17,19 +17,18 @@ export default function SelecionarPerfil() {
   useEffect(() => {
     let ativo = true
 
-    supabase
-      .from('children')
-      .select('id, nickname, school_year, avatar_id, xp, coins, stage')
-      .order('created_at')
-      .then(({ data, error }) => {
+    repo
+      .listarPerfis()
+      .then((perfis) => {
+        if (ativo) setCriancas(perfis)
+      })
+      .catch((e) => {
         if (!ativo) return
-        if (error) {
-          setErro('Não deu para carregar os perfis. Recarregue a página.')
-          console.error(error)
-        } else {
-          setCriancas(data ?? [])
-        }
-        setCarregando(false)
+        console.error(e)
+        setErro('Não deu para carregar os perfis. Recarregue a página.')
+      })
+      .finally(() => {
+        if (ativo) setCarregando(false)
       })
 
     return () => {

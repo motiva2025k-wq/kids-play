@@ -26,7 +26,8 @@ import Badge from '../components/ui/Badge.jsx'
 import ProgressBar from '../components/ui/ProgressBar.jsx'
 import Card from '../components/ui/Card.jsx'
 import Layout from '../components/Layout.jsx'
-import { carregarMissoes, missoesConcluidas } from '../lib/missoes.js'
+import { repo } from '../lib/repo/index.js'
+import { modoLocal } from '../lib/modo.js'
 import { dizer } from '../components/kapivarus/falas.mjs'
 
 // icones nominais para matérias (sem imagem externa; usa emojis só como placeholder,
@@ -68,7 +69,9 @@ export default function MapaDeMissoes() {
   const contexto = useMemo(() => ({ nome: perfil?.nickname || perfil?.nome || '' }), [perfil])
   const falaBoasVindas = useMemo(() => dizer('boas_vindas', contexto), [contexto])
 
-  const [materiaId, setMateriaId] = useState('portugues')
+  // O conteúdo embarcado no modo local é só de Matemática; nas outras
+  // matérias não há nada para mostrar, então a tela já abre na certa.
+  const [materiaId, setMateriaId] = useState(modoLocal ? 'matematica' : 'portugues')
   const [missoes, setMissoes] = useState([])
   const [concluidas, setConcluidas] = useState([])
   const [carregando, setCarregando] = useState(true)
@@ -81,8 +84,8 @@ export default function MapaDeMissoes() {
     }
     setCarregando(true)
     const [missoesCarregadas, concluidasCarregadas] = await Promise.all([
-      carregarMissoes(ano, materiaId),
-      missoesConcluidas(idCrianca),
+      repo.carregarMissoes(ano, materiaId),
+      repo.missoesConcluidas(idCrianca),
     ])
     setMissoes(missoesCarregadas)
     setConcluidas(concluidasCarregadas)
@@ -93,7 +96,10 @@ export default function MapaDeMissoes() {
     recarregarMapa()
   }, [recarregarMapa])
 
-  const materia = MATERIAS.find((m) => m.id === materiaId) || MATERIAS[0]
+  const materiasVisiveis = modoLocal
+    ? MATERIAS.filter((m) => m.id === 'matematica')
+    : MATERIAS
+  const materia = materiasVisiveis.find((m) => m.id === materiaId) || materiasVisiveis[0]
 
   // estados dos blocos
   function estadoDaMissao(idx, missao, todas) {
@@ -136,7 +142,7 @@ export default function MapaDeMissoes() {
       <Card className="mb-6">
         <h3 className="mb-4 text-lg font-bold">Escolha a matéria</h3>
         <div className="grid grid-cols-5 gap-3">
-          {MATERIAS.map((m) => {
+          {materiasVisiveis.map((m) => {
             const ativo = m.id === materiaId
             return (
               <button
@@ -167,8 +173,23 @@ export default function MapaDeMissoes() {
         </div>
       ) : missoes.length === 0 ? (
         <div className="bloco p-6 text-center">
-          <p className="text-lg font-bold">Nenhuma missão disponível por enquanto.</p>
-          <p className="mt-1 opacity-80">Volte mais tarde ou escolha outra matéria.</p>
+          {modoLocal ? (
+            <>
+              <p className="text-lg font-bold">
+                Este ano ainda não tem missões offline 😴
+              </p>
+              <p className="mt-1 opacity-80">
+                As missões sem internet estão disponíveis para o 3º ano.
+                Escolha outro perfil ou conecte o app ao Supabase para ver
+                todas.
+              </p>
+            </>
+          ) : (
+            <>
+              <p className="text-lg font-bold">Nenhuma missão disponível por enquanto.</p>
+              <p className="mt-1 opacity-80">Volte mais tarde ou escolha outra matéria.</p>
+            </>
+          )}
         </div>
       ) : (
         <div className="space-y-4">
