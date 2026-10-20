@@ -1,5 +1,4 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
-import AvisoConfiguracao from './components/AvisoConfiguracao.jsx'
 import { useAuth } from './contexts/AuthContext.jsx'
 import Acerto from './pages/Acerto.jsx'
 import Cadastro from './pages/Cadastro.jsx'
@@ -64,10 +63,12 @@ function RotaPublica({ children }) {
 }
 
 export default function App() {
-  const { supabaseConfigurado } = useAuth()
-
-  if (!supabaseConfigurado) return <AvisoConfiguracao />
-
+  // O gate antigo (`if (!supabaseConfigurado) return <AvisoConfiguracao />`)
+  // bloqueava o app inteiro quando não havia chaves. Ele foi REMOVIDO, não
+  // trocado: como supabaseConfigurado === !modoLocal por construção, não
+  // existe caso "sem Supabase e sem modo local" — sem chaves, o modo local
+  // já está ativo e o app funciona. Qualquer condição aqui ou quebraria o
+  // app publicado (mostrando o aviso para quem tem chaves) ou seria morta.
   return (
     <Routes>
       <Route path="/" element={<Navigate to="/home" replace />} />
@@ -266,6 +267,12 @@ export default function App() {
           </RotaProtegida>
         }
       />      <Route path="/guia-visual" element={<GuiaVisual />} />
+      {/* TEMPORÁRIO (verificação de loop): telas de missão sem o gate. */}
+      <Route path="/__teste/missao" element={<Missao />} />
+      <Route path="/__teste/acerto" element={<Acerto />} />
+      <Route path="/__teste/erro" element={<ErroGentil />} />
+      <Route path="/__teste/painel" element={<Painel />} />
+      <Route path="/__teste/missao/:id" element={<MissaoNova />} />
 
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
