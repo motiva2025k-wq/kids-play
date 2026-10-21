@@ -103,6 +103,24 @@ artefato da execução (localmente, em `.lighthouseci/reports/`).
 No Windows sem Chrome instalado, o script usa automaticamente o Chromium do
 Playwright ou o Edge (defina `CHROME_PATH` para escolher outro navegador).
 
+### Lighthouse na produção (Vercel)
+
+```bash
+npm run testar-lighthouse-producao
+```
+
+Audita o app instalável no site publicado, não no build local. O workflow
+`.github/workflows/lighthouse-producao.yml` roda todo dia às 06:00 UTC
+resolvendo, pela API do GitHub, a URL do deploy de produção mais novo (ela
+muda a cada publicação). O agendamento só passa a valer quando o arquivo
+existir na `main`; até lá, use "Run workflow" na aba Actions.
+
+A produção está atrás da proteção da Vercel: o valor de
+`VERCEL_PROTECTION_BYPASS` (dashboard → Settings → Deployment Protection →
+Protection Bypass for Automation, salvo como secret do GitHub Actions) é
+injetado como header numa configuração temporária gerada pelo script — o
+secret nunca é versionado nem aparece no repositório.
+
 ## 6. Build
 ```bash
 npm run build && npm run preview

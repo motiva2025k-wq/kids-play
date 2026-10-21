@@ -12,6 +12,7 @@
     "testar-modo-local": "node scripts/testar-modo-local.mjs",
     "testar-pwa": "node scripts/testar-pwa.mjs",
     "testar-lighthouse": "node scripts/testar-lighthouse.mjs",
+    "testar-lighthouse-producao": "node scripts/testar-lighthouse-producao.mjs",
     "testar": "node --test \"src/lib/*.test.mjs\" \"src/lib/repo/*.test.mjs\" \"scripts/**/*.test.mjs\""
   },
   "dependencies": {

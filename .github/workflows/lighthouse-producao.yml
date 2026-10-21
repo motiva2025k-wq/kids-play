@@ -1,0 +1,57 @@
+name: Lighthouse Produção
+
+# Audita o app instalável no site publicado na Vercel (deploy de produção
+# mais novo), uma vez por dia. O agendamento só passa a valer quando este
+# arquivo existir na main; até lá, use "Run workflow" na aba Actions.
+on:
+  schedule:
+    - cron: '0 6 * * *' # 06:00 UTC (03:00 em Brasília)
+  workflow_dispatch:
+
+jobs:
+  producao:
+    name: Produção instalável
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: read
+    env:
+      # O Lighthouse usa o Chrome do próprio runner; sem isto o `npm ci` baixaria
+      # o Chromium do Playwright à toa.
+      PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Descobrir o deploy de produção mais novo
+        id: producao
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          ID=$(gh api "repos/${{ github.repository }}/deployments?environment=Production&per_page=1" --jq '.[0].id')
+          URL=$(gh api "repos/${{ github.repository }}/deployments/$ID/statuses" --jq '[.[] | select(.state=="success")][0].target_url')
+          test -n "$URL"
+          echo "url=$URL" >> "$GITHUB_OUTPUT"
+          echo "Produção: $URL"
+
+      - name: Rodar Lighthouse contra a produção (falha se não for instalável)
+        env:
+          URL_PRODUCAO: ${{ steps.producao.outputs.url }}
+          VERCEL_PROTECTION_BYPASS: ${{ secrets.VERCEL_PROTECTION_BYPASS }}
+        run: npm run testar-lighthouse-producao
+
+      - name: Guardar relatórios quando falhar
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: relatorios-lighthouse-producao
+          path: .lighthouseci/
+          if-no-files-found: ignore
+          include-hidden-files: true

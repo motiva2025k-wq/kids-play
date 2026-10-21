@@ -1,0 +1,21 @@
+{
+  "ci": {
+    "collect": {
+      "url": ["https://kids-play-aft48k9f8-kids-play1.vercel.app/"],
+      "numberOfRuns": 3,
+      "settings": {
+        "onlyCategories": ["pwa"]
+      }
+    },
+    "assert": {
+      "assertions": {
+        "installable-manifest": "error",
+        "maskable-icon": "error"
+      }
+    },
+    "upload": {
+      "target": "filesystem",
+      "outputDir": ".lighthouseci/reports-producao"
+    }
+  }
+}
