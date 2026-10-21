@@ -26,7 +26,7 @@ import { lerPerfilSelecionado } from '../lib/perfil.js'
 import { dizer, estadoDe } from '../components/kapivarus/falas.mjs'
 import { supabase } from '../lib/supabase.js'
 import { aplicarResultadoMissao } from '../lib/progresso.js'
-import { carregarMissaoComPerguntas } from '../lib/missoes.js'
+import { repo } from '../lib/repo/index.js'
 
 // ---------- Web Speech (ATRIBUTO: modo reforço) ----------
 const sintetizador = typeof window !== 'undefined' ? window.speechSynthesis : null
@@ -49,7 +49,9 @@ export default function MissaoNova() {
   const auth = useAuth()
   const perfil = lerPerfilSelecionado()
 
-  const idMissao = Number(id) || 0
+  // O id vai como está: `Number(id)` transformava ids de texto
+  // ('mat3-mult-m1') em 0 e a missão nunca carregava.
+  const idMissao = id || null
   const idCrianca = perfil?.id
 
   // ref para o bark.evento achar a falarEvento mais recente (definida abaixo)
@@ -110,7 +112,7 @@ export default function MissaoNova() {
   useEffect(() => {
     let vivo = true
     async function checar() {
-      const detalhe = await carregarMissaoComPerguntas(idMissao)
+      const detalhe = await repo.carregarMissaoComPerguntas(idMissao)
       if (!vivo) return
       const nome = (detalhe?.materias?.nome || '').toLowerCase()
       setMissaoLeitura(nome.includes('portug') || nome.includes('l.ngua'))

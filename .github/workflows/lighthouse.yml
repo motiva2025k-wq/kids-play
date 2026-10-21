@@ -1,0 +1,40 @@
+name: Lighthouse PWA
+
+# Roda o Lighthouse a cada push e falha a build se o app deixar de ser
+# instalável (manifest quebrado, ícone maskable sumido etc.).
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  lighthouse:
+    name: App instalável
+    runs-on: ubuntu-latest
+    env:
+      # O Lighthouse usa o Chrome do próprio runner; sem isto o `npm ci` baixaria
+      # o Chromium do Playwright à toa (ele só é fallback no Windows sem Chrome).
+      PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Rodar Lighthouse (falha se o app não for instalável)
+        run: npm run testar-lighthouse
+
+      - name: Guardar relatórios quando falhar
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: relatorios-lighthouse
+          path: .lighthouseci/
+          if-no-files-found: ignore
+          # O diretório começa com ponto; sem isto o v4 ignora os arquivos ocultos
+          # e o artefato sairia vazio.
+          include-hidden-files: true

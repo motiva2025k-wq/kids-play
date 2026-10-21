@@ -1,0 +1,22 @@
+{
+  "ci": {
+    "collect": {
+      "staticDistDir": "dist",
+      "url": ["/"],
+      "numberOfRuns": 3,
+      "settings": {
+        "onlyCategories": ["pwa"]
+      }
+    },
+    "assert": {
+      "assertions": {
+        "installable-manifest": "error",
+        "maskable-icon": "error"
+      }
+    },
+    "upload": {
+      "target": "filesystem",
+      "outputDir": ".lighthouseci/reports"
+    }
+  }
+}

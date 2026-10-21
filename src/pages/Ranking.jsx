@@ -8,7 +8,7 @@ import Button from '../components/ui/Button.jsx'
 import Confete from '../components/ui/Confete.jsx'
 import Trono from '../components/ui/Trono.jsx'
 import { IconeCoroa, IconeTrofeu } from '../components/ui/Icones.jsx'
-import { supabase } from '../lib/supabase.js'
+import { repo } from '../lib/repo/index.js'
 import { lerPerfilSelecionado } from '../lib/perfil.js'
 
 export default function Ranking() {
@@ -28,43 +28,13 @@ export default function Ranking() {
   }, [periodo])
 
   async function carregarRanking() {
-    if (!supabase) return
-
     setLoading(true)
     setError(null)
 
     try {
-      const hoje = new Date()
-      const ano = hoje.getFullYear()
-      const semana = Math.ceil((((hoje - new Date(ano, 0, 1)) / 86400000) + new Date(ano, 0, 1).getDay() + 1) / 7)
-      const mes = hoje.getMonth() + 1
-
-      let query = supabase
-        .from('ranks')
-        .select(`
-          *,
-          children (
-            id,
-            nickname,
-            avatar_id,
-            mostrar_no_ranking,
-            mostrar_foto_no_ranking
-          )
-        `)
-        .eq('periodo', periodo)
-        .eq('ano', ano)
-
-      if (periodo === 'semanal') {
-        query = query.eq('semana', semana)
-      } else if (periodo === 'mensal') {
-        query = query.eq('mes', mes)
-      }
-
-      const { data, error } = await query.order('posicao', { ascending: true })
-
-      if (error) throw error
-
-      const filtrado = (data || []).filter(r => r.children?.mostrar_no_ranking !== false)
+      // Semana/mês, filtro de privacidade e ordem já vêm resolvidos pelo
+      // repositório — igual online e no modo local.
+      const filtrado = await repo.carregarRanking(periodo)
       setRanking(filtrado)
 
       if (perfil?.id) {
@@ -75,6 +45,8 @@ export default function Ranking() {
             xp: filtrado[minhaPosicao].xp_total,
             item: filtrado[minhaPosicao]
           })
+        } else {
+          setPosicaoAtual(null)
         }
       }
     } catch (err) {

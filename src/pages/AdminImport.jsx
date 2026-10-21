@@ -7,6 +7,8 @@ import { supabase } from '../lib/supabase.js'
 import { useAuth } from '../contexts/AuthContext.jsx'
 import { isAdmin } from '../lib/admin.js'
 import { useToast } from '../contexts/ToastContext.jsx'
+import { modoLocal } from '../lib/modo.js'
+import AvisoModoLocal from '../components/AvisoModoLocal.jsx'
 
 export default function AdminImport() {
   const navigate = useNavigate()
@@ -17,6 +19,20 @@ export default function AdminImport() {
   const [errors, setErrors] = useState([])
   const [preview, setPreview] = useState(null)
   const [importando, setImportando] = useState(false)
+
+  // No modo local não há banco: a importação grava no Supabase, então avisa
+  // antes do "acesso negado" (que aqui seria confuso, não é falta de permissão).
+  if (modoLocal) {
+    return (
+      <Layout>
+        <AvisoModoLocal
+          titulo="Importar questões precisa de conexão"
+          texto="Você está no modo local. A importação de bancos de questões grava no banco de dados, então só funciona online."
+          dica="Para voltar, remova a linha VITE_MODO_LOCAL=1 do arquivo .env.local."
+        />
+      </Layout>
+    )
+  }
 
   if (!isAdmin(usuario)) {
     return (

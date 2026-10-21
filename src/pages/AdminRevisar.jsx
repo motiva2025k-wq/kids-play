@@ -7,6 +7,8 @@ import { supabase } from '../lib/supabase.js'
 import { useAuth } from '../contexts/AuthContext.jsx'
 import { isAdmin } from '../lib/admin.js'
 import { useToast } from '../contexts/ToastContext.jsx'
+import { modoLocal } from '../lib/modo.js'
+import AvisoModoLocal from '../components/AvisoModoLocal.jsx'
 
 export default function AdminRevisar() {
   const navigate = useNavigate()
@@ -31,6 +33,19 @@ export default function AdminRevisar() {
     } finally {
       setLoading(false)
     }
+  }
+
+  // No modo local não há banco: revisar lotes importados exige conexão.
+  if (modoLocal) {
+    return (
+      <Layout>
+        <AvisoModoLocal
+          titulo="Revisar questões precisa de conexão"
+          texto="Você está no modo local. Os lotes de importação ficam no banco de dados, então esta tela só funciona online."
+          dica="Para voltar, remova a linha VITE_MODO_LOCAL=1 do arquivo .env.local."
+        />
+      </Layout>
+    )
   }
 
   if (!isAdmin(usuario)) {

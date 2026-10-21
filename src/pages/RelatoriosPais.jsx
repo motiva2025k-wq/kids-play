@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import Layout from '../components/Layout.jsx'
 import Card from '../components/ui/Card.jsx'
 import Button from '../components/ui/Button.jsx'
-import { supabase } from '../lib/supabase.js'
+import { repo } from '../lib/repo/index.js'
 import { lerPerfilSelecionado } from '../lib/perfil.js'
 import { useToast } from '../contexts/ToastContext.jsx'
 
@@ -20,17 +20,14 @@ export default function RelatoriosPais() {
   }, [periodo])
 
   async function carregarRelatorio() {
-    if (!perfil?.id || !supabase) return
+    if (!perfil?.id) {
+      setLoading(false)
+      return
+    }
 
     setLoading(true)
     try {
-      const { data, error } = await supabase.rpc('relatorio_pais', {
-        child_id_param: perfil.id,
-        periodo: periodo
-      })
-
-      if (error) throw error
-      setRelatorio(data && data[0] ? data[0] : null)
+      setRelatorio(await repo.relatorioPais(perfil.id, periodo))
     } catch (err) {
       console.error('Erro ao carregar relatório:', err)
       addToast({ message: 'Erro ao carregar relatório' })
